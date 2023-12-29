@@ -10,16 +10,20 @@ public class A11StringMethodTeacher {
         // 자바 String의 중요한 메소드 7가지씩 조사해서 테스트 해보기 
         // *** 메소드 인자의 개수 와 형식에 따라 분류 해보기 ***
         String message ="Hello, World~";
+
+
         // 1.메소드 괄호안에 아무것도 없는 것. : length, isEmpty, toUppercase, toLowerCase
         System.out.println("message.length() :" + message.length());
         System.out.println("message.toUpperCase() : "+message.toUpperCase());
         System.out.println("message.isEmpty() : "+message.isEmpty());
+        
         // 2.메소드 괄호안에 정수 1개를 쓰는 것 : charAt  
         // 문자의 문자열은 0부터 순서대로 문자에게 번호를 매깁니다. -> index
         System.out.println("message.charAt(0) : " + message.charAt(0));
         System.out.println("message.charAt(3) : " + message.charAt(3));
         System.out.println("message.charAt(4) : " + message.charAt(4));
         // 현재 message에서 마지막 인덱스는 얼마인가하면..... length-1
+        
         // 3.메소드 괄호안에 문자열 1개를 쓰는 것. : concat, equals ,startsWith , endsWith , indexOf
         System.out.println("message.concat(\"~짱짱\") :"+ message.concat("~짱짱"));
         //대소문자 구분하면서 hello 로 시작하는지 검사하는 메소드

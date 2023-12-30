@@ -6,10 +6,11 @@ public class HomeStringFormat {
     public static void main(String[] args) {
 
         // 주말과제 : String.format() 에 대한 예제를 작성하고 실행도 해보세요.
-        // 예제 : String.format() 메서드와 ASCII 코드를 활용하여 현재 날짜를 구하기.(day 메소드 사용 금지)
+        // 예제 : String.format() 메서드와 ASCII 코드를 활용하여  날짜를 구하기.(day 메소드 사용 금지)
+
         
         String year = "DC4";
-        boolean bool = true;
+        String month = "DC4";
         int n = 1234;
         LocalDateTime now = LocalDateTime.now();
         
@@ -27,6 +28,8 @@ public class HomeStringFormat {
         
         result = String.format("날짜/시간 서식: %tY년 %<tm월 %<td일 %<tH시 %<tM분 %<tS초", now);
         System.out.println(result);  // $< 로 상대 인덱스 지정하여 직전의 인수와 같은 인덱스를 이용
+
+        //1
         
 
      }

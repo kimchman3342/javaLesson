@@ -1,35 +1,64 @@
 package myexam;
 
-import java.time.LocalDateTime;
 
 public class HomeStringFormat {
+    /**
+     * @param args
+     */
     public static void main(String[] args) {
 
         // 주말과제 : String.format() 에 대한 예제를 작성하고 실행도 해보세요.
-        // 예제 : String.format() 메서드와 ASCII 코드를 활용하여  날짜를 구하기.(day 메소드 사용 금지)
+        // 예제 : String.format()메서드와 유니코드를 활용하여 광복절 날짜를 출력하기.
 
         
-        String year = "DC4";
-        String month = "DC4";
-        int n = 1234;
-        LocalDateTime now = LocalDateTime.now();
+        char month = '\u0038';
+        char day = '\u0031';
+        char day2 = '\u0035';
         
-        String result = String.format("문자열 서식: %s, %S", str, str);
-        System.out.println(result);
-        
-        result = String.format("boolean 서식 문자열: %B, %b", bool, bool);
-        System.out.println(result);
-        
-        result = String.format("정수 서식: %d, %o, %x, %05d", n, n, n, n); 
-        System.out.println(result);  // %05d → 5자리수, 공백을 0으로 채움
-        
-        result = String.format("부동 소수점 서식: %4$e, %3$f, %2$g, %1$a", 1234.01, 1234.02, 1234.03, 1234.04);
-        System.out.println(result);  // %숫자$ 로 절대 인수 인덱스 지정
-        
-        result = String.format("날짜/시간 서식: %tY년 %<tm월 %<td일 %<tH시 %<tM분 %<tS초", now);
-        System.out.println(result);  // $< 로 상대 인덱스 지정하여 직전의 인수와 같은 인덱스를 이용
+        System.out.println("\n 주말과제 정답 : ");
+        String str1 = String.format("광복절 날짜: %s월%s"+"%s일", month, day, day2);
+        System.out.println(str1);
 
-        //1
+        
+        
+     
+
+        // 1. 기본 자료형의 크기 순서를 작은것 부터 차례대로 출력하시오. (부등호 사용)
+        System.out.println("\n 1번문제 정답 : boolean(1bit) < byte(1byte) < char( 2byte) = short(2byte) < int(4byte) = float(4byte) < long(8byte) = double(8byte)");
+            
+        
+        //  2. 반복문을 사용하여 100부터 50까지 나열하시오 System.out.print()사용
+        
+        int start = 100;
+        int end = 50;
+        System.out.println("\n 2번문제 정답 : ");
+
+       while (end<=start) {
+        System.out.print(" " + start--);
+        
+       }
+        
+       
+
+        //  3. toUpperSize() 메소드를 사용하여 "KOREA IT academy (강남)"를 출력하시오.
+        String contry = "koera";
+        String name = "it";
+        
+
+        System.out.println("\n\n 3번문제 정답 : " + contry.toUpperCase() + " " + name.toUpperCase() + " academy (강남)" );
+
+        //  4. length() 메서드를 이용해 '내 과제 수'의 글자수를 출력하시오.
+        String word = "내 과제 수";
+        System.out.println("\n 4번정답 : 내 과제수는 " + word.length() + "개");
+
+
+        //  5. relpace() 메소드를 사용하여 'lively weak'을 'lively week'로 바꿔서 출력하시오. 
+
+        String message = "lively weak";
+        System.out.println("\n 5번문제 정답 : " + message.replace("weak","week"));
+
+         
+        
         
 
      }

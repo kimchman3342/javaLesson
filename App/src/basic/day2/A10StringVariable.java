@@ -26,7 +26,6 @@ public class A10StringVariable {
 
         // 1. 메소드 괄호 안에 아무것도 엇는 것. 
         System.out.println("\n\nisEmpty() : 문자열이 비어있는지 확인한다. \n 결과 :  " + message.isEmpty()); 
-        System.out.println("toCharArray() : 문자열의 각 문자를 char[]에 담아 반환한다. \n 결과 :" + message.toCharArray());  
         System.out.println("toUpperCase() : 모든 문자열을 대문자/소문자(Upper/Lower)로 변경한다. \n 결과 :" + message.toUpperCase());
         
         // 2. 메소드 괄호 안에 정수 1개를 쓰는 것.

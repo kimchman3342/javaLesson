@@ -31,7 +31,7 @@ public class A20BankExam {
                     System.out.println("예금액 입력> ");
                     money = sc.nextInt();
                     balance += money;
-                    System.out.println("고객님의 잔액은 " + df.format(balance) + "입니다.🤗");
+                    System.out.println("고객님의 잔액은 " + df.format(balance) + "입니다.💵");
                     break;
                 case 2:
                     System.out.println("출금액 입력> ");
@@ -51,10 +51,10 @@ public class A20BankExam {
                     
                     break;
                 case 3:
-                    System.out.println("현재잔고" + balance);   
+                    System.out.println("현재잔고" + balance + "원 입니다.💵");   
                     break;
                 case 4:
-                    System.out.println("이용해 주셔서 감사합니다.🙂");
+                    System.out.println("이용해 주셔서 감사합니다.!🙂");
                     run = false;
                     break;
                 

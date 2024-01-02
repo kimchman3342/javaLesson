@@ -11,7 +11,7 @@ public class A19SwitchTest {
 		int menu =5;
 		Scanner sc = new Scanner(System.in); //System.in는 표준입력
 		boolean run = true;
-		while (run) {
+		while (run) {	// 종료 조건은 사용자가 '5'를 입력하는 것입니다.
 			
 		
 			System.out.println(":::: 쇼핑몰 사용자 마이페이지 ::::");

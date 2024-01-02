@@ -21,6 +21,8 @@ public class A01DataTest {
 
         System.out.println(isAdult);
         System.out.println(grade);
+
+        
         
         
     }

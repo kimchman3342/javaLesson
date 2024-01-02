@@ -40,7 +40,7 @@ public class HomeStringFormat {
         
        
 
-        //  3. toUpperSize() 메소드를 사용하여 "KOREA IT academy (강남)"를 출력하시오.
+        //  3.  toUpperSize() 메소드를 사용하여 "KOREA IT academy (강남)"를 출력하시오.
         String contry = "koera";
         String name = "it";
         

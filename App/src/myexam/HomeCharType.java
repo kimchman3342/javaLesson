@@ -23,9 +23,27 @@ public class HomeCharType {
  */
         String str1 = "Hello* Java Hi* Linux~~~" ;
         int upperCount = 0;
+        int LowerCount = 0;
         int numberCount = 0;
         int symbolCount = 0;
 
+        for(int i = 0; i < str1.length(); i++ ) {
+            if(Character.isUpperCase(str1.charAt(i))){
+                upperCount++;
+            }
+            else if(Character.isLowerCase(str1.charAt(i))) {
+                LowerCount++;
+            }
+            else if(str1.matches("^[0-9]")){
+                numberCount++;
+            }
+            else{
+                symbolCount++;
+            }
+        } 
+        System.out.println("---------------------------------------------");
+        System.out.println("Hello* Java Hi* Linux~~~");
+        System.out.println("대문자 : " + upperCount + "개, 소문자 : " + LowerCount + "개, 숫자 : " + numberCount + "개,기호 : " + symbolCount + "개" );
         
 
     }

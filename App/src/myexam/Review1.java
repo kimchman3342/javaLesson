@@ -24,10 +24,10 @@ public class Review1 {
             System.out.println("🎲🎲 : " + sum);
             
             if (sum % 2 == 0) {
-                System.out.println("짝수입니다. 반복문을 탈출합니다.");
+                System.out.println("짝수입니다. 반복문을 탈출합니다.🏃");
                 break;
             } else {
-                System.out.println("홀수입니다. 다시 굴립니다.");
+                System.out.println("홀수입니다. 다시 굴립니다.🤪");
             }
         }
     }

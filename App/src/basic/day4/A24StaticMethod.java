@@ -6,7 +6,11 @@ public class A24StaticMethod {
     public static void main(String[] args) {
         argumentTest();         //메소드 호출. 이름과 형식이 맞는 메소드를 찾아서 실행시킵니다.
         argumentTest(999);
-        argumentTest(100,333);
+        argumentTest(100,333);       //100,333은 실매개변수
+        // 메소드가 실행될 때 실매개변수 값이 형식매개변수로 전달, 저장됩니다.
+        // argumentTest("100",333);     형식에 맞는 메소드 없음.
+        int a = 100, b = 999;
+        argumentTest(a, b);         //실매개변수 a,b 입니다.
         
         
         
@@ -18,11 +22,11 @@ public class A24StaticMethod {
         System.out.println("\n인자 값이 없는 메소드입니다.");
     }
         // 2) 인자가 1개 있는 메소드
-         public static void argumentTest(int i) {
+         public static void argumentTest(int i) {       //인자로 사용된 변수 i는 argument Test 메소드에서만
         System.out.println("\n*인자가 1개 정수 " + i + "입니다.");
     }
         // 3) 인자가 2개 있는 메소드
-        public static void argumentTest(int i, int j) {
+        public static void argumentTest(int i, int j) {     //i,j는 형식매개변수
         System.out.println("\n**인자가 2개인 정수 i = " + i + ",j = " + j);
         System.out.println("                    i + j = " + (i + j));
     }

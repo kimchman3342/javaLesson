@@ -14,8 +14,12 @@ public class A28CharArray {
             System.out.println(temp);
             messageArray[i] = temp;
         }
-
+        //char 배열만의 특징. 배열이름으로 println 하면?
+        System.out.println(messageArray);
         
+
+        // 고대 암호 : '모모'가 '나연'이 한테 비밀 메세지를 보냅니다. 암호문을 만듭니다.
+        //             두 사람이 알고 있는 비밀키 값 key = 7 을 정했습니다. 암호문은??
     }
     
 }

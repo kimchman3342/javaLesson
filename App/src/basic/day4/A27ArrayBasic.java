@@ -68,9 +68,11 @@ public class A27ArrayBasic {
 		}
 		
 		System.out.println("\n\narr2 배열 값 출력");
+		System.out.println(arr2);	// [I@27973e9b 출력.
 		printArray(arr2);	// 배열 요소의 값을 출력하는 메소드
 
 		System.out.println("\narr1 배열 값 출력");
+		System.out.println(arr1);	//[I@9807454 출력.
 		printArray(arr1);	
 		// 메모리에 저장되는 데이터는 주소를 갖습니다.
 		// arr1,arr2는 배열의 이름은 배열의 시작주소.

@@ -33,7 +33,8 @@ public class A24StaticMethod {
         System.out.println("\n7. 변수를 chch로 설정한 메소드 : " + chch);
         System.out.println("   리턴 값이 char인 메소드 : " + resultCharTest());
 
-        System.out.println("\n\n8. add(34, 26, 23) = " + add(34, 26, 23));
+        System.out.println("\n\n8. 정수 add(34, 26, 23) = " + add(34, 26, 23));
+        System.out.println("\n9. 실수 add(24.4542, 254.11454, 52045.55215) = " + add(24.4542, 254.11454, 52045.55215)); // abc 메소드 2개 선언하여 자동캐스팅이 됨.
         
         
         

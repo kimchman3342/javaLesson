@@ -28,18 +28,29 @@ public class A22ForReview {
         }
          System.out.println(String.format("문제 2 ) 1부터 %d 까지의 곱 : %d ", n, longResult));
 
-           //3) 시작 값 정수 m 부터 마지막 값 n까지 더하기
-           m = 5; n = 8;
-           for(int i=1; i<=n; i++){
-
-           }
-           //4) 시작 값 정수 m 부터 마지막 값 n까지 곱하기
-           m = 5; n = 8;
-           for(int i=1; i<=n; i++){
-           //5) 2의 n승 구하기 : 2를 n번 곱하기 (2진수에서는 많이 사용되는 연산)
-        
-
+        //3) 시작 값 정수 m 부터 마지막 값 n까지 더하기
+        m = 5; n = 8;
+        sum = 0; // 초기화 꼭 필요
+        for(int i=m; i<=n; i++){
+        sum += i;
         }
+        System.out.println(String.format("문제 3 ) &d부터 %d 까지의 더하기 : %d ", m, n, sum));
+
+        //4) 시작 값 정수 m 부터 마지막 값 n까지 곱하기
+        m = 5; n = 8;
+        longResult = 1;
+        for(int i=m; i<=n; i++){
+            longResult  *= i;
+        }
+        System.out.println(String.format("문제 4 ) %d부터 %d 까지의 곱 : %d ", m,n,longResult));
+        
+        //5) 2의 n승 구하기 : 2를 n번 곱하기 (2진수에서는 많이 사용되는 연산)
+        n = 4;
+        longResult = 1;
+        for(int i = 1; i <= n; i++){
+        longResult *= 2;
+        }
+        System.out.println(String.format("문제 5 ) 2의 %d승 구하기 : %d ", n, longResult));
     
     }
 }

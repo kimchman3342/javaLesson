@@ -57,24 +57,25 @@ public class A27ArrayBasic {
 		System.out.println("arr1 배열들의 값들을 더하면 = " + sum + "입니다.");
 
 		System.out.println("\n~~~~~3. arr1 배열의 70이상 값 개수 구하기 ~~~~");
-		System.out.println("70개 이상 값의 개수 = " + count);
+		System.out.println("\n70개 이상 값의 개수 = " + count);
 
 
 		System.out.println("\n~~~~~4.arr2배열에 키보드 입력으로 값 저장하기~~~~~");
 		Scanner sc = new Scanner(System.in);
 		for(int i = 0; i < arr2.length; i++){
-		System.out.print("arr2" + i + "번째 배열 값을 입력 >>>>> ");
+		System.out.print("\narr2 : " + i + "번째 배열 값을 입력 >>>>> ");
 		arr2[i] = sc.nextInt();
 		}
 		
 
-		printArray(arr2);
-		printArray(arr1);			
+		printArray(arr2);	// 배열 요소의 값을 출력하는 메소드
+		printArray(arr1);	// arr1,arr2는 배열의 이름은 배열의 시작주소.
+							// 메소드가 실행될 때 배열의 시작 주소를 메소드의 인자로 전달합니다.		
 	}
 
-	public static void printArray(int[] array) {
+	public static void printArray(int[] array) {	// 전달 받은 배열 주소로 데이터를 가져오기 합니다.
 		for(int i = 0; i < array.length; i++){
-			System.out.println("i = " + i + ",array[" + i + "] = " + array[i]);
+			System.out.println("i = " + i + ", array[" + i + "] = " + array[i]);
 		}
 		
 	}

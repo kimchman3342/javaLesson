@@ -20,6 +20,13 @@ public class A28CharArray {
 
         // 고대 암호 : '모모'가 '나연'이 한테 비밀 메세지를 보냅니다. 암호문을 만듭니다.
         //             두 사람이 알고 있는 비밀키 값 key = 7 을 정했습니다. 암호문은??
+        int key = 7;
+        for(int i = 0; i < message.length(); i++) {
+            messageArray[i] += key;
+        }
+
+        System.out.println("모모가 나연이한테 보낸 비밀 메시지 : ");
+        System.out.println(messageArray);
     }
     
 }

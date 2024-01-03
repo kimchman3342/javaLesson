@@ -7,6 +7,10 @@ public class A25MySampleMethod {
         // 6) 구구단 '출력'하는 메소드. 리턴은 void.printGuguDan
 
     public static void main(String[] args) {
+
+        int result = addMToN(2,5);
+        boolean isOK = checkJumsu(67);
+
         int m = 5;
         int n = 10;
         
@@ -23,6 +27,20 @@ public class A25MySampleMethod {
             }
     
     
+    private static boolean checkJumsu(int i) {
+        return i >= 0 && i <= 100;
+    }
+
+
+    private static int addMToN(int i, int j) {
+        int sum = 0;
+        for(int k = i; k <= j; k++){
+            sum += k;
+        }
+        return 0;
+    }
+
+
     public static int sum1ToN(int a) {       // 1) 1부터 정수 n 까지 더하기
         int result1 = 0;
        

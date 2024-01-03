@@ -13,6 +13,12 @@ public class A24StaticMethod {
         argumentTest(a, b);         //실매개변수 a,b 입니다.
         
         
+        System.out.println("리턴 값이 정수인 메소드 : " + resultIntTest());
+        System.out.println("리턴 값이 Boolean인 메소드 : " + resultBooleanTest());
+        System.out.println("리턴 값이 String인 메소드 : " + resultStringTest());
+        System.out.println("리턴 값이 char인 메소드 : " + resultCharTest());
+        
+        
         
       
     }
@@ -31,7 +37,20 @@ public class A24StaticMethod {
         System.out.println("                    i + j = " + (i + j));
     }
         // 4) 리턴 값이 정수인 메소드
+        public static int resultIntTest() {
+            return 999;    
+        }
+        
         // 5) 리턴 값이 boolean인 메소드
-        // 6) 리턴 값이 String인 메소드
-        // 7) 리턴 값이 char인 메소드
+        public static boolean resultBooleanTest() {
+            return false;
+        }
+        // 6) 리턴 값이 String인 메소드 (문자열 String "")
+        public static String resultStringTest() {
+            return "Hello";
+        }
+        // 7) 리턴 값이 char인 메소드 (문자 char '')
+        public static char resultCharTest() {
+            return 'A';
+        }
 }

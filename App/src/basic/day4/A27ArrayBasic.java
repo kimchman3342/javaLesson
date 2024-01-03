@@ -45,7 +45,7 @@ public class A27ArrayBasic {
 		}
 		
 		for( int i = 0; i < arr2.length; i++ ){
-			System.out.println("i = " + i + "일 때, arr2[ " + i + "] = " + arr2[i]);
+			System.out.println("\ni = " + i + "일 때, arr2[ " + i + "] = " + arr2[i]);
 		}
 
 		System.out.println("\n~~~~~2. arr1 배열의 합계 구하기 ~~~~~");
@@ -62,10 +62,20 @@ public class A27ArrayBasic {
 
 		System.out.println("\n~~~~~4.arr2배열에 키보드 입력으로 값 저장하기~~~~~");
 		Scanner sc = new Scanner(System.in);
+		for(int i = 0; i < arr2.length; i++){
+		System.out.print("arr2" + i + "번째 배열 값을 입력 >>>>> ");
+		arr2[i] = sc.nextInt();
+		}
 		
-		
-				
-		
+
+		printArray(arr2);
+		printArray(arr1);			
+	}
+
+	public static void printArray(int[] array) {
+		for(int i = 0; i < array.length; i++){
+			System.out.println("i = " + i + ",array[" + i + "] = " + array[i]);
+		}
 		
 	}
 }

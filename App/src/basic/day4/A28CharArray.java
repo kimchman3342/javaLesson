@@ -15,18 +15,27 @@ public class A28CharArray {
             messageArray[i] = temp;
         }
         //char 배열만의 특징. 배열이름으로 println 하면?
+        System.out.println("~~~~~~메세지 원문 : ");
         System.out.println(messageArray);
         
 
-        // 고대 암호 : '모모'가 '나연'이 한테 비밀 메세지를 보냅니다. 암호문을 만듭니다.
+        // 고대 암호 : '모모'가 '나연'이 한테 비밀 메세지를 보냅니다. 암호문을 만듭니다. (ASCII 코드를 이용한 암호 작성)
         //             두 사람이 알고 있는 비밀키 값 key = 7 을 정했습니다. 암호문은??
         int key = 7;
         for(int i = 0; i < message.length(); i++) {
             messageArray[i] += key;
         }
 
-        System.out.println("모모가 나연이한테 보낸 비밀 메시지 : ");
+        System.out.println("\n~~~~~모모가 나연이한테 보낸 비밀 메시지 : ");
         System.out.println(messageArray);
+
+        
+        for(int i = 0; i < message.length(); i++) {
+            messageArray[i] -= key;
+        }
+        System.out.println("\n~~~~~~나연이는 받은 메시지를 읽으려고 암호문을 풀었습니다.");
+        System.out.println(messageArray);
+
     }
     
 }

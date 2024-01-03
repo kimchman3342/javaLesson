@@ -44,6 +44,7 @@ public class A22ForReview {
         }
         System.out.println(String.format("문제 4 ) %d부터 %d 까지의 곱 : %d ", m,n,longResult));
         
+       
         //5) 2의 n승 구하기 : 2를 n번 곱하기 (2진수에서는 많이 사용되는 연산)
         n = 4;
         longResult = 1;

@@ -5,7 +5,7 @@ public class A21VariableArea {
     static int number2 = 99999;
     public static void main(String[] args) {
         
-        int a = 23;         //2.main 메소드 범위에서 사용되는 변수
+        int a = 23;         //2. main 메소드 범위에서 사용되는 변수
 
         for(int i= 0; i<10; i++){       //3. 특정 블럭 (for) 블럭 안에서 사용되는 변수 -i
             System.out.println("i="+i);

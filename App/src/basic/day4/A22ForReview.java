@@ -30,7 +30,7 @@ public class A22ForReview {
 
         //3) 시작 값 정수 m 부터 마지막 값 n까지 더하기
         m = 5; n = 8;
-        sum = 0; // 초기화 꼭 필요
+        sum = 0; // 리턴 타입 초기화 꼭 필요
         for(int i=m; i<=n; i++){
         sum += i;
         }

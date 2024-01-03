@@ -67,15 +67,19 @@ public class A27ArrayBasic {
 		arr2[i] = sc.nextInt();
 		}
 		
-
+		System.out.println("\n\narr2 배열 값 출력");
 		printArray(arr2);	// 배열 요소의 값을 출력하는 메소드
-		printArray(arr1);	// arr1,arr2는 배열의 이름은 배열의 시작주소.
-							// 메소드가 실행될 때 배열의 시작 주소를 메소드의 인자로 전달합니다.		
+
+		System.out.println("\narr1 배열 값 출력");
+		printArray(arr1);	
+		// 메모리에 저장되는 데이터는 주소를 갖습니다.
+		// arr1,arr2는 배열의 이름은 배열의 시작주소.
+		// 메소드가 실행될 때 배열의 시작 주소를 메소드의 인자로 전달합니다.		
 	}
 
 	public static void printArray(int[] array) {	// 전달 받은 배열 주소로 데이터를 가져오기 합니다.
 		for(int i = 0; i < array.length; i++){
-			System.out.println("i = " + i + ", array[" + i + "] = " + array[i]);
+			System.out.println("i = " + i + "인덱스에 저장된 값 = " + array[i]);
 		}
 		
 	}

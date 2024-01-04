@@ -1,5 +1,7 @@
 package object.day5;
 
+import java.util.Arrays;
+
 public class MyClass2 {
    
     // 인스턴스 필드
@@ -22,10 +24,10 @@ public class MyClass2 {
         return field2;
     }
     
-   /*  public double getField3(){
+    public double[] getField3(){
         return field3;
     }
-     */
+    
     
 
     // 필드 값을 저장하는 메소드 : setter
@@ -36,8 +38,15 @@ public class MyClass2 {
         field2 = f2;
     }
     
-    /*public double setFiled3(double f3){
-        field3 = f3;
-    }*/
+    public void setFiled3(double[] f3){   // 배열의 값이 인자 값입니다
+        field3 = f3;        // 참조 값을 대입시킵니다.
+    }
+
+    public void printdata(){
+        System.out.println("field1 = " + field1 + ",field2 = " + field2 +", "+
+        "field3 = "+ field3 +", " + Arrays.toString(field3));
+    }
+    
+    /**/
 }
  

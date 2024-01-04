@@ -52,6 +52,14 @@ public class B01MyClassMain {
         System.out.println("my2.field2 : " + my2.field2);
         System.out.println("my2.field3 : " + my2.field3);
         System.out.println("--------------------------------------------");
-    }
+
+        MyClass2 my3 = new MyClass2();
+        // MyClass1 err = new MyClass2();   오류 : 객체의 타입과 변수의 타입이 불일치
+
+        // private : 사적인,개인적인. MyClass2 클래스 외에는 사용할 수 없음. 
+        System.out.println("\nmy3.field1 : " + my2.field1);
+        System.out.println("my2.field2 : " + my2.field2);
+        System.out.println("my2.field3 : " + my2.field3);
+}
     
 }

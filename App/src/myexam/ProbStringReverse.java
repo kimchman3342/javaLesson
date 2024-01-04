@@ -31,8 +31,8 @@ public class ProbStringReverse {
             messageArray[cidx] = temp;         // cidx = 10입니다.
             // i = 1 일 때, cidx = 9       
             // i = 2 일 때, cidx = 8
-            cidx--; //cidx 변수 없이 사용할 공식 찾아보세요.
-        } 
+            cidx--;//cidx 변수 없이 사용할 공식 찾아보세요.
+        }  
          
         System.out.print("\nHello World 거꾸로 뒤집기 ♻♻♻  ");
         System.out.println(messageArray);

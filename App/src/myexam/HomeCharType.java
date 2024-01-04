@@ -41,7 +41,8 @@ public class HomeCharType {
                 symbolCount++;
             }
         } 
-        System.out.println("---------------------------------------------");
+        System.out.println("\n
+        .0---------------------------------------------");
         System.out.println("Hello* Java Hi* Linux~~~");
         System.out.println("대문자 : " + upperCount + "개, 소문자 : " + LowerCount + "개, 숫자 : " + numberCount + "개,기호 : " + symbolCount + "개" );
         

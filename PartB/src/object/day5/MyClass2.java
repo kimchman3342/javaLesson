@@ -39,7 +39,13 @@ public class MyClass2 {
     }
     
     public void setFiled3(double[] f3){   // 배열의 값이 인자 값입니다
-        field3 = f3;        // 참조 값을 대입시킵니다.
+        //field3 = f3;        
+        // 참조 값을 대입시킵니다. 객체가 의도하지 않아도 쉽게 field3 배열 값이 변경됩니다.
+        field3 = new double[f3.length]; // 배열을 새로 생성하기
+        for(int i = 0; i < f3.length; i++)  // f3 배열의 값을 복사하기
+                field3[i] = f3[i];
+
+        
     }
 
     public void printdata(){

@@ -11,7 +11,7 @@ public class B04CartMainTeacher {
         CartTeacher momos_cart = new CartTeacher();       //String, String[] ,int[] 필드는 null
         
         //모모의 장바구니- 상품이름 , 가격
-        String[] products ={"새우깡","칠성사이다","빅토리아","제주감귤","나주배","삼립호빵","이클립스"};
+        String[] products ={"새우깡","칠성사이다","빅토리아","제주감귤","나주배","삼립호빵","이클립스"};        //product 메소드에 들어갈 내용을 적음
         int[] prices ={3000,2500,9900,12000,9800,6000,1500};
 
         //장바구니 값을 저장합니다.

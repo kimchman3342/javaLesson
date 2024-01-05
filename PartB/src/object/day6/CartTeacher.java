@@ -2,7 +2,7 @@ package object.day6;
 
 public class CartTeacher {
     
-    private String userid;
+    private String userid; 
     private String[] proudctNames;
     private int[] prices;
     private int total_Money;

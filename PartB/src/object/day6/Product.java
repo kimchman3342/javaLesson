@@ -40,6 +40,6 @@ public class Product {
     public String getData() {
         return String.format("%s\t %d\t %s\t %s", productName, price, company, Arrays.toString(etc));
     }
-
+    // 자리크기 지정한 것에 대해 정렬은 %s 문자열은 가운데 -를 붙이면 왼쪽 %d 정수는 오른쪽
     // setter는 값을 변경하기 위해 사용, 필요에 따라 넣을 수도 있고 뺄 수도 있음
 }

@@ -5,10 +5,14 @@ public class Product {
     private String productName;
     private int price;
     private String company;
+    private String[] etc;
 
     // 커스텀 생성자 만들기
-    public Product() {
-        
+    public Product(String productName,int price, String company, String[] etc) {
+        this.productName = productName;
+        this.price = price;
+        this.company = company;
+        this.etc = etc;
     }
     
 
@@ -23,5 +27,9 @@ public class Product {
 
     public String getCompany() {
         return company;
+    }
+
+    public String[] getEtc() {
+        return etc;
     }
 }

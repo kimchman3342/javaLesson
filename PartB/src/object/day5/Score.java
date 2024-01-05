@@ -26,7 +26,7 @@ public class Score {
 
     
 
-    //setternayeon
+    //setter
     public void setName(String na){
         name = na;
     }

@@ -4,7 +4,7 @@ public class practiceMain1 {
     public static void main(String[] args) {
         
     }
-    
+  /*   
     //날짜
     Practice1 day = new Practice1();
 
@@ -14,7 +14,7 @@ public class practiceMain1 {
     // 공부한 내용
     day.setDay();
 
-
+ */
 
 
 }

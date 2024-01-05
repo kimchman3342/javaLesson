@@ -1,5 +1,7 @@
 package object.day6;
 
+import java.util.Arrays;
+
 public class Product {
 
     private String productName;
@@ -14,6 +16,8 @@ public class Product {
         this.company = company;
         this.etc = etc;
     }
+
+    
     
 
     // getter 만들기
@@ -31,5 +35,9 @@ public class Product {
 
     public String[] getEtc() {
         return etc;
+    }
+
+    public String getData() {
+        return String.format("%s\t %d\t %s\t %s", productName, price, company, Arrays.toString(etc));
     }
 }

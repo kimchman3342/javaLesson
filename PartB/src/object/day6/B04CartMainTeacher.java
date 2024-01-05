@@ -32,7 +32,7 @@ public class B04CartMainTeacher {
         int sel=0;
         int[] select = new int[5];      //상품 선택 개수는 최대 5개.
         int k=0;    //select 배열 인덱스
-        while(sel!=-1 && k < select.length){
+        while(sel!= -1 && k < select.length){
             System.out.print("상품번호 입력 >>> ");
             sel = sc.nextInt();
             //sel의 선택범위는 productNames 인덱스 범위값만

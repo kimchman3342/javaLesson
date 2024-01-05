@@ -25,5 +25,21 @@ public class AddQuiz {
     
     
     //setter
+    public void setData1(int data1) {
+        this.data1 = data1;
+    }
     
+    public void setData2(int data2) {
+        this.data2 = data2;
+    }
+
+    public void setUserAnswer(int userAnswer) {
+        this.userAnswer = data1 + data2;
+    }
+    
+    
+
+    
+    
+   
 }

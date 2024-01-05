@@ -27,7 +27,7 @@ public class practiceMain1 {
         Practice1 numb2 = new Practice1();
         Practice1 numb3 = new Practice1();
 
-        Random random = new Random();
+        Random random = new Random();   // 랜덤랜덤 뉴 랜덤0
 
         numb1.setNum1(random.nextInt(10) + 1);
         numb2.setNum1(random.nextInt(10) + 1);

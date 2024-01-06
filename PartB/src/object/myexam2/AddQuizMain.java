@@ -27,7 +27,7 @@ public class AddQuizMain {
             int temp2 = (int)(Math.random()*(end-start+1)) + start;
             sum = temp1 + temp2;
            
-            System.out.println((i+1) + "번. " + temp1 + " + " + temp2 + "= ?");
+            System.out.println(String.format("\n%d번) %d+%d= ?",(i+1),temp1,temp2));
             System.out.println("답을 입력하세요. >>> " +  sc.nextInt());
             
             

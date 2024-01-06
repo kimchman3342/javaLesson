@@ -20,8 +20,7 @@ public class AddQuiz {
         return userAnswer;
     }
 
-    
-    
+
     
     
     //setter

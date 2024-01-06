@@ -10,9 +10,6 @@ public class AddQuizBrother {
 
 
 
-    
-    
-
 
     public int getData1() {
         return data1;
@@ -39,7 +36,7 @@ public class AddQuizBrother {
 
     public boolean isRight(){
         boolean result = false;
-        if (data1+data2 == userAnswer) result=true;
+        if (data1 + data2 == userAnswer) result = true;
         return result;
     }
     

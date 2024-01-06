@@ -9,9 +9,11 @@ public class AddQuizMain {
         
         
         
-        AddQuiz an1 = new AddQuiz();
-        AddQuiz an2 = new AddQuiz();
-        AddQuiz usan = new AddQuiz();
+        AddQuiz quiz = new AddQuiz();
+        int[] an1 = new int[10];
+        int[] an2 = new int[10];
+        int[] usan = new int[10];
+        boolean[] right = new boolean[10];
 
         
 

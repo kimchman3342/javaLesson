@@ -34,7 +34,13 @@ public class AddQuiz {
     }
 
     public void setUserAnswer(int userAnswer) {
-        this.userAnswer = data1 + data2;
+        this.userAnswer = userAnswer;
+    }
+
+    public boolean isRight(){
+        boolean result = false;
+        if(data1 + data2 == userAnswer) result = true;
+        return result;
     }
     
     

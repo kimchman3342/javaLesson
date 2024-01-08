@@ -9,13 +9,18 @@ public class Diamond extends Shape {
    
 
     // 자식이지만 부모가 private으로 했으므로 오류
-    /* public void setShapeName(String shapeName){
+    /*\ public void setShapeName(String shapeName){
         this.shapeName = shapeName;
     }
  */
     // 부모가 protected 로 선언한 필드는 자식이 자유롭게 접근 가능함.
     public void setEtc(String etc) {
         this.etc = etc;
+    }
+
+    @Override
+    public void draw() {
+        System.out.println("다이아몬드 " + this.getShapeName() + " 을 그립니다.");
     }
 
     public void setRound(int round){

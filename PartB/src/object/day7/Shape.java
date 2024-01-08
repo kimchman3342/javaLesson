@@ -19,8 +19,10 @@ public class Shape {
 		private String shapeName;		//도형 이름
 		private int width;				//도형의 크기 중 너비
 		private int height;				//도형의 크기 중 높이
+		// 테스트 할 필드
 		protected String etc;
 		int round; 						// 접근 한정자 없는 경우
+		public double border;
 
 		public Shape() {
 			System.out.println("새로운 도형이 만들어졌습니다. 초기화 필요합니다.");
@@ -47,12 +49,21 @@ public class Shape {
 		}
 		
 		// setXXX 메소드 없음.('초기값을 바꿀수 없다'는 요구조건을 예시로 합니다. )
+		// ㄴ 변경 : shapeName만 setter가 필요해서 추가합니다.
+
+		public void setShapeName(String shapeName){
+			this.shapeName = shapeName;
+		}
 		
 		// 도형의 면적(넓이) 계산하는 메소드 (계산식은 너비 *높이)
 		public int calculateArea() {
 			return width*height;
 		}
-	
+		
+		// 자식 클래스들이 draw를 재정의해서 다른 메시지가 출력되게 만들 예정입니다.
+		public void draw() {
+			System.out.println("어떤 도형인지 아직 모릅니다❓❓");
+		}
 		// final 메소드 - 재정의 할수 없는 메소드로 만들어야 할때 사용합니다.
 		public final void print() {
 			System.out.println("final 메소드 테스트-" + shapeName + "의 너비:" + width +",높이:" 

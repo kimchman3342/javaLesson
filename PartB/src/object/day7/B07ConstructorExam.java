@@ -6,6 +6,7 @@ public class B07ConstructorExam {
 
 /*     자바 클래스의 생성자로 메소드 오버로딩 알아보기
  *          ㄴ String Class
+ * Scanner 클래스의 생성자와 메소드 확인하기
  */
     public static void main(String[] args) {
         
@@ -14,7 +15,7 @@ public class B07ConstructorExam {
         String temp = "Hello~";
 
         // 문자열 객체 생성하기
-        // 1) 메소드 오버로딩 : 메소드 이름과 리턴타입(생성자는 없음)이 같으면서 인자의 개수와 형식이 다른 정의
+        // 1) 메소드 오버로딩 : 메소드 이름이 같으면서 인자의 개수와 형식을 다르게 정의합니다.
         String str1 = new String();     // 생성자 인자 없음
         String str2 = new String("Hello~");  // 생성자 인자가 문자열 리터럴
         String str3 = new String(new char[] {'h','e','l','l','o','~'}); // 생성자 인자가 문자 배열
@@ -55,7 +56,7 @@ public class B07ConstructorExam {
         temp = sc.nextLine();
         num = Integer.parseInt(temp);       // 문자열을 int로 변환하는 메소드 사용.
         System.out.println("실수 입력 >>> ");
-        temp = sc.nextLine();
+        temp = sc.nextLine();               // 숫자와 .만 입력하세요.
         pi = Double.parseDouble(temp);  // 문자열을 double로 변환하는 메소드 사용.
         System.out.println("문자열 입력 >>> ");
         name = sc.nextLine();

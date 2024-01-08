@@ -8,6 +8,10 @@ public class Square extends Shape {
         this.etc = etc;     // Shape의 상속 클래스는 etc 필드 직접 사용
     }
 
+
+    public void draw() {
+        System.out.println("직사각형 " + this.getShapeName() + "  을 그립니다.");
+    }
 //round setter
 /* public void setRound(int round){
     this.round = round;

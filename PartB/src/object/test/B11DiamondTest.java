@@ -15,6 +15,8 @@ public class B11DiamondTest {
         diamond.etc = "테스트";     // Shape과 같은 패키지가 아님.
         System.out.println("변경된 내용 확인 : " + diamond.round);
         System.out.println("변경된 내용 확인 : " + diamond.etc); */
+
+        diamond.border = 3.45; // 패키지도 다르고 상속관계도 아니지만 public 필드는 어디서나 사용가능
     }
     
 }

@@ -32,6 +32,10 @@ public class B13StaticFieldExam {
         System.out.println("Character.MIN_VALUE = " + Character.MIN_VALUE);
         System.out.println("Character.SIZE = " + Character.SIZE);   // 16비트
         System.out.println("Character.BYTE = " + Character.BYTES);  // 2바이트
+
+        System.out.println("\nShape.MAX_WIDTH = " + Shape.MAX_WIDTH);    // 100
+        System.out.println("Diamond.MAX_WIDTH = " + Diamond.MAX_WIDTH);    // 100 -> 상속 받음
+        System.out.println("Triangle.MAX_WIDTH = " + Triangle.MAX_WIDTH);  // 90 - > 상수 재정의
         
 
 
@@ -45,6 +49,8 @@ public class B13StaticFieldExam {
          * public final int xyz;
          * 
          * 위의 2가지 경우보다는 의미상 조합이 public static final
+         * 영원히 고정되는 값에 대해 기호를 부여하는 '상수'의 개념입니다.
+         * 그리고 상수는 모두 대문자로 약속해서 작성합니다.
          */
         System.out.println("");
         

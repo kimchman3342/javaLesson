@@ -13,7 +13,9 @@ package object.day7;
  */
 public class Shape {    
 
-		static final int MAX_WIDTH=100;    //상수
+		static final int MAX_WIDTH=100;    //상수 = 최대 너비를 정함.
+		// 도형의 너비가 MAX_WIDTH 를 넘으면 도화지가 작아서 못 그림... 등 기준을 정하는 예시
+		// 상수는 상속의 의미가 없습니다.
 		
 		// 인스턴스 필드
 		private String shapeName;		//도형 이름

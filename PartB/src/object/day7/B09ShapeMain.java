@@ -29,6 +29,7 @@ public class B09ShapeMain {
         // 상속에서의 변수 참조 타입 - 자식클래스 타입, 부모클래스 타입.
         // 1) 자식 객체를 부모 타입으로 참조하기 (*****)
         Shape temShape = new Triangle("임시세모2", 30, 40, 90);
+        
         System.out.println("~~~~~~~~재정의 메소드 확인~~~~~~~~~~");
         System.out.println("부모타입 참조지만 객체의 실체는 Triangle 이므로 재정의");
         System.out.println("\t 너비는 재정의 메소드로 실행됩니다.");

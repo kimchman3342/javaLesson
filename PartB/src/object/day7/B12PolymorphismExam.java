@@ -49,9 +49,13 @@ public class B12PolymorphismExam {
         
          System.out.println("\n~~~삼각형 Triangle 객체는 넓이를 구해서 출력하기~~~");
          shapes[4] = new Triangle("🔺🔺🔺", 45, 12, 68);
+         System.out.println("삼각이면 angle 필드 값도 출력합니다.");
          for(int i = 0; i < shapes.length; i++) {
-            if (shapes[i] instanceof Triangle) {
+            if (shapes[i] instanceof Triangle) {        // true
+                // 반드시 실제 객체 Triangle 일 때만 강제캐스팅 합니다. 그렇지 않으면 오류.
+                Triangle temTriangle = (Triangle) shapes[i];
                 System.out.println("i = " + i + "는 삼각형입니다. 넓이 : " + shapes[i].calculateArea());
+                temTriangle.printAngle();
                 
             }
          }

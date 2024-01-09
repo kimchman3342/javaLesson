@@ -46,7 +46,9 @@ public class B19BeAbleMain {
             }else {
                 System.out.println(able.getClass().getName()+ "은 계산 못합니다.");
             }
-        }
+         } // 결론 : 업캐스팅 또는 다운캐스팅 목적은 상속과 같은 방식으로 사용합니다.
+           // 업캐스팅 : 다형성
+           // 다운캐스팅 : 업캐스팅 타입이 갖는 추상메소드가 아닌 메소드 실행하기 위함.   
         Thinkable[] thinks = new Thinkable[2];
 
 

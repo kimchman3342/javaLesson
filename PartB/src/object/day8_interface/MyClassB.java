@@ -19,7 +19,6 @@ public class MyClassB implements InterfaceA , InterfaceX {
 	//InterfaceX의 추상메소드 구현
 	@Override
 	public String methodX() {
-		// TODO Auto-generated method stub
 		return "나는 테스트";
 	}
 }

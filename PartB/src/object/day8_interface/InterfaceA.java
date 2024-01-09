@@ -13,11 +13,14 @@ public interface InterfaceA {
 	int SIZE = 100;
 	
 	
-//메소드는  *1)추상메소드(public abstract 생략함.) 
-//         ,2)인스턴스(default)메소드 3)static메소드 
-//	3가지 모두 가능합니다.--> 모두 public
+//  인터페이스의 구성
+//         *1)추상메소드(public abstract 생략함.) 
+//          2)인스턴스(default)메소드 
+//          3)static메소드 
+//	        4)상수.--> 모두 public
 	
-	//1)추상 메소드
+    //1)추상 메소드
+
 	void methodA();
 	int methodB(int num);
 	

@@ -1,4 +1,4 @@
-package object.day7;
+/* package object.day7;
 
 
 
@@ -22,7 +22,7 @@ package object.day7;
         /**
          * @param args
          */
-        public static void main(String[] args) {
+     /*    public static void main(String[] args) {
             int a = 20;
             B b1 = new B();
             review b2 = new B(1);
@@ -40,7 +40,4 @@ package object.day7;
         
             
         }
-    }
-    
-     
-
+    } */

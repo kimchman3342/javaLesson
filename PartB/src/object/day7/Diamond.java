@@ -23,6 +23,18 @@ public class Diamond extends Shape {
         System.out.println("다이아몬드 " + this.getShapeName() + " 을 그립니다.");
     }
 
+    // 자식클래스가 정의한 인스턴스 메소드 - Diamond 타입으로 선언한 참조변수만 실행할 수 있음.
+    public void iAmDiamond() {
+        System.out.println("나는 다이아몬드 ~반짝반짝!!");
+    }
+
+    // Day 8 : Object 클래스의 toString 메소드를 오버라이드
+    //                    object.day7.Diamond@5674cd4d 가 기본인 것을 바꿈
+    @Override
+    public String toString(){
+        return "Diamond []";
+    }
+
     public void setRound(int round){
         this.round = round;
     }

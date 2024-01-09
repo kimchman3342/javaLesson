@@ -63,6 +63,8 @@ public class B12PolymorphismExam {
          
          System.out.println("\n~~~shape 배열에 저장된 객체 중 다이아 몬드를 draw하기~~~~~~");
         //  for문 반복할 때 알아서 순서대로 1개씩 배열 요소를 가져오기. 인덱스 i 값을 사용하지 않습니다.
+
+        
         
         // 1번 방법
         for(Shape temp : shapes) {
@@ -80,6 +82,16 @@ public class B12PolymorphismExam {
             }
          }
          System.out.println("  ");
+
+        //  upcasting
+        Shape sh = new Diamond();
+        
+        //  downcasting - sh의 실제 객체가 다운 캐스팅 하려는 타입인지 검사 필수.
+        //              - sh의 실제 객체가 아닌 것 (Triangle, Sqare)을 Diamond 로 캐스팅하면 오류
+        Diamond diamond = (Diamond)sh;
+
+        // 자식 객체의 인스턴스 메소드 iAmDiamond는 반드시 다운캐스팅을 해야 실행 가능
+        diamond.iAmDiamond();
     }
     
 }

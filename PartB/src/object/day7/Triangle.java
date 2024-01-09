@@ -42,6 +42,11 @@ public class Triangle extends Shape{
 		System.out.println("삼각형 모양 " +  this.getShapeName()+ "  을 그립니다");
 	}
 
+	@Override
+	public String toString() {
+		return super.toString() + "[각도 = " + this.angle + "]";
+	}
+
 	/* 
 	// Triangle 객체의 인스턴스 메소드
 	public int getArea(int angle) {

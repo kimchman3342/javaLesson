@@ -7,14 +7,13 @@ public class MyClassB implements InterfaceA , InterfaceX {
 	//InterfaceA의 추상메소드 구현
 	@Override
 	public void methodA() {
-		// TODO Auto-generated method stub
+		System.out.println("여기는 MyClassB의 methodA 입니다.");
 		
 	}
 	
 	@Override
 	public int methodB(int num) {
-		// TODO Auto-generated method stub
-		return 0;
+		return num * 11;
 	}
 	
 	//InterfaceX의 추상메소드 구현

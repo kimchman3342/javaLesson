@@ -15,6 +15,9 @@ public class B17MyClassBMain {
 
         ifx.methodX();
         // ifa.methodX();  interfaceX의 추상 메소드
+
+        InterfaceX ix = (InterfaceX) ifa;
+        ix.methodX();
     
 }
     

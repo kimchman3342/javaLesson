@@ -30,6 +30,8 @@ public class AI implements Thinkable {
         return result;
     }
 
+
+
     @Override
     public void think() {
         
@@ -44,5 +46,9 @@ public class AI implements Thinkable {
     
     public void setOp(char op) {
         this.op = op;
+    }
+
+    public char getOp() {
+        return op;
     }
 }

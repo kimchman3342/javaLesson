@@ -38,6 +38,10 @@ public class B19BeAbleMain {
                 // 다운 캐스팅
                 Thinkable temp = (Thinkable) able;
                 System.out.println(able.getClass().getName() + "이 계산합니다.");
+                char op = temp instanceof AI ? ((AI)temp).getOp() : '+';
+                System.out.println("\t 연산 : " + op);
+                System.out.println("\t 정답 : " + temp.calculate(2024, 3));
+                
                 System.out.println("\t계산해 주세요. - " + temp.calculate(2024, 3));
             }else {
                 System.out.println(able.getClass().getName()+ "은 계산 못합니다.");

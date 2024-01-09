@@ -56,9 +56,9 @@ public class B14ObjectTest {
         Triangle triangle = new Triangle("삼각형", 20, 30, 65);
         
         System.out.println("\t sh2 = " + sh2);
-        System.out.println("\t diamond = " + diamond);
-        System.out.println("\t square = " + square);
-        System.out.println("\t triangle = " + triangle);
+        System.out.println("\t diamond = " + diamond);      // Diamond 자식 클래스가 정의한 toString
+        System.out.println("\t square = " + square);        // 부모 Shape이 정의한 toString
+        System.out.println("\t triangle = " + triangle);    // 부모 Shape이 정의한 toString
 
 
         System.out.println("");

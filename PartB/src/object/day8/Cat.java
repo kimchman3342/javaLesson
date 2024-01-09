@@ -1,9 +1,10 @@
 package object.day8;
 
 public class Cat extends Animal {
-	
+	public static final String TYPE ="고양이 ";
 	
 	public Cat(String color) {
+		super(); 		// 생략할 수 있나요? 생략 가능. super()는 자식 클래스 생성자에서 기본 호출 됩니다.
 		this.color = color;			// 부모클래스 생성자 호출. 인자를 전달합니다.
 	}
 	

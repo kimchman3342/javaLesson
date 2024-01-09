@@ -6,11 +6,29 @@ public class AnimalCommunity {
 	public static void main(String[] args)  {
 		System.out.println("~~~~~ 여기는 유기동물 분양소입니다. ~~~~~");
 			Animal[] animals = new Animal[10];
+			// result =  member.isAdopt(animals[i]);	// 인자를 animal 타입으로 전달받는 메소드 (다형성)
 			animals[0] = new Puppy("푸들이","브라운");
 			animals[1] = new Cat("그레이");
 			animals[2] = new Rabbit();
 			animals[2].setColor("화이트");
-			animals[3] = new Puppy("말티즈","화이트");
+			animals[3] = (new Puppy("말티즈","화이트"));
+			
+			// 퀴즈 : 아래 객체를 배열 요소에 대입합니다. 수정이 필요한 코드는?
+			animals[7] = new Animal(){
+			public static final String TYPE = "새";
+			
+			@Override
+			public void sound(){
+			System.out.println(" 앵무새는 안녕~~ 하고 말합니다.");
+			}
+			
+			@Override
+			public String toString() {
+				// TODO Auto-generated method stub
+				return TYPE + "[ color = " + color + ", name = " + name + "]";
+			}
+		};
+			
 
 			System.out.println("\n[[반려동물 목록을 보여드리겠습니다.]] \n");
 			for(int i=0;i<animals.length;i++) {
@@ -33,17 +51,22 @@ public class AnimalCommunity {
 		sb.append(" 회원님 \n");	// message += " 회원님 \n";
 		boolean result;
 		for(int i=0;i<animals.length;i++) {
-			if(animals[i]==null) break;		// 배열 요소에 참조 값이 더 이상 없으니 break 하기
+			// break는 null만나면 break
+			if(animals[i]==null) continue;		// null 만나면 다음 명령어들 실행 안하고  for문 i++부터 다시 시작
 			 result =member.isAdopt(animals[i]);	// 인자를 Animal 타입으로 전달받는 메소드(다형성)
 			 sb.append(animals[i].toString());		// message += animal[i].toString();
 			if(result) {
 				sb.append("  😃 분양 가능합니다. \n");		// message += " 😃 분양 가능합니다. "
 			} else {
 				sb.append("  😓 분양 자격이 안됩니다.\n");
+
+			/* 삼항연산자 
+			String temp = member.isAdopt(animals[i]) ? "분양 가능합니다.\n" : "분양 자격이 안됩니다\n";
+			sb.append(temp); */
 			}
 		}
 		System.out.println();
-		System.out.println(sb.toString());
+		System.out.println(sb.toString());	// StringBuilder 타입 객체는 println의 인자로 쓸 때 toString 생략 가능
 
 	}//main end
 	

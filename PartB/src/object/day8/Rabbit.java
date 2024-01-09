@@ -1,9 +1,13 @@
 package object.day8;
 
 public class Rabbit extends Animal {
-	public static final String TYPE ="강아지 ";
+	public static final String TYPE ="토끼 ";
+
 	
-	public Rabbit() {
+	public Rabbit() { // 만약 생성자 정의가 없으면 기본 생성자를 쓰도록 함 (자동으로 부모 생성자 super()호출)
+					  //  복습 : 자식 객체가 생성될 때, 먼저 부모 객체를 생성(생성자 호출)하고 자식 인스턴스 요소가 추가됩니다.
+					  // 이 때 부모 생성자는 super()가 기본입니다.    
+
 	}
 	
 	public Rabbit(String name, String color) {

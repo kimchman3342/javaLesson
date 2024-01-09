@@ -30,16 +30,23 @@ public class B19BeAbleMain {
         beAbles[2] = run2;
 
         System.out.println("bealbe 테스트");
-        for(BeAble able : beAbles)
+        for(BeAble able : beAbles){
+        System.out.println("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~");
             System.out.println(able.beAble());
-            if() {
+            if(able instanceof Thinkable) {
 
                 // 다운 캐스팅
-                System.out.println("계산해 주세요. - " + able.);
+                Thinkable temp = (Thinkable) able;
+                System.out.println(able.getClass().getName() + "이 계산합니다.");
+                System.out.println("\t계산해 주세요. - " + temp.calculate(2024, 3));
+            }else {
+                System.out.println(able.getClass().getName()+ "은 계산 못합니다.");
             }
+        }
         Thinkable[] thinks = new Thinkable[2];
 
 
     }
     
 }
+

@@ -42,4 +42,7 @@ public class AI implements Thinkable {
         return "생각할 수 있음.";
     }
     
+    public void setOp(char op) {
+        this.op = op;
+    }
 }

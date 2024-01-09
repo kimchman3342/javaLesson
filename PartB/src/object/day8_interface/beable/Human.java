@@ -36,8 +36,7 @@ public class Human implements Thinkable, Cookable, Runnable {
 
     @Override
     public String run(int speed) {
-        // TODO Auto-generated method stub
-        return null;
+        return "사람은 " + speed + " km/h로 달립니다.\n 최대속도 10km/h...";
     }
     
 }

@@ -1,19 +1,19 @@
 package object.day8;
 
-public class Puppy extends Animal {
+public class Rabbit extends Animal {
 	public static final String TYPE ="강아지 ";
 	
-	public Puppy() {
+	public Rabbit() {
 	}
 	
-	public Puppy(String name, String color) {
+	public Rabbit(String name, String color) {
 		super(name,color);			// 부모클래스 생성자 호출. 인자를 전달합니다.
 	}
 	
 	
 	@Override
 	public void sound() {
-		System.out.println(this.color +" 강아지는 멍멍 🐶🐶 하고 짖습니다. ");
+		System.out.println(this.color +" 토끼는 그냥 🐰🐰 조용합니다. ");
 
 	}
 

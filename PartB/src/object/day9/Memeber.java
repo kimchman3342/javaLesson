@@ -33,7 +33,7 @@ public class Memeber implements Comparable<Memeber> {
     public String toString() {
         return "Memeber [id=" + id + ", age=" + age + "]\n";
     }
-
+ 
     // Comparable 인터페이스의 추상메소드  compareTo를 구현합니다.
     @Override
     public int compareTo(Memeber o) {   // 메소드의 인자 타입 Memeber는 <> 제너릭 타입과 같게 만들어집니다.

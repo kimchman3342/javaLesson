@@ -1,6 +1,7 @@
 package object.day9;
 
 import java.util.Arrays;
+import java.util.Comparator;
 
 public class C21ArraySortTest {
     public static void main(String[] args) {
@@ -19,6 +20,18 @@ public class C21ArraySortTest {
 
     // 순차정렬 알고리즘 : 가장 단순한 알고리즘.
     
+    // 내림차순 정렬 - Comparator는 <> 제너릭타입에 기본형을 사용 못합니다.
+                    //기본형은 Wrapper 클래스 사용합니다.
+    Integer[] numbers2 = { 67, 34, 77, 89, 82};
+    Arrays.sort(numbers2, new Comparator<Integer>() {
+        @Override
+        public int compare(Integer o1, Integer o2) {
+            // 내림차순 리턴 수식을 만드세요.
+            return o2 - o1;
+            // 대입문 또는 수식에서 Integer 타입과 int 타입의 캐스팅은 자동입니다.
+        }
+    });
+    System.out.println("numbers2 내림차순 정렬 후 : " + Arrays.toString(numbers2));
 }
     
 }

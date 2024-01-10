@@ -34,17 +34,20 @@ public class C25StudentCompareTest {
         Arrays.sort(students,ageAscending);
         System.out.println("나이 오름차순 정렬 후 students 배열 : " + Arrays.toString(students));
         
-       
+    //    o1(왼쪽), o2(오른쪽) 이며 오름/내림 상관없이 교환을 안해도 되는 경우에는 음수 값으로 리턴합니다.
+    //    sort 메소드 정렬 알고리즘은 비교결과 "음수 리턴하면 교환하지 않고 양수 리턴하면 교환합니다."
        
        
        
         // 2. ageDecending
+        // 한 번만 사용할 Comparator는 변수 선언하지 않고 바로 인자로 전달할 수 있습니다.
         Comparator<Student> ageDecending = new Comparator<Student>() {
             
             @Override
             public int compare(Student o1, Student o2) {
                 
-                return o2.getAge() - o1.getAge();
+                return o2.getAge() - o1.getAge();       // 내림차순 o1 > o2이 되어야합니다.
+                                                        // o2 - o1 < 0 이면 교환.
             }
 
         };
@@ -59,7 +62,7 @@ public class C25StudentCompareTest {
        
         // 3.nameAscending
     
-        Arrays.sort(students,(o1,o2) -> {
+        Arrays.sort(students,(o1,o2) -> {   // sort(Araays, Comparator)
              return o1.getName().compareTo(o2.getName());
 
             });
@@ -71,7 +74,7 @@ public class C25StudentCompareTest {
         
         // 4.nameDecending
        
-        Arrays.sort(students, new Comparator<Student>() {
+        Arrays.sort(students, new Comparator<Student>() { 
             
             @Override
             public int compare(Student o1, Student o2) {
@@ -82,6 +85,8 @@ public class C25StudentCompareTest {
         });
         System.out.println("이름 내림차순 정렬 후 students 배열 : " + Arrays.toString(students));
         System.out.println(" ");
+
+        // C21번에 int 배열 오름차순은 그냥하면 됩니다. 내림차순 완성하러 갑니다~~~
     }
     
 }

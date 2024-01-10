@@ -1,5 +1,5 @@
 package object.day8_interface.beable;
-
+ @FunctionalInterface
 public interface BeAble {
 	String beAble(); 
 }

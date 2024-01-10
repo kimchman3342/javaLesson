@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 //자바라이브러리의 비교 기능 인터페이스를 활용하기 위한 선행 연습
-public class ComparToTest {
+public class C20ComparToTest {
 	
 		//비교는 sort (정렬) 메소드에서 사용하게 됩니다.
 		public static void main(String[] args) {
@@ -29,6 +29,7 @@ public class ComparToTest {
 			System.out.println("'k'-'m' = " + ('k'-'m'));
 			System.out.println("you.compareTo(na) = "+you.compareTo(na));		//결과값? 2 
 			System.out.println("'m'-'k' = " + ('m'-'k'));
+			
 			you = "kang";
 			System.out.println("kim과 kang의 비교는 첫글자 k가 같으므로 i와 a를 비교합니다.");
 			System.out.println("na.compareTo(you) =" + na.compareTo(you)); 
@@ -38,7 +39,7 @@ public class ComparToTest {
 					+ "양수이면 \n"
 					+"사전 순으로 na 의 문자열이 you의 문자열 보다 뒤에 나옵니다.\n");
 
-			// List<User> list = new ArrayList<>();					
+					
 			
 		}
 }

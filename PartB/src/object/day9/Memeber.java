@@ -31,7 +31,7 @@ public class Memeber implements Comparable<Memeber> {
 
     @Override
     public String toString() {
-        return "Memeber [id=" + id + ", age=" + age + "]\n";
+        return "Memeber [id=" + id + ", age=" + age + "]";
     }
  
     // Comparable 인터페이스의 추상메소드  compareTo를 구현합니다.
@@ -40,6 +40,11 @@ public class Memeber implements Comparable<Memeber> {
         // 현재 객체 this를 인자로 전달되는 Memeber 객체와 비교합니다.
         // 비교 기준은 요구사항에 따라 개발자가 정합니다.
         // 만약에 나이로 한다면
-        return this.age - o.age;
+            //  return this.age - o.age;    // 나이 오름차순(기본)
+            //  returm o.age - this.age;    // 나이 내림차순
+        // 만약 이름(id)으로 한다면
+            // return this.id.compareTo(o.id);  // 이름 오름차순 (기본)
+            return o.id.compareTo(this.id);     // 이름 내림차순
+        
     }
 }

@@ -10,7 +10,7 @@ public class C24MemeberCompareTest {
         Memeber nana = new Memeber("nana", 20);
 
         System.out.println("모모와 나나를 비교(나이 기준) : ");
-        System.out.println("\t" + momo.compareTo(nana) + " -> 양수면 momoo가 nana보다 나이가 많습니다.");
+        System.out.println( momo.compareTo(nana) + " -> 양수면 momoo가 nana보다 나이가 많습니다.\n");
 
         Memeber dahy = new Memeber("dahyeon", 21);
         Memeber sana = new Memeber("sana", 22);
@@ -23,8 +23,9 @@ public class C24MemeberCompareTest {
         memebers[2] = dahy;     
         memebers[3] = sana;
         
-        System.out.println("members 배열 : " + Arrays.toString(memebers));
-        System.out.println("정렬 후 members 배열 : " + Arrays.toString(memebers));
+        System.out.print("members 배열 : " + Arrays.toString(memebers) + "\n");
+        Arrays.sort(memebers); // 배열 요소 Memeber 객체가 compareTo 메소드 있으므로 정렬됩니다.
+        System.out.print("\n정렬 후 members 배열 : " + Arrays.toString(memebers) + "\n\n");
         
     }
     

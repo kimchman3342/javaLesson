@@ -38,6 +38,35 @@ public class C01ListExample {
         System.out.println("strlist.get(0)" + strlist.get(0));
         System.out.println("strlist.get(3)" + strlist.get(3));
         // System.out.println("strlist.get(9)" + strlist.get(9));  요소 없어서 오류
+
+        // addAll
+        List<String> sublist = new ArrayList<>();
+        sublist.add("투바투");      sublist.add("세븐틴");
+        strlist.addAll(sublist);
+        strlist.add("아이브");
+        System.out.println("\n이미 저장되어 있는 값도 추가됩니까? : " + strlist);    // 안됨
+
+        System.out.println("\naddAll(strlist) : " + strlist);
+       
+       
+        // 리스트에서 요소를 찾기 (조회)
+        
+        System.out.println("\n\n리스트에서 항목 찾기");
+        
+        // indexOf
+        System.out.println("\t 리스트에 처음 `아이브` 어디 있음? " + strlist.indexOf("아이브"));
+        System.out.println("\t 리스트에 `뉴진스` 어디 있음? " + strlist.indexOf("뉴진스"));
+
+        // lastIndexOf
+        System.out.println("\t 리스트에 마지막 `아이브` 어디 있음? " + strlist.lastIndexOf("아이브"));
+        
+        
+        // contains
+        System.out.println("\t 리스트에 `뉴진스` 있음? " + strlist.contains("뉴진스"));
+        
+
+        
+
     }
     
 }

@@ -53,10 +53,10 @@ public class C06TodayMenuVote {
         };
         
 
-        Entry<String,Integer> maEntry = Collections.max(map.entrySet(),comparator);
+        Entry<String,Integer> maxEntry = Collections.max(map.entrySet(),comparator);
         System.out.println("최다 득표 결과");
-        System.out.println("\t 메뉴 이름 : " + maEntry.getKey());
-        System.out.println("\t 메뉴 이름 : " + maEntry.getValue());
+        System.out.println("\t 메뉴 이름 : " + maxEntry.getKey());
+        System.out.println("\t 메뉴 이름 : " + maxEntry.getValue());
 
        /*  // 가장 많이 투표된 메뉴 찾기
         int maxMenu = Collections.max(map.values()); // 투표 수 중 가장 큰 값 찾기
@@ -67,5 +67,6 @@ public class C06TodayMenuVote {
                 System.out.println(entry.getKey());
             }
         } */
+        sc.close();
     }
 }

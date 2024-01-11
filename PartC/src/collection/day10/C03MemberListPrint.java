@@ -3,7 +3,7 @@ package collection.day10;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.swing.text.html.HTMLDocument.Iterator;
+import java.util.Iterator;
 
 public class C03MemberListPrint {
     public static void main(String[] args) {

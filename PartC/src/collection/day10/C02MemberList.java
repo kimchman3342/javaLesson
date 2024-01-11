@@ -33,10 +33,23 @@ public class C02MemberList {
         list.sort(new Comparator<Member>() {
             public int compare(Member o1, Member o2) {
                 return o1.getAge() - o2.getAge();
-            };
+            }
         });
         System.out.println("정렬 후 : " + list);
+        // 정수, 실수, 문자열 타입은 list.sort(null); 로 오름차순 정렬합니다.
+        //              그 외에는 Comparator를 구현해야합니다.
+
+
+
+        // List의 static 메소드
+                    // ㄴ 테스트용 리스트 만들 때 많이 사용합니다. 불변객체 입니다. 
+        List<String> names = List.of("momo", "dahy", "nana", "sana");
+        System.out.println("names : " + names);
         System.out.println(" ");
+
+        // names.add("xxyyzz");     // Immutable(불변의) Collections 오류
+
+
     }
     
 }

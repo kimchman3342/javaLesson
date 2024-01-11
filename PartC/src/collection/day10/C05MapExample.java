@@ -5,6 +5,7 @@ import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.TreeMap;
 
 public class C05MapExample {
     
@@ -14,7 +15,7 @@ public class C05MapExample {
     //            맵에 입력한 순서대로 접근해야 한다면 LinkedHashMap 또는 정렬(Key 기준)된 방식으로 접근해야한다면 TreeMap
     // Map의 구성요소 : Key,Value 중에서 Key는 Set 특성을 갖고 있습니다.
 
-    Map<String,String> map = new LinkedHashMap<>();       //HashMap<>();
+    Map<String,String> map = new TreeMap<>();      //LinkedHashMap<>();       //HashMap<>();
     map.put("tw", "트와이스");
     map.put("nu", "뉴진스");
     map.put("as", "에스파");
@@ -38,8 +39,11 @@ public class C05MapExample {
     Iterator<String> mapIterator = map.keySet().iterator();
     int cnt =0;
     while(mapIterator.hasNext()) {
-        String temp =mapIterator.next();
-        System.out.println(String.format("count = %d , key = %s , value = %s", cnt++,temp,map.get(temp)));
+        String temp =mapIterator.next();        // 반복자가 가져온 값은 key 입니다.
+        System.out.println(String.format("count = %d , key = %s , value = %s", cnt++, 
+                                                                                        temp,  //key 
+                                                                                        map.get(temp) //value
+                                                                                        ));
     }
     
   }

@@ -2,6 +2,7 @@ package collection.day10;
 
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Scanner;
 
@@ -13,7 +14,7 @@ public class C05MapExample {
     //            맵에 입력한 순서대로 접근해야 한다면 LinkedHashMap 또는 정렬(Key 기준)된 방식으로 접근해야한다면 TreeMap
     // Map의 구성요소 : Key,Value 중에서 Key는 Set 특성을 갖고 있습니다.
 
-    Map<String,String> map = new HashMap<>();
+    Map<String,String> map = new LinkedHashMap<>();       //HashMap<>();
     map.put("tw", "트와이스");
     map.put("nu", "뉴진스");
     map.put("as", "에스파");

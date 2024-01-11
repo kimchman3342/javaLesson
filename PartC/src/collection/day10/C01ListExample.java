@@ -23,14 +23,21 @@ public class C01ListExample {
 
         System.out.println("\n  데이터 삭제");
         strlist.remove("원더걸스");     // remove 메소드 오버로딩
-        strlist.remove(1);          // 메소드 인자 타입이 int와 String(요소의 타입) 2가지로 동작
+        System.out.println("항목 삭제 후 리스트 : " + strlist);
+        strlist.remove(1);          //          ㄴ 메소드 인자 타입이 int와 String(요소의 타입) 2가지로 동작
         System.out.println("항목 삭제 후 리스트 : " + strlist); //ArrayList 클래스의 toString 메소드 실행
 
         // 아래 2개 메소드 비교
         System.out.println("\n  데이터 항목 변경");
-        strlist.add(2, "????");
-        strlist.add(2, "!!!!");
+        strlist.add(2, "????");         // 중간 삽입
+        System.out.println("항목 삭제 후 리스트 : " + strlist);
+        strlist.add(2, "!!!!");         // 수정**
         System.out.println("항목 변경 후 리스트 : " + strlist);
+
+        System.out.println("\n 특정 인덱스 위치의 요소 값 가져오기");
+        System.out.println("strlist.get(0)" + strlist.get(0));
+        System.out.println("strlist.get(3)" + strlist.get(3));
+        // System.out.println("strlist.get(9)" + strlist.get(9));  요소 없어서 오류
     }
     
 }

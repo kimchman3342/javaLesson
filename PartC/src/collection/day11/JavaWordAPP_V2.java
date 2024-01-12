@@ -5,12 +5,18 @@ import java.util.List;
 
 import collection.myapp.JavaWord;
 
-public class JavaWordAPP_V1 {
+/* 
+ * JavaWordAPP_V2 : 메소드 만드는 연습
+ *                  검색 메소드, print
+ * 
+ */
+
+public class JavaWordAPP_V2 {
     // private : 현재 클래스에서만 사용할 목적으로 접근 제한합니다.
     private List<JavaWord> words = new ArrayList<>();
     
     // 프로그램 실행을 시작하는 메소드
-    void start(){
+    private void start(){
             initialize();       // words 리스트 요소를 몇 개만 저장해서 초기화 (테스트용)
             // 단어 등록, 목록, 검색, 삭제 기능을 메뉴로 구현합니다.
             System.out.println("단어장 프로그램 시작합니다.~~" + "~".repeat(30));
@@ -79,23 +85,48 @@ public class JavaWordAPP_V1 {
             System.out.println("삭제할 단어는 단어장에 없습니다.");
         }
     }
-        
-    
+    // 새로운 검색 메소드 정의
+    // 1. 단어 검색 : 첫 번째로 일치하는 결과만 리턴
+    //      메소드 인자를 입력 데이터로 하여 메소드의 코드가 실행되고 결과는 출력으로 리턴
+    private JavaWord searchFirstWord(String english){
+        for(JavaWord word : words) {
+            if(word.getEnglish().equals(english)) {
+                return word;        // 인자로 전달된 english와 같은 word 리턴
+            }
+        }
+        return null;          // 찾는 english 단어 없으면 for문이 리스트 모두 반복하고 종료. null 리턴
+    }
+
+    // 2. 단어 검색 : 검색하는 단어와 일치하는 결과를 모두 리턴
+    private List<JavaWord> searchAllWords(String english){
+        List<JavaWord> list = new ArrayList<>();        // 검색 결과 저장할 리스트
+        for(JavaWord word : words) {
+            if(word.getEnglish().equals(english)) {
+                list.add(word);     // 일치하는 단어를 만날 때마다 저장
+            }
+        }
+        return list;
+    }
     private void searchWord() {
         System.out.println("\t::단어 검색합니다.::");
         System.out.println("검색할 단어를 영문으로 입력하세요._");
         String find = System.console().readLine();
-        boolean isFind = false;
-        for(JavaWord word : words){
-            if(word.getEnglish().equals(find)){          // 문자열 비교 equals 
-                System.out.println("검색 결과 : " + word.getEnglish() + " = " + word.getKorean() + " 레벨 " + word.getLevel());
-                 return;         // 단어를 한 개 찾으면 searchWord 메소드 종료.  같은 단어를 1번만 저장하게 할 때.
-               // isFind = true;   //2) 같은 단어가 2번 이상 저장될 때
+        // 2. 단어 여러개 리턴할 때
+        List<JavaWord> result  = searchAllWords(find);
+        if(result.size()==0)
+                System.out.println("찾는 단어가 단어장에 없습니다.");
+        else
+                System.out.println("result : " + result);       // 이쁘게 출력은 나중으로..
 
-            }
-        }
-             if(isFind == false)     //2) if문 조건 검사는 같은 단어가 2번 이상 단어장에 있을 때 사용.
-                System.out.println("찾는 단어가 단어장에 없습니다.");   // 1), 2)
+
+        // 1. 단어 1개만 리턴할 때
+        /* 
+        JavaWord word = searchFirstWord(find);
+        if(word != null)
+                System.out.println("검색 결과 : " + word.getEnglish() + " = " + word.getKorean() + " 레벨 " + word.getLevel());
+                
+        else
+        System.out.println("찾는 단어가 단어장에 없습니다.");   // 1), 2) */
     }     
             // 리스트에 없는 단어를 조회한다면 ? 같은 단어 중복 저장하게 할 때는 위와 같이 할 수 있습니다.
 
@@ -132,7 +163,7 @@ public class JavaWordAPP_V1 {
         // 프로그램 실행하는 객체 생성하고 (메소드로 기능을 분리할 때 main이 호출하는 static을 없애기 위함.)
         //          start 메소드 프로그램 실행 내용을 코딩
 
-        JavaWordAPP_V1 app = new JavaWordAPP_V1();
+        JavaWordAPP_V2 app = new JavaWordAPP_V2();
         app.start();
     }
 

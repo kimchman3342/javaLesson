@@ -4,6 +4,8 @@ public class B17MyClassBMain {
     public static void main(String[] args) {
 
         MyClassB myb = new MyClassB();
+        
+        
         // 다중 구현 클래스인 MyClassB는 두 가지 업 캐스팅 가능
         InterfaceA ifa = new MyClassB();
         InterfaceX ifx = new MyClassB();

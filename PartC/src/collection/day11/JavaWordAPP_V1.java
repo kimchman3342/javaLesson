@@ -60,12 +60,19 @@ public class JavaWordAPP_V1 {
         System.out.println("\t::단어 검색합니다.::");
         System.out.println("검색할 단어를 영문으로 입력하세요._");
         String find = System.console().readLine();
+        boolean isFind = false;
         for(JavaWord word : words){
             if(word.getEnglish().equals(find)){          // 문자열 비교 equals 
                 System.out.println("검색 결과 : " + word.getEnglish() + " = " + word.getKorean() + " 레벨 " + word.getLevel());
+                 return;         // 단어를 한 개 찾으면 searchWord 메소드 종료.  같은 단어를 1번만 저장하게 할 때.
+                // isFind = true;   // 같은 단어가 2번 이상 저장될 때
+
             }
         }
-    }       // 리스트에 동일한 단어가 2번 저장되었다면?     리스트에 없는 단어를 조회한다면 ?
+            // if(isFind == false)     // if문 조건 검사는 같은 단어가 2번 이상 단어장에 있을 때 사용.
+                System.out.println("찾는 단어가 단어장에 없습니다.");   // 1), 2)
+    }     
+            // 리스트에 없는 단어를 조회한다면 ? 같은 단어 중복 저장하게 할 때는 위와 같이 할 수 있습니다.
 
     private void listWord() {   
         // TO DO : 리스트 words에 저장된 요소(항목)들을 모두 출력해보세요.-예쁘게~~

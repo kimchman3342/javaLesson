@@ -38,6 +38,7 @@ public class JavaWordBook {
     }
 
     // 단어 삭제
+    
     public void removeWord(String english){
         this.wordBook.remove(english);
     }

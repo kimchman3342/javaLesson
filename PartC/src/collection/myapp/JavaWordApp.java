@@ -11,6 +11,7 @@ public class JavaWordApp {
         // 1. 단어장을 생성  
         JavaWordBook myBook = new JavaWordBook();
         
+        
         // 2. 단어 추가
         JavaWord newWord = new JavaWord("Public", "공용의", 1);
         myBook.addWord(newWord);
@@ -40,6 +41,8 @@ public class JavaWordApp {
 
         // 4. 단어 삭제
         
+        List<JavaWord> list2 = myBook.deleteWord("application");
+        myBook.wordListPrint(list2);
 
     }
     

@@ -38,7 +38,7 @@ public class JavaWordBook {
     }
 
     // 단어 삭제
-    
+
     public void removeWord(String english){
         this.wordBook.remove(english);
     }
@@ -69,6 +69,17 @@ public class JavaWordBook {
 
         }
 
+        return results;
+    }
+   
+    public List<JavaWord> deleteWord(String deleteText){
+        List<JavaWord> results = new ArrayList<>();
+        //인자로 전달된 deleteText만 제외하고 results에 저장시키기
+        for(JavaWord word : this.wordBook.values()){
+            if (word.getEnglish() != deleteText) {
+                results.add(word);
+            }
+        }
         return results;
     }
 }

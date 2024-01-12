@@ -35,7 +35,7 @@ public class JavaWordAPP_V2 {
 
             case 2: listWord(); break;      // 단어 목록 출력 메소드 실행
             
-            case 3: searchWord();  break;   // 단어 검색 메소드 실행
+            case 3: searchWordBy();  break;   // 단어 검색 메소드 실행
             
             case 4: removeWord();  break;   // 단어 삭제 메소드 실행
             
@@ -106,17 +106,59 @@ public class JavaWordAPP_V2 {
             }
         }
         return list;
+       
     }
-    private void searchWord() {
+    
+    private List<JavaWord> searchAllWords(int level){
+        List<JavaWord> list = new ArrayList<>();        // 검색 결과 저장할 리스트
+        for(JavaWord word : words) {
+            if(word.getLevel() == level) {
+                list.add(word);     // 일치하는 단어를 만날 때마다 저장
+            }
+        }
+        return list;
+       
+    }
+
+    
+    private void searchWordBy(){
+        System.out.println("\t::단어 검색합니다.(단어 조회는 1, 레벨 조회는 2)::");
+        String find = null;
+        List<JavaWord> list = null;
+        switch (System.console().readLine()) {
+            case "1": 
+            System.out.println("검색한 단어를 영문으로 입력하세요_");
+            find = System.console().readLine();
+            list = searchAllWords(find);
+            break;
+            case "2": System.out.println("검색할 레벨을 입력하세요._");  
+            int level = Integer.parseInt(System.console().readLine()); 
+            list = searchAllWords(level);          
+            break;      
+            default:
+                System.out.println("1,2 만 입력하세요.");
+                return;
+    }
+            System.out.println("\t 검색 결과 입니다.::");
+            if(list.size()==0)
+                System.out.println("찾는 단어가 단어장에 없습니다.");
+            else
+                printWordList(list);      // 출력할 리스트 result를 메소드에 전달
+
+}
+
+        private void searchWord() {
         System.out.println("\t::단어 검색합니다.::");
         System.out.println("검색할 단어를 영문으로 입력하세요._");
         String find = System.console().readLine();
+
         // 2. 단어 여러개 리턴할 때
         List<JavaWord> result  = searchAllWords(find);
         if(result.size()==0)
                 System.out.println("찾는 단어가 단어장에 없습니다.");
         else
-                System.out.println("result : " + result);       // 이쁘게 출력은 나중으로..
+            printWordList(result);      // 출력할 리스트 result를 메소드에 전달
+                // System.out.println("result : " + result);       // 이쁘게 출력은 나중으로..
 
 
         // 1. 단어 1개만 리턴할 때
@@ -128,20 +170,22 @@ public class JavaWordAPP_V2 {
         else
         System.out.println("찾는 단어가 단어장에 없습니다.");   // 1), 2) */
     }     
-            // 리스트에 없는 단어를 조회한다면 ? 같은 단어 중복 저장하게 할 때는 위와 같이 할 수 있습니다.
+    
+    // 출력 메소드 : 출력할 여러 개의 JavaWord 객체를 전달받아 이쁘게 화면에 print
+    private void printWordList(List<JavaWord> list){
+        for(JavaWord word : list) {
+            System.out.println(String.format("%-20s %-30s -%20s", word.getEnglish(), word.getKorean(), word.getLevel() ));
+        }
+
+    }
+
 
     private void listWord() {   
         // TO DO : 리스트 words에 저장된 요소(항목)들을 모두 출력해보세요.-예쁘게~~
         System.out.println("\t::단어 목록 출력합니다.::");
         System.out.println(String.format("%-20s %-30s -%20s", "ENGLISH", "KOREAN", "LEVEL"));
-        System.out.println("\n== for 반복자로 출력하기 ==");
-        for(JavaWord word : words) {
-            System.out.println(String.format("%-20s %-30s -%20s", word.getEnglish(), word.getKorean(), word.getLevel() ));
-
-        }
-      
-
-    
+        
+        printWordList(words); // 출력할 리스트 words로 메소드에 전달
     }
 
     

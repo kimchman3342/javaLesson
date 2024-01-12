@@ -11,6 +11,7 @@ import collection.day11.Customer;
 public class CustomerManageApp {
     // JavaCustomerApp V2 형식으로 하세요.
     private List<Customer> customers = new ArrayList<>();
+    
 
     private void initialize() {
         customers.add(new Customer("황병훈", "010 123 123", 1));
@@ -82,7 +83,7 @@ public class CustomerManageApp {
             find = System.console().readLine();
             list = searchAllCustomer(find);
             break;
-            case "2": System.out.println("검색하실 등급을 입력하세요._");  
+            case "2": System.out.println("검색하실 등급을 입력하세요. (1.일반 2.VIP 3.일회용) _");  
             int group = Integer.parseInt(System.console().readLine()); 
             list = searchAllCustomer(group);          
             break;      

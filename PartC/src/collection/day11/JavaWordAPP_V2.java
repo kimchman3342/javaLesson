@@ -174,7 +174,7 @@ public class JavaWordAPP_V2 {
     // 출력 메소드 : 출력할 여러 개의 JavaWord 객체를 전달받아 이쁘게 화면에 print
     private void printWordList(List<JavaWord> list){
         for(JavaWord word : list) {
-            System.out.println(String.format("%-20s %-30s -%20s", word.getEnglish(), word.getKorean(), word.getLevel() ));
+            System.out.println(String.format("%-20s %-30s %-20s", word.getEnglish(), word.getKorean(), word.getLevel() ));
         }
 
     }
@@ -183,7 +183,7 @@ public class JavaWordAPP_V2 {
     private void listWord() {   
         // TO DO : 리스트 words에 저장된 요소(항목)들을 모두 출력해보세요.-예쁘게~~
         System.out.println("\t::단어 목록 출력합니다.::");
-        System.out.println(String.format("%-20s %-30s -%20s", "ENGLISH", "KOREAN", "LEVEL"));
+        System.out.println(String.format("%-20s %-30s %-20s", "ENGLISH", "KOREAN", "LEVEL"));
         
         printWordList(words); // 출력할 리스트 words로 메소드에 전달
     }

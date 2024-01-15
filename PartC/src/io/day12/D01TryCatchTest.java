@@ -17,7 +17,7 @@ public class D01TryCatchTest {
         System.out.println("인덱스 범위는 배열의 길이 -1 까지입니다.");
        }
        System.out.println("마지막 명령어 입니다."); 
-    }
+    } 
     
     
     public static void indexException() {

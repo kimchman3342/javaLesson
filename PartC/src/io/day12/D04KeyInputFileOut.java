@@ -26,7 +26,7 @@ public class D04KeyInputFileOut {
             }
             System.out.println("총 입력 바이트 수 : " + count);
                 
-            
+             
            
         }catch (IOException e) {
             System.out.println("예외 : " + e.getMessage());

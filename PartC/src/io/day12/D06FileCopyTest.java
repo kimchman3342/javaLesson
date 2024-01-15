@@ -26,7 +26,7 @@ public class D06FileCopyTest {
             try {fis.close(); fos.close();} 
             catch (IOException e) {}
     
-    }
+    } 
 
     
  }

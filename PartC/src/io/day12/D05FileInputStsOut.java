@@ -22,7 +22,7 @@ public class D05FileInputStsOut {
     } finally {
         try { fis.close();} 
         catch (IOException e) {};
-    }
+    } 
     
 }
 }

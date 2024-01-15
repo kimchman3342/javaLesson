@@ -9,7 +9,7 @@ public class D02CheckedExceptionTest {
         // File file = new File("F:\\테스트.md"); 없는 드라이브 지정 -> 예외 발생
         File file = new File("테스트2.md");
         // 디렉토리 지정하지 않으면 프로젝트와 같은 폴더에
-
+ 
 
         // 파일을 생성하는 메소드
         try {

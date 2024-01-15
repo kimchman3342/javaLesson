@@ -1,6 +1,6 @@
 package io.day12;
 
-import java.io.IOException;
+import java.io.IOException; 
 
 // 표준 입출력 키보드 테스트
 // 키보드 입력 : new Scanner(System.in) 또는 System.console().readLine()

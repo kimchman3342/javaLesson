@@ -4,7 +4,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 
 // 파일입력 - > 콘솔장치(화면) 출력
-public class D05FileInputStsOut {
+public class D05FileInputStsOut { 
     public static void main(String[] args) {
         FileInputStream fis = null;
     try {

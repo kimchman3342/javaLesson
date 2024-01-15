@@ -14,7 +14,7 @@ public class D01TryCatchTest {
         // 예외가 발생할 때 실행할 명령
         System.out.println("정수는 숫자만 입력하세요.");
        } catch (ArrayIndexOutOfBoundsException e)  {  
-        System.out.println("인덱스 범위는 배열의 길이 -1 까지입니다.");
+        System.out.println("인덱스 범위는 배열의 길이 -1 까지입니다."); 
        }
        System.out.println("마지막 명령어 입니다."); 
     } 

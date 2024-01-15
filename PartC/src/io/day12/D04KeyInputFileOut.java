@@ -5,7 +5,7 @@ import java.io.IOException;
 
 // 표준 입출력 키보드 테스트
 // 키보드 입력 : 파일로 출력
-public class D04KeyInputFileOut {
+public class D04KeyInputFileOut { 
     
     public static void main(String[] args) {
         int b;

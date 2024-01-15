@@ -4,7 +4,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-public class D06FileCopyTest {
+public class D06FileCopyTest { 
     
     public static void main(String[] args) {
         FileInputStream fis = null;

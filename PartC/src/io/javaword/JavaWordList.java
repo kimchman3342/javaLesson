@@ -32,7 +32,9 @@ public class JavaWordList implements WordList{
 
             String line;
             while ((line = br.readLine())!=null) {
+                if(line.trim().length()==0) continue;   // 빈 줄은 skip
                 String[] temp = line.split(",");
+                if(temp.length!=3) continue;    // 배열크기는 반드시 3
                 JavaWord word = new JavaWord(temp[0].trim(),
                                        temp[1].trim(),
                                        Integer.parseInt(temp[2].trim()));

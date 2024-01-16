@@ -14,7 +14,8 @@ public class D08FileReader {
 
         long start = System.currentTimeMillis(); //1000분의 1초
         // readByChar();
-        readByCharBuffer();
+        // readByCharBuffer();
+        readByScanner();
         long end = System.currentTimeMillis();
         System.out.println(String.format("실행 소요 시간 : %,d ms",(end-start)));
        
@@ -98,4 +99,25 @@ public class D08FileReader {
             }
             System.out.println("읽어온 라인 수 : " + count);
    }
+
+            public static void readByScanner(){
+                String filePath = "단어장.txt";
+                int count=0;
+
+                // Scanner 클래스 : 한줄씩 읽어오는 nextLine() 메소드, 2) 구분기호로 분리해서 읽어오는 방법
+                try( Scanner fc = new Scanner(new FileReader(filePath))){
+
+                    fc.useDelimiter(",|\\n");   // 구분기호(delimiter)를 , 또는 (|) 엔터
+
+                    // 파일의 끝까지 반복
+                    while (fc.hasNext()) {      // 구분기호로 분리된 데이터가
+                        String token = fc.next();   // next 메소드로 가져오기
+                        System.out.println(token.trim());
+                        count++;
+                    }
+
+            } catch (Exception e) { }
+
+                System.out.println("읽은 단어수 : "+count);
+            }
 }

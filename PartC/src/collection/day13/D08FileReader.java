@@ -70,8 +70,8 @@ public class D08FileReader {
 
         // 파일에서 읽은 내용 출력
         System.out.println("~~~~~~~~~~~~~~~~~~~~");
-        System.out.println("읽은 문자수 : "+charCount);
-        System.out.println("반복 횟수 : "+count);
+        System.out.println("읽은 문자수 : " + charCount);
+        System.out.println("반복 횟수 : " + count);
     }
 
     

@@ -6,7 +6,11 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
+
+import collection.myapp.JavaWord;
 
 public class D08FileReader {
 
@@ -15,7 +19,8 @@ public class D08FileReader {
         long start = System.currentTimeMillis(); //1000분의 1초
         // readByChar();
         // readByCharBuffer();
-        readByScanner();
+        // readByScanner();
+        readByScanner2();
         long end = System.currentTimeMillis();
         System.out.println(String.format("실행 소요 시간 : %,d ms",(end-start)));
        
@@ -120,4 +125,28 @@ public class D08FileReader {
 
                 System.out.println("읽은 단어수 : "+count);
             }
-}
+            
+            public static void readByScanner2(){
+                String filePath = "단어장.txt";
+                int count=0;
+                List<JavaWord> list = new ArrayList<>();
+    
+                // Scanner 클래스 : 한줄씩 읽어오는 nextLine() 메소드, 2) 구분기호로 분리해서 읽어오는 방법
+                try( Scanner fc = new Scanner(new FileReader(filePath))){
+    
+                    fc.useDelimiter(",|\\n");   // 구분기호(delimiter)를 , 또는 (|) 엔터
+    
+                    // 파일의 끝까지 반복
+                    while (fc.hasNext()) {      // 구분기호로 분리된 데이터가
+                        list.add(new JavaWord(fc.next().trim(),    // 첫번째 가져오기
+                                              fc.next().trim(),    // 두번째 가져오기
+                                              Integer.parseInt(fc.next().trim())          ));   // next 메소드로 가�
+                        count++;
+                    }
+    
+            } catch (Exception e) { }
+                System.out.println(list);
+                System.out.println("읽은 단어수 : "+count);
+                for (JavaWord word : list) System.out.println("생성된 객체 : " + word);
+            }
+        }

@@ -1,4 +1,4 @@
-package day13;
+package collection.day13;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;

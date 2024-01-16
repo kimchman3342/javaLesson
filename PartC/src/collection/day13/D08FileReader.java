@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
@@ -12,16 +13,18 @@ public class D08FileReader {
     public static void main(String[] args) {
 
         long start = System.currentTimeMillis(); //1000분의 1초
-        readByCharArray();
+        // readByChar();
+        readByCharBuffer();
         long end = System.currentTimeMillis();
-        System.out.println(String.format("실행 소요 시간 : %,d",(end-start)));
+        System.out.println(String.format("실행 소요 시간 : %,d ms",(end-start)));
        
 
     }
 
     
     public static void readByChar(){
-        String filePath = "단어장.txt";
+        // String filePath = "단어장.txt";
+        String filePath = "C:\\Windows\\PFRO.log";
         //문자열 저장하고 변경할 수 있는 가변 객체
         StringBuilder content = new StringBuilder();
         int charValue;
@@ -74,6 +77,25 @@ public class D08FileReader {
         System.out.println("반복 횟수 : " + count);
     }
 
-    
-    
+    public static void readByCharBuffer(){
+        String filePath = "C:\\Windows\\PFRO.log";   
+        //한 줄이 256문자보다 많이 적으면 위의 char 배열보다 시간은 더 소요될수 있습니다.      
+       // char[] charValues = new char[256];
+        int count=0;       //읽은 라인수. 문자기반 버퍼스트림은 라인(줄) 단위로 입출력 기능이 있습니다.
+        int b;
+        try(
+           BufferedReader br = new BufferedReader(new FileReader(filePath))
+           ){
+               String line;  //라인 단위로 읽어서 저장할 변수
+               while ((line = br.readLine())!=null) {          //readLine 은 String 리턴
+                   System.out.println(line);
+                   count++;
+                   
+               }
+
+            }catch(IOException e){
+               System.out.println("파일 입력 예외 : " + e.getMessage());
+            }
+            System.out.println("읽어온 라인 수 : " + count);
+   }
 }

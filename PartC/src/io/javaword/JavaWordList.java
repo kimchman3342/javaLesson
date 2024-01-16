@@ -1,8 +1,10 @@
 package io.javaword;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,15 +20,32 @@ public class JavaWordList implements WordList{
     //private : 현재 클래스에서만 사용할 목적으로 접근 제한합니다.
     //필드collection.myapp.JavaWord
     private List<JavaWord> words;
+    private String filePath;
     
-    public JavaWordList() {
+    public JavaWordList(String filePath) {
         System.out.println(" 최대 단어장 개수 : " + WordList.Max_LENGTH);
         words = new ArrayList<>();
+        this.filePath = filePath;
+    }
+
+    // 새로운 단어등록, 기존단어 삭제 등의 변경사항을 파일에 저장하기
+    public void fileSave() {
+            File file = new File(filePath);
+            try (
+                PrintWriter pw = new PrintWriter(file);
+             ){
+                // words에 있는 리스트의 모든 데이터를 파일로 출력하기
+                for(JavaWord word : words) 
+                                pw.println(word);
+             }catch (IOException e) {
+                System.out.println("파일 출력 예외 발생 : " + e.getMessage());
+                
+            }
     }
    
     // 단어장.txt 에서 데이터를 읽어와서 'words 리스트에 담기'
-    public void makeList() {    // 이 메소드에서 모든 동작을 실행하도록 작성하세요.
-        String filePath = "단어장.txt";
+    public void fileLoad() {    // 이 메소드에서 모든 동작을 실행하도록 작성하세요.
+        
         try(BufferedReader br = new BufferedReader(new FileReader(filePath))
         ){
 

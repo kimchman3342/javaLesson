@@ -4,15 +4,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 import collection.myapp.JavaWord;
-
+/* 
+ * JavaWordList : 단어장 객체를 생성할 때 읽어올 단어장 파일을 꼭 전달해야 합니다. 단어장 파일의 데이터로 리스트를 초기화 했습니다.
+ */
 
 public class JavaWordApp_V4 {
     //private : JavaWordList 객체
-    private JavaWordList words = new JavaWordList();
+    private JavaWordList words = new JavaWordList("단어장.txt");
     
     //프로그램 실행을 시작하는 메소드
     private void start(){
-            words.makeList();           // 파일에서 단어장 읽어오기
+            words.fileLoad();           // 파일에서 단어장 읽어오기
             //단어 등록,목록,검색,삭제 기능을 메뉴로 구현합니다.
             System.out.println("단어장 프로그램 시작합니다.~~" + "~".repeat(30));
             while(true){
@@ -34,6 +36,7 @@ public class JavaWordApp_V4 {
                     case 4: removeWord();  break;    // 단어 목록 조회 메소드 실행
                     case 5: 
                         System.out.println("프로그램을 종료합니다.");
+                        words.fileSave();     // 최종 리스트 내용을 파일에 저장.
                         System.exit(0);     //main 실행을 종료  
                         break;    
                     default:

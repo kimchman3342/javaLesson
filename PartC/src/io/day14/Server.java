@@ -19,6 +19,9 @@ public class Server {
     public static void main(String[] args) {
         ServerSocket server = null;
         Socket socket = null;
+        OutputStream os = null; DataInputStream dis = null;
+        InputStream is = null;  DataOutputStream dos = null;
+
         try {
             // 서버 소켓 생성
              server = new ServerSocket();
@@ -31,19 +34,22 @@ public class Server {
             
             // 서버가 클라이어트에게 데이터 보내기 : 출력 스트림
             // 클라이언트와 서버가 연결된 소켓으로 출력 스트림 생성
-            OutputStream os = socket.getOutputStream();
+             os = socket.getOutputStream();
             // 정수, 실수, 문자열 보내는 스트림
-            DataOutputStream dos = new DataOutputStream(os);    // 보조 스트림
+             dos = new DataOutputStream(os);    // 보조 스트림
             dos.writeUTF("\tFrom 서버 >> 다시 돌아가세요.my name is Hoon"); 
 
             // 클라이언트가 보낸 인사말 받기
-            InputStream is = socket.getInputStream();
-            DataInputStream dis = new DataInputStream(is);
-            String message = dis.readUTF();
-            System.out.println("\t 서버 >> 메시지를 남겨주세요." + message);
+             is = socket.getInputStream();
+             dis = new DataInputStream(is);
+            System.out.println(dis.readUTF());
+            
 
             // 파일명은 "d:\\sana.jfif" 다운로드 위치는 d드라이브
-            BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream("D:\\다운로드.jfif"));
+            // 클라이언트가 보내준 파일명으로 저장하기.(D드라이브 또는 다운로드 폴더)
+            String filename = dis.readUTF();
+            System.out.println("\t클라이언트 업로드 파일명 : " + filename);
+            BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream("D:\\upload\\" + filename)); 
             int b; int count = 0;
             while ((b = dis.read())!= -1) {
                 bos.write(b);       // 버퍼스트링 이용한 바이트 단위 출력

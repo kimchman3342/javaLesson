@@ -42,7 +42,7 @@ public class Client {
             dos.writeUTF("\tFrom 클라이언트 >> " + message);
 
             // 이미지 파일을 서버에 보내기(업로드)
-            String filePath = "C:\\Users\\Administrator\\Downleads\\다운로드.jfif";
+            String filePath = "C:\\Users\\Administrator\\Downloads\\이강인.jfif";
             // 파일 입력을 받아 소켓으로 출력하기
             FileInputStream fis = new FileInputStream(filePath);
             BufferedInputStream bis = new BufferedInputStream(fis);

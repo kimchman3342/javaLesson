@@ -1,7 +1,9 @@
 package io.day14;
 
+import java.io.BufferedOutputStream;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -40,6 +42,14 @@ public class Server {
             String message = dis.readUTF();
             System.out.println("\t 서버 >> 메시지를 남겨주세요." + message);
 
+            // 파일명은 "d:\\sana.jfif" 다운로드 위치는 d드라이브
+            BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream("D:\\다운로드.jfif"));
+            int b; int count = 0;
+            while ((b = dis.read())!= -1) {
+                bos.write(b);       // 버퍼스트링 이용한 바이트 단위 출력
+                count++;
+            }
+            System.out.println("파일 받기 완료!! 총바이트 : " + count);
 
         } catch (IOException e) {
             e.printStackTrace();

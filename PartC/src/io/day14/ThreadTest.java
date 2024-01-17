@@ -14,16 +14,47 @@ public class ThreadTest {
         //      ㄴ 1초마다 출력하기 => 새로운 쓰레드로 만듭니다.
         //  1) Thread 클래스 상속받기  2) Runnable 인터페이스 구현하기 
 
+        // 1) 쓰레드가 할 일을 인터페이스 활용하여 정의합니다. => 익명 클래스
+
+        Runnable runnable = new Runnable() {
+            @Override
+            public void run() { // 쓰레드가 할 일을 여기에 코딩하세요.
+            
+                boolean run = true;
+                while (run) {
+                    System.out.println(".");
+                        try {
+                            Thread.sleep(500);  // 0.5초
+                        } catch (InterruptedException e) {
+                            run = false;
+                    
+                        }
+                    // interrupt : 방해하다. 간섭하다. 끼어들다.
+                }
+                
+            }
+        };
+        // 2) 쓰레드 생성하기
+        Thread thread = new Thread(runnable);
+        
+        // 3) 쓰레드 시작하기
+        thread.start();
         // Sysyem에서 시간측정 메소드 : 나노세컨드 10억분의 1, ms 1000분의 1
         long start = System.nanoTime();     
-
+    
         // 처리할 메소드
         // copyByBuffer();
         // copyByByteArray();
          copyByByte();  // main 쓰레드 실행
         long end = System.nanoTime();
         System.out.println(String.format("소요시간 : %,d ns",(end-start)));
+
+        // 3)쓰레드 종료를 위해 인터럽트 발생하기
+        thread.interrupt();
+
     }
+        
+
     
     public static void copyByByte() {
         int b; int count=0;
@@ -42,7 +73,7 @@ public class ThreadTest {
             try{ fis.close(); fos.close();}
             catch(IOException e) {}
         }
-        System.out.println(String.format("복사한 파일 크기 : %,d 바이트",count));
+        System.out.println(String.format("\n복사한 파일 크기 : %,d 바이트",count));
     }
     // count : 2,595,514 바이트
     // 소요시간 :  14,854,307,900  ns

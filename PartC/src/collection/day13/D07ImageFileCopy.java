@@ -14,9 +14,9 @@ public class D07ImageFileCopy {
         long start = System.nanoTime();     
 
         // 처리할 메소드
-        copyByBuffer();
+        // copyByBuffer();
         // copyByByteArray();
-        //  copyByByte();
+         copyByByte();
         long end = System.nanoTime();
         System.out.println(String.format("소요시간 : %,d ns",(end-start)));
     }

@@ -10,6 +10,7 @@ public interface WordList {
 
     //최대 단어 개수 100개를 설정한다면
     int Max_LENGTH =100;
+    String MAX_LANGTH = null;
     //추상메소드 정의           - 구현 내용은 클래스의 특징에 따라 정의됩니다.
     JavaWord getWord(int i);
     List<JavaWord> list();

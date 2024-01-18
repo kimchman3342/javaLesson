@@ -18,6 +18,9 @@ public class InstanceTest {
         // MyCalender my = new MyCalender();
 
         YourCalendar you1 = YourCalendar.of("2024", "03");
+
+        Member member = new Member("kkk", 23, 1110);
+        System.out.println(member.getName());
     }
     
 }

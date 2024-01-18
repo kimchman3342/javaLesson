@@ -21,7 +21,7 @@ CREATE TABLE tbl_javaword(
 	english varchar(100),
 	korean	nvarchar2(100),
 	step		number(1)
-
+	
 );
 
 
@@ -50,7 +50,7 @@ SELECT * FROM TBL_JAVAWORD tj WHERE ENGLISH LIKE '%ic';		-- sh로 끝나는, %�
 SELECT * FROM TBL_JAVAWORD tj WHERE ENGLISH LIKE '%ic%';		-- sh로 끝나는, %기호는 don't care
 SELECT * FROM TBL_JAVAWORD tj WHERE IDX BETWEEN  10 AND 20;	-- 10~20
 SELECT * FROM TBL_JAVAWORD tj WHERE IDX NOT BETWEEN  10 AND 20;	-- 10~20 범위 값이 아닌 것.
-SELECT * FROM TBL_JAVAWORD tj WHERE ENGLISH <'public';	-- 
+SELECT * FROM TBL_JAVAWORD tj WHERE ENGLISH <'public';	-- pulic보다 IDX가 높은 것 
 
 
 

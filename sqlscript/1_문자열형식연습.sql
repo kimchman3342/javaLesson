@@ -9,7 +9,7 @@ CREATE TABLE tblTest (    --tblTest 이름의 테이블 만들기
 	tid NUMBER,				-- 정수 또는 실수
 	name varchar2(100)		--최대 100바이트 크기의 문자열
 );
-
+ 
 
 -- DDL : 2. 테이블 제거
 DROP TABLE TBLTEST ;

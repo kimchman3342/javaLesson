@@ -39,9 +39,10 @@ class Member {
     private int age;
     private int point;
 
+    // lombok 라이브러리 : 매번 작성되는 아래 메소드를 자동으로 만들어 줍니다.
     // 커스텀생성자
     // 기본생성자
-    // getter
+    // getter   // setter
     // toString
     // hashCode 와 equals 재정의
 }

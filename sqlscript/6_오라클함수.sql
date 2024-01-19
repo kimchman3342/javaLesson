@@ -25,7 +25,7 @@ INSERT INTO TBL_MEMBER VALUES (10,'홍길동','gdHONG@daum.net',to_date('2024010
 
 SELECT * FROM TBL_MEMBER tm ;
 
--- '월' 관련 함수
+-- 1. '월' 관련 함수
 SELECT ADD_MONTHS(SYSDATE,3) FROM dual; -- 오늘 날짜 3개월 이후. 첫 번째 인자는 날짜 형식. 두 번째 더해지는 값
 
 SELECT TO_CHAR(ADD_MONTHS(SYSDATE,3),'yyyy/mm/dd') FROM dual;  -- 문자열 패턴 기호 - 또는 / 또는 구분기호 없음 가능
@@ -38,7 +38,7 @@ SELECT SYSDATE + 5 FROM dual;
 SELECT SYSDATE + 15 FROM dual;
 
 
--- 숫자 함수 (정수 또는 실수 number를 대상으로 하는 함수)
+-- 2. 숫자 함수 (정수 또는 실수 number를 대상으로 하는 함수)
 -- abs(n) : 절대 값
 -- trunc(숫자, 자리수) : 소수점 이하 자리 수 맞추기 위해서 버림 3.177567 - > 3.17
 SELECT TRUNC(3.177567,2) FROM dual; 
@@ -53,7 +53,7 @@ SELECT CEIL(3.177567) FROM dual;
 SELECT FLOOR(3.177567) FROM dual; 
 
 
--- 문자열 함수 
+-- 3. 문자열 함수 
 SELECT INITCAP('hello') FROM dual;		-- 예상 : Hello -- initail capital : 첫번째 대문자
 SELECT UPPER('hello')  FROM dual;		-- 대문자로 변환. HELLO
 SELECT LOWER('oraCle')  FROM dual;		-- 소문자로 변환. oracle

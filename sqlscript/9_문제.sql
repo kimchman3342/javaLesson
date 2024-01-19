@@ -59,9 +59,9 @@
 조회 문제를 하나씩 만들어 공유하세요.*/
 
 
-CREATE TABLE excustomer (cus_id varchar2(10) UNIQUE ,
-						cus_name varchar2(50) unique,
-						cus_email varchar2(100)unique,
+CREATE TABLE excustomer (cus_id varchar2(10)  ,
+						cus_name varchar2(50) ,
+						cus_email varchar2(100),
 						cus_age number(5),
 						cus_signintime DATE default sysdate	);	
 
@@ -74,9 +74,9 @@ SELECT * FROM EXCUSTOMER e ;
 DROP TABLE EXBUY  ;
 
 CREATE TABLE exproduct (
-  pdt_code VARCHAR2(30)unique,
+  pdt_code VARCHAR2(30),
   pdt_cate VARCHAR2(30),
-  pdt_name VARCHAR2(30)unique,
+  pdt_name VARCHAR2(30),
   pdt_price NUMBER(30)
 );
 
@@ -100,6 +100,24 @@ INSERT INTO exbuy  VALUES ( 'mina012' , 'CJBAb12g' , 5 , to_date('2022-03-10 14:
 INSERT INTO exbuy  VALUES ( 'mina012' , 'APLE5kg' , 2 , to_date('2022-03-10 14:33:15','yyyy-mm-dd hh24:mi:ss')); 
 INSERT INTO exbuy  VALUES ( 'mina012' , 'JINRMn5' , 2 , to_date('2022-03-16 10:13:15','yyyy-mm-dd hh24:mi:ss')); 
 INSERT INTO exbuy  VALUES ( 'twice' , 'MANGOTK4r' , 3 , to_date('2021-12-25 19:32:15','yyyy-mm-dd hh24:mi:ss')); 
+INSERT INTO exbuy  VALUES ( 'twice' , 'JINRMn5' , 3 , to_date('2021-12-25 19:32:15','yyyy-mm-dd hh24:mi:ss')); 
 INSERT INTO exbuy  VALUES ( 'hongGD' , 'DOWON123a' , 1 , to_date('2021-10-21 11:13:25','yyyy-mm-dd hh24:mi:ss')); 
 INSERT INTO exbuy  VALUES ( 'hongGD' , 'APLE5kg' , 1 , to_date('2021-10-21 11:13:25','yyyy-mm-dd hh24:mi:ss')); 
 
+-- 1) 카테고리 별로 상품 갯수 구하기(카테고리 번호랑 같이 나와야 됨.)	- 황병훈
+SELECT PDT_CATE ,COUNT(*) FROM EXPRODUCT e GROUP BY PDT_CATE ; 
+
+-- 2) 고객이 가장 많이 구매한 상품을 구하시오(판매 갯수로 내림차순) - 한주영
+SELECT max(buy_count) FROM EXBUY e GROUP BY PDT_CODE  ;
+
+-- 3) ID가 'mina012' 인 회원의 가입날짜부터 현재까지 며칠(day)이 지났는지 출력하시오. - 조하연
+SELECT (TO_DATE(SYSDATE,'YYYY-MM-DD') - TO_DATE(CUS_SIGNINTIME ,'YYYY-MM-DD')) AS "회원 기간" FROM EXCUSTOMER e WHERE CUS_ID ='mina012'; 
+
+-- 4) 이름 내림차순 정렬하기		- 조지수
+SELECT * FROM EXCUSTOMER e ORDER BY CUS_NAME DESC;
+
+-- 5) twice ID를 사용하는 고객이 구매한 상품을 모두 구하시오 - 한진만
+SELECT CUS_ID ,PDT_CODE  FROM EXBUY e WHERE CUS_ID = 'twice';
+
+-- 6)구글 이메일 유저를 구하세요 - 차정호
+SELECT CUS_EMAIL FROM EXCUSTOMER e WHERE CUS_EMAIL LIKE '%gmail%';

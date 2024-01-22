@@ -9,12 +9,12 @@ public class HomeStringFomatHJY {
 
     
     
-    int i = 23;
+    int i = 545623;
 
-    System.out.println(String.format("%d_", i));
-    System.out.println(String.format("%5d_", i));
-    System.out.println(String.format("%-5d_", i));
-    System.out.println(String.format("%05d_", i));
+    System.out.println(String.format("%d_", i));   // 기본출력
+    System.out.println(String.format("%5d_", i));  // 앞에 10진수 5자리 기본(초과할 시 기본으로)
+    System.out.println(String.format("%-5d_", i)); // 뒤에 10진수 5자리 기본(초과할 시 기본으로)
+    System.out.println(String.format("%05d_", i)); // 앞에 0을 5개 놓음(초과할 시 기본으로)
 
 
 

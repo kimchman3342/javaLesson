@@ -1,7 +1,7 @@
 package object.test;
 
 import object.day7.Shape;
-
+ 
 public class Square extends Shape {
     // etc setter
         public void setEtc(String etc){

@@ -41,7 +41,7 @@ public class A02DataPrintTest {
 		System.out.println("7년 후 나의 나이는 : " + age);
 		
 		System.out.println("::: 조건 연산자 해보기 :::");
-		System.out.println((age >= 20)? "성인입니다.":"청소년 입니다.");		//검사하고싶은 수식? 참일때 : 거짓일때
+		System.out.println((age >= 20)? "성인입니다.":"청소년 입니다.");		//검사하고싶은 수식? 참일때 : 거짓일때 (삼항 연산자)
 		System.out.println("나이 age를 17 로 변경해서 다시 실행하면 ?");
 		age = 17;
 		System.out.println((age >= 20)? "성인입니다.":"청소년 입니다.");		//검사하고싶은 수식? 참일때 : 거짓일때

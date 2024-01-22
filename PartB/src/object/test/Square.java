@@ -17,7 +17,7 @@ public class Square extends Shape {
         this.round = round;
         // Shape과 같은 패키지 아니므로 직접 사용 못함.
     } 
-     */    
+     */     
 }       
       
 

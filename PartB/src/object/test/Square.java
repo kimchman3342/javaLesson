@@ -16,7 +16,7 @@ public class Square extends Shape {
     /* public void setRound(int round){
         this.round = round;
         // Shape과 같은 패키지 아니므로 직접 사용 못함.
-    }
+    } 
      */    
 }       
     

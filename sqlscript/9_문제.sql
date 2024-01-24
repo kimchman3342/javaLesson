@@ -104,6 +104,34 @@ INSERT INTO exbuy  VALUES ( 'twice' , 'JINRMn5' , 3 , to_date('2021-12-25 19:32:
 INSERT INTO exbuy  VALUES ( 'hongGD' , 'DOWON123a' , 1 , to_date('2021-10-21 11:13:25','yyyy-mm-dd hh24:mi:ss')); 
 INSERT INTO exbuy  VALUES ( 'hongGD' , 'APLE5kg' , 1 , to_date('2021-10-21 11:13:25','yyyy-mm-dd hh24:mi:ss')); 
 
+-- 구매 테이블에 기본키 만들기.
+
+-- 0) 기본키가 필요한 이유.
+
+-- 1) 기본키에 들어갈 값은 시퀀스로 만듭니다.  exbuy_pk_seq 시작 값은 1001로 합시다.
+CREATE SEQUENCE exbuy_pk_seq START WITH 1001;
+
+
+
+-- 2) 기본키 컬럼을 buy_idx로 하여 컬럼추가. number(8)
+ALTER TABLE EXBUY ADD buy_idx NUMBER(8);
+
+-- 3) 기본 행에 적용할 buy_idx 컬럼 값을 저장하기. (디비버의 GUI 메뉴에서 합니다.)
+		
+
+-- 4) buy_idx 컬럼에 대해 primary 키 설정하기
+ALTER TABLE EXBUY ADD CONSTRAINT tbl_exbuy_pk PRIMARY KEY (buy_idx);
+
+-- 5) 이제부터 새로운 행을 추가할 때에는 시퀀스 함수로 pk 값을 insert 합니다.
+INSERT INTO exbuy (buy_idx,cus_id,pdt_code,buy_count)
+			VALUES ( exbuy_pk_seq.nextval, 'mina012' , 'CJBAb12g' , 5 ); 
+		
+SELECT * FROM EXBUY e ;
+
+
+
+
+-- 문제
 -- 1) 카테고리 별로 상품 갯수 구하기(카테고리 번호랑 같이 나와야 됨.)	- 황병훈
 SELECT PDT_CATE ,COUNT(*) FROM EXPRODUCT e GROUP BY PDT_CATE ; 
 

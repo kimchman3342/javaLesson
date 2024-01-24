@@ -70,7 +70,7 @@ GROUP BY STUNO;
 SELECT stuno, COUNT(*),AVG(jumsu)
 FROM TBL_SCORE ts 
 GROUP BY STUNO 
-HAVING AVG(JUMSU) < 80;		-- having 은 집계함수 결과에 대한 조건식입니다.
+HAVING AVG(JUMSU) < 80;		-- having 은 '집계함수 결과'에 대한 조건식입니다.
 							
 -- 예를 들어서 점수가 80점 이상 데이터만 예시 1번을 실행하도록 한다면 where jumsu >= 80 group by stuno
 SELECT STUNO, COUNT(*), AVG(jumsu)
@@ -79,3 +79,14 @@ WHERE JUMSU >= 80
 GROUP BY STUNO; 
 
 -- 예시 3 : 예시 1번의 결과를 평균 내림차순으로 조회하세요.
+SELECT STUNO, COUNT(*), AVG(jumsu) "학생별 평균"		-- 평균 함수 결과에 대한 컬럼명 별칭
+FROM TBL_SCORE ts 
+GROUP BY STUNO
+ORDER BY "학생별 평균" DESC;
+	-- avg(JUMSU) DESC;
+
+-- 예시 5 : 학기- 교사별 count, avg 조회하기
+SELECT TERM ,TEACHER ,COUNT(*) ,AVG(JUMSU) 
+FROM TBL_SCORE ts 
+GROUP BY TERM ,TEACHER ;			-- 먼저 학기별로 그룹하고 2차로 학기가 같은 결과안에서 선생님별로 그룹화.
+-- 제대로 된 결과를 보려면 데이터가 좀 많아야 합니다.

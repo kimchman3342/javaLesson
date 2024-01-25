@@ -6,7 +6,7 @@ public abstract class Product {
     protected String prdName;
 
     // 2)
-    public abstract String sell(Object object);
+    public abstract String sell(Object object); // 추상메소드
 
     
     // 10)

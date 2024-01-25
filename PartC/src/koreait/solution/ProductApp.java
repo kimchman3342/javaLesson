@@ -55,12 +55,17 @@ public class ProductApp {
 }
 
 /* 자바 교재 204 페이지
- * 라이브러리 클래스 : Product, Bike, Electronics
+ * 라이브러리 클래스 : Product, Bike, Electronics, 그리고 제일 중요한 자바 클래스들
  *                   ㄴ 프로그래밍에 필요한 재료로 사용되는 클래스
  *                   ㄴ 인스턴스 메소드와 static 메소드로 제공되는 기능을 사용함.
  * 실행 클래스 : ProductApp
  *                  ㄴ main 메소드를 포함하여 프로그램을 실행함.
  *                  ㄴ main 메소드는 반드시 static 이어야 합니다.
  *                  ㄴ main 메소드를 위한 객체를 먼저 생성할 수 없다. 그래서 static 입니다.  
+ * 
+ * 
+ * 설명 예시 : Bike 클래스의 sell 메소드 Object 인자 값은 외부에서 줍니다.
+ *             여기서 외부는 이 메소드를 사용하는 main 또는 다른 클래스를 말합니다.
+ *             라이브러리 클래스의 특히 인스턴스 필드 값은 실행될 때 결정됩니다.
  * 
  */

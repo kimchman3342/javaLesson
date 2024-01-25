@@ -68,7 +68,8 @@ VALUES ('SNACK99', 'c1', '새우깡', '5500');
 SELECT  tp.PNAME , tp.PRICE  
 FROM TBL_PRODUCT tp  
 LEFT JOIN TBL_BUY tb
-ON tp.PCODE  = tp.PCODE ;
+ON tp.PCODE  = tb.PCODE 
+WHERE tb.PCODE IS NULL;
 
 -- 형식 3: 오라클에서만 사용하는 조인 형식(외부 outer 조인)
 SELECT *

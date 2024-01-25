@@ -31,6 +31,19 @@ FROM
 	WHERE tp.PCODE  = tb.PCODE) saleMoney
 GROUP BY saleMoney.PCODE;
 
+-- 오라클 with 구문 : select 조회 결과를 저장해 놓고 사용하는도록 합니다.
+WITH SALEMONEY
+AS
+(
+SELECT tp.PCODE, PNAME, QUANTITY, PRICE , QUANTITY * PRICE "구매 금액" 
+	FROM TBL_PRODUCT tp, TBL_BUY tb  
+	WHERE tp.PCODE  = tb.PCODE
+)
+SELECT SALEMONEY.PCODE, SUM(SALEMONEY.QUANTITY), SUM("구매 금액")  
+FROM SALEMONEY
+GROUP BY SALEMONEY.pcode; 
+
+
 -- join
 SELECT 
 	tp.PCODE,
@@ -42,3 +55,29 @@ JOIN
 	TBL_BUY tb ON tp.PCODE = tb.PCODE
 GROUP BY 
     tp.PCODE;
+
+   
+SELECT *
+FROM TBL_CUSTOM tc , TBL_PRODUCT tp , TBL_BUY tb ;
+-- 서브쿼리와 조인을 이용한 문제를 한 개씩 만들어 공유해보세요
+-- 황병훈 문제 : 진라면을 구매한 고객들의 평균 나이를 제품코드(PCODE)와 함께출력해 주세요.
+
+SELECT PCODE ,AVG(AGE)" 진라면 구매자의 평균 나이"
+FROM 
+(SELECT AGE, PCODE 
+FROM TBL_CUSTOM tc , TBL_BUY tb 
+WHERE tc.CUSTOM_ID  = tb.CUSTOMID
+AND PCODE = 'JINRMn5') 
+GROUP BY PCODE;
+
+SELECT CUSTOMID , AGE, PCODE 
+FROM TBL_CUSTOM tc , TBL_BUY tb 
+WHERE tc.CUSTOM_ID  = tb.CUSTOMID
+AND PCODE = 'JINRMn5';
+
+/*고객별로 구매금액이 가장 높은 상품코드를 조회하세요.
+ * ㄴ 오라클 RANK 함수		(그룹화 결과에 대한 순위를 제공)
+ * 내림차순 또는 오름차순 정렬된 결과에서 top3 조회하기 
+ * */
+
+

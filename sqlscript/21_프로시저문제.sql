@@ -12,20 +12,35 @@
  * 
  */
  
-CREATE TABLE money_of_day
-AS 
-SELECT * FROM TBL_BUY tb ;
-
-CREATE OR REPLACE PROCEDURE "C##IDEV".proc_set_money_of_day(     
-   bcustom_id IN p_buy.CUSTOMID %TYPE, --  회원ID      -- 입력 매개변수 IN
-   bpcode IN p_buy.PCODE %TYPE,    -- 상품코드
-   bcnt IN p_buy.QUANTITY %TYPE , -- 수량
-   bdate IN p_date.SYSDATE %TYPE,
-   isSuccess OUT varchar2  -- 출력 매개변수 OUT. 트랜잭션 처리 성공여부 저장.
+CREATE OR REPLACE PROCEDURE "C##IDEV".money_of_day(
+   p_id IN tbl_custom.custom_id %TYPE,      -- 출력(리턴) 변수
+   p_date IN varchar2,      -- 출력(리턴) 변수
+   p_money OUT NUMBER
 )
-IS 
-   vseq NUMBER;   --변수선언
-   vprice NUMBER;
+IS
+   v_pcode TBL_BUY.PCODE %TYPE;
+   v_quantity TBL_BUY.QUANTITY %TYPE;
+   v_price TBL_PRODUCT.PRICE %TYPE;
+BEGIN
+   SELECT PCODE, QUANTITY
+      INTO v_pcode , v_quantity
+   FROM TBL_BUY
+   WHERE CUSTOMID = p_id AND BUY_DATE = p_date;
+   
+   DBMS_OUTPUT.PUT_LINE('* p : ' || v_pcode || v_quantity );
+   SELECT PRICE
+      INTO v_price
+   FROM TBL_PRODUCT
+   WHERE PCODE = v_pcode;
+   DBMS_OUTPUT.PUT_LINE('* p : ' || v_price);
+   SELECT v_quantity * v_price
+      INTO p_money
+   FROM dual;
+   DBMS_OUTPUT.PUT_LINE('* m : ' || p_money);
+   EXCEPTION
+   WHEN no_data_found then
+   DBMS_OUTPUT.PUT_LINE('조건에 맞는 데이터가 없습니다.');
+END;
    
 
 --	프로시저 실행

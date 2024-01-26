@@ -43,6 +43,8 @@ INSERT INTO TBL_PRODUCT tp
 VALUES ('APLE5kg', 'A1', '청송사과 5kg', 66000);
 INSERT INTO TBL_PRODUCT tp 
 VALUES ('MANGOTK4r', 'A2', '애플망고 1kg', 32000);
+INSERT INTO TBL_PRODUCT tp 
+VALUES ('SNACK99', 'C1', '새우깡번들', 5500);
 
 
 -- 구매 테이블 : 어느 고객이 무슨 상품을 구입하는가? 고유ID 또는 상품코드로 기본키를 만들 수 있을까요? -> 없습니다. 

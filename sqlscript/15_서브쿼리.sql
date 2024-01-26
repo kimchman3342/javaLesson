@@ -31,6 +31,16 @@ FROM
 	WHERE tp.PCODE  = tb.PCODE) saleMoney
 GROUP BY saleMoney.PCODE;
 
+-- 위의 쿼리를 서브쿼리 없이 합시다.
+
+SELECT 
+	saleMoney.PCODE, sum(QUANTITY), sum("구매 금액")
+FROM 
+	(SELECT tp.PCODE, PNAME, QUANTITY, PRICE , QUANTITY * PRICE "구매 금액" 
+	FROM TBL_PRODUCT tp, TBL_BUY tb  
+	WHERE tp.PCODE  = tb.PCODE) saleMoney
+GROUP BY saleMoney.PCODE;
+
 -- 오라클 with 구문 : select 조회 결과를 저장해 놓고 사용하는도록 합니다.
 WITH SALEMONEY
 AS

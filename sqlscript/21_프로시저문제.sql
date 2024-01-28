@@ -12,7 +12,7 @@
  * 
  */
  
-CREATE OR REPLACE PROCEDURE "C##IDEV".money_of_day(
+CREATE OR REPLACE PROCEDURE "SCOTT".money_of_day(
    p_id IN tbl_custom.custom_id %TYPE,      -- 출력(리턴) 변수
    p_date IN varchar2,      -- 출력(리턴) 변수
    p_money OUT NUMBER
@@ -57,19 +57,3 @@ END;
  		dbms_output.put_line('고객님의 구매금액은 ' || vmonet || ' 입니다.');
   END;
   
- -- 1) 
- SELECT PCODE, QUANTITY
- INTO ??
- FROM TBL_BUY tb 
- WHERE CUSTOMID = 입력변수 IN AND to_char(BUY_DATE,'yyyy-mm-dd') = 입력변수IN;
- 
--- 2)
-SELECT PRICE 
-INTO 
-FROM TBL_PRODUCT tp 
-WHERE PCODE = 1)번에서 구한 값 변수
-
--- 3) 출력 매개변수에 저장하기
-SELECT 1)번에서 구한 수량 값 변수 * 2) 번에서 구한 가격 값 변수
-INTO ?
-FROM dual;

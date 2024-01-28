@@ -10,7 +10,7 @@ public class Bike extends Product{
     // 3)
     public Bike(int price, String prdName, int speed) {
         // super();  생략가능
-        // 자식 클래스는 부모 생성자 반드시 호출한다.         
+        // 자식 클래스는 부모 생성자를 반드시 호출한다.         
         this.price = price;
         this.prdName = prdName;
         // price 와 prdName 은 protected 필드이므로 자식은 직접 접근 가능합니다.
@@ -63,7 +63,13 @@ class Electronics extends Product{
         this.prdName = prdName;
     }
    
+    
+
     // 문제 2에서 필요함
+    public double getKwh() {
+        return kwh;
+    }
+    
     public void setKwh(double kwh) {
         this.kwh = kwh;
     }

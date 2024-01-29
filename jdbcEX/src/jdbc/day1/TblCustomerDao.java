@@ -23,8 +23,8 @@ public class TblCustomerDao {
     public void join(CustomerVo vo){
         // 할일 1 : SQL 작성하기 (매개변수 표시 정확히 합시다.)
         String sql = "INSERT INTO tbl_custom(custom_id,name,email,age,reg_date)";    // insert
-        try( Connection connection = getConnection();
-            PreparedStatement pstmt = connection.prepareStatement(sql);
+        try( Connection connection = getConnection();   // 1) 서버와의 연결
+            PreparedStatement pstmt = connection.prepareStatement(sql); // 2) 연결된 서버로 실행할 SQL 전달. 서버가 SQL 컴파일
             ){
         // 할일 2 : 매개변수 바인딩(매개변수 타입에 맞는 메소드를 실행합시다.)
                 pstmt.setString(1, vo.getCustomID());

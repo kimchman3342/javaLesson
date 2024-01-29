@@ -31,7 +31,7 @@ SELECT CUSTOMID , tc.AGE , PNAME
 	ON tc.CUSTOM_ID = tb.CUSTOMID
 	JOIN TBL_PRODUCT tp 
 	ON tb.PCODE = tp.PCODE
-	WHERE tc.AGE > 25;		
+	WHERE tc.AGE >= 25;		
 
 --A-4. 상품명에 '사과' 단어가 포함된 상품을 구매한 고객에 대해 상품별 구매금액의 합을 구하기.(고길현)
 SELECT tb.CUSTOMID , tb.PCODE , sum(QUANTITY*PRICE)
@@ -47,7 +47,14 @@ INSERT INTO TBL_BUY
 			VALUES (buy_pk_seq.nextval,'hongGD','BUSA211',2,'2024-01-03');
 
 --A-5. 총 구매합산 금액이 100000~200000 값인 고객 ID를 조회하시오.(김태완)
-
+SELECT CUSTOMID
+FROM 
+		(SELECT CUSTOMID,SUM(tp.PRICE ) 
+		FROM TBL_BUY tb 
+		JOIN TBL_PRODUCT tp 
+		ON tb.pcode = tp.pcode
+		GROUP BY CUSTOMID)
+	WHERE price BETWEEN 100000 AND 200000;
 
 
 /*  B조 */

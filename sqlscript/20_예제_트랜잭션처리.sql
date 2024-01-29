@@ -15,7 +15,7 @@ ALTER TABLE p_buy ADD money number(7) CHECK (money >=10000);	-- 수량*가격으
 --	JDBC : Java DataBase Connection. 자바와 db(오라클, mysql 등등)를 연결하는 프로토콜(규칙)
 -- 데이베이스관점에는 `무결성`(정확성) 을 유지할 수 있는 방법.
 -- 프로시저에서 트잰잭션을 관리하는 예시 : 최소구매 금액 10000원 미만이면 트랜잭션을 롤백하는 예시.
-CREATE OR REPLACE PROCEDURE "SCOTT".proc_set_money(     
+CREATE OR REPLACE PROCEDURE "C##IDEV".proc_set_money(     
    acustom_id IN p_buy.CUSTOMID %TYPE, --  회원ID      -- 입력 매개변수 IN
    apcode IN p_buy.PCODE %TYPE,    -- 상품코드
    acnt IN p_buy.QUANTITY %TYPE ,       -- 수량

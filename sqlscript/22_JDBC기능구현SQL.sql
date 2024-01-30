@@ -10,12 +10,13 @@ UPDATE TBL_CUSTOM
 DELETE FROM TBL_CUSTOM tc 
 		WHERE CUSTOM_ID = 'sana77';
 
--- 상품 검색하기 SQL
+-- 상품 검색하기 SQL : ProductVo, TblProductDao 만들기
+--								ㄴ selectByCategory, selectByPname 메소드 만듭시다.	
 -- 카테고리로 검색하기
 -- 1) 어떤 카테고리가 있는지 보여주기
 SELECT DISTINCT CATEGORY FROM TBL_PRODUCT tp;	-- 중복제거
 
--- 2) 특정 카테고리에 대해 상품 목록 보여주기
+-- 2) 특정 카테고리에 대해 상품 목록 보여주기 - 조회 결과는 1 or N개
 SELECT * FROM TBL_PRODUCT tp 
 WHERE CATEGORY = 'B1';
 
@@ -25,4 +26,5 @@ INSERT INTO TBL_PRODUCT tp
 			
 -- 3) 상품명 유사(like) 검색
 SELECT * FROM TBL_PRODUCT tp 
-WHERE PNAME LIKE '%' || '사과' || '%';	-- 프로그램에서 매개변수 처리를 위해 연결연산으로 합니다.
+WHERE PNAME LIKE '%' || '사과' || '%'
+ORDER BY CATEGORY ;	-- 프로그램에서 매개변수 처리를 위해 연결연산으로 합니다.

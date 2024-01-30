@@ -1,5 +1,7 @@
 package jdbc.day1;
 
+import project.dao.TblCustomerDao;
+import project.vo.CustomerVo;
 
 public class CustomerApp {
     

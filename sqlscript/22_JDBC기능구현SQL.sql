@@ -23,8 +23,18 @@ WHERE CATEGORY = 'B1';
 -- 데이터 추가
 INSERT INTO TBL_PRODUCT tp 
 			VALUES ('BUSA211','B2','부사 사과 3kg 박스',25000);
-			
+		
 -- 3) 상품명 유사(like) 검색
 SELECT * FROM TBL_PRODUCT tp 
 WHERE PNAME LIKE '%' || '사과' || '%'
 ORDER BY CATEGORY ;	-- 프로그램에서 매개변수 처리를 위해 연결연산으로 합니다.
+
+-- MyPage 기능의 메소드를 위한 SQL
+-- selectCustomerBuyList
+SELECT  BUY_IDX , PNAME, PRICE, BUY_DATE 
+FROM TBL_BUY tb 
+JOIN TBL_PRODUCT tp 
+ON tb.PCODE = tp.PCODE 
+WHERE tb.CUSTOMID = 'mina012'
+ORDER BY BUY_DATE DESC;	 --'mina012'는 SQL 매개변수입니다.
+			

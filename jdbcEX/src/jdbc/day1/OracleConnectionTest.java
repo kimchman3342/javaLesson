@@ -8,9 +8,9 @@ public class OracleConnectionTest {
         //1) ojdbc11.jar 라이브러리 프로젝트에 추가
         Connection conn = null;
         String driver = "oracle.jdbc.driver.OracleDriver";
-        String url = "jdbc:oracle:thin:@//localhost:1521/XE";       //localhose는 서버의 ip가 바뀔 수 있습니다.
-        String user = "C##idev";
-        String password = "1234";
+        String url = "jdbc:oracle:thin:@//localhost:1521/xe";       //localhose는 서버의 ip가 바뀔 수 있습니다.
+        String user = "scott";
+        String password = "tiger";
         try{
             // 2) ojdbc11.jar 라이브러리에 포함된 드라이버 클래스를 메모리에 로드
             //      java 6부터 jdbc4.0버전이 지원되고 그 때부터 생략합니다.

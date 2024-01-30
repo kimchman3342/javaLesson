@@ -9,6 +9,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+
 import jdbc.day1.OracleConnectionUtil;
 import project.vo.CustomerVo;
 
@@ -83,7 +84,7 @@ public class TblCustomerDao {
 
     // 회원 정보 조회   : select * from tbl_custom where custom_id = ?
     public CustomerVo getCustomer(String customerID){
-            CustomerVo Vo = null;
+            CustomerVo vo = null;
             
             String sql = "SELECT * FROM tbl_custom WHERE custom_id = ?";
             try (
@@ -94,7 +95,7 @@ public class TblCustomerDao {
                 ResultSet rs = pstmt.executeQuery();
                 if(rs.next()){  // 첫번째 행 조회 결과가 있으면 true, 없으면 false
                     // 할일 : 객체 만들어서 vo 변수에 참조시키기
-                    Vo = new CustomerVo(rs.getString(1),
+                    vo = new CustomerVo(rs.getString(1),
                     rs.getString(2),
                     rs.getString(3),
                     rs.getInt(4), 
@@ -105,7 +106,7 @@ public class TblCustomerDao {
             } catch (SQLException e) {
                 System.out.println("getCustomer 실행 예외 발생 : " + e.getMessage());
             }
-              return Vo;
+              return vo;
         
         
     }

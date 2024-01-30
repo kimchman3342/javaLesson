@@ -3,8 +3,14 @@ package project.dao;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
 import project.vo.BuyVo;
+import project.vo.CustomerBuyVo;
+import project.vo.CustomerVo;
 
 
 
@@ -68,5 +74,38 @@ public class TblBuyDao {
             System.out.println("join 실행 예외 발생 : " + e.getMessage());
         }
     }
+    
+
+     // MyPage 기능
+    public List<CustomerBuyVo> selectCustomerBuyList(String customid) {
+        List<CustomerBuyVo> list = new ArrayList<>();
+        String sql = "SELECT BUY_IDX , tb.PCODE , PNAME , PRICE , QUANTITY , BUY_DATE \r\n" + 
+                "FROM TBL_BUY tb \r\n" + 
+                "JOIN TBL_PRODUCT tp \r\n" + 
+                "ON tb.PCODE = tp.PCODE \r\n" + 
+                "WHERE tb.CUSTOMID  =? " +
+                "ORDER BY BUY_DATE DESC ";
+
+        try (Connection conn = getConnection();
+            PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setString(1, customid);
+            ResultSet rs = pstmt.executeQuery();
+            
+            while (rs.next()) {
+                CustomerBuyVo vo = new CustomerBuyVo(rs.getString(1), 
+                                                     rs.getString(2), 
+                                                     rs.getString(3), 
+                                                     rs.getInt(4), 
+                                                     rs.getInt(5), 
+                                                     rs.getTimestamp(6));
+                list.add(vo);
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            e.printStackTrace();
+        }
+        return list;
+    }
+
     
  }

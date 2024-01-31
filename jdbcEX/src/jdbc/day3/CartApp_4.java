@@ -1,7 +1,9 @@
 package jdbc.day3;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import project.dao.TblBuyDao;
 import project.dao.TblProductDao;
@@ -17,6 +19,17 @@ public class CartApp_4 {
     private TblBuyDao buyDao = new TblBuyDao();
     private TblProductDao productDao = new TblProductDao();
     private List<BuyVo> cart = new ArrayList<>();       //장바구니
+    private Map<String,Integer> priceMap = null;
+
+    public CartApp_4() {
+        // 할일 1 : getPriceTable 메소드 구현.
+        //                  ㄴ  상품 테이블에서 pcode와 price를 조회하여 Map에 저장하기.
+        
+        this.priceMap = productDao.getPriceTable();
+        System.out.println("테스트 : 가격표 출력");
+        System.out.println(priceMap);
+    }
+    
 
     private void showMenu() {
         System.out.println(".".repeat(70));
@@ -63,9 +76,17 @@ public class CartApp_4 {
 
     private void showCartList() {
         System.out.println(".................. 장바구니 :: 목록 보기...................");
-        for(int i=0; i<cart.size(); i++)
-            System.out.println(String.format("번호 : %d 물품 : %s", i,cart.get(i)));    //리스트에서 i번째 가져오기
-    }
+        int totalMoney = 0;
+        for(int i=0; i<cart.size(); i++){
+            System.out.println(String.format("번호 : " + i + "물품 :" + cart.get(i)));   //리스트에서 i번째 가져오기
+            // 할일 2 : 각 구매 물품의 수량과 가격을 곱하여 totalMoney에 누적하여 더하기
+            int quantity = cart.get(i).getQuantity();
+            int price = priceMap.get(cart.get(i).getPcode());
+            totalMoney += quantity * price;
+        }
+        System.out.println("총 금액: " + totalMoney);
+      }
+        
 
     private void removeCartItem() {
         System.out.println(".................. 장바구니 :: 물품 삭제 ...................");

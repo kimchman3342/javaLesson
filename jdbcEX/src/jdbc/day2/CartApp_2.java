@@ -59,7 +59,7 @@ public class CartApp_2 {
                     productlist = productDao.selectByPname(pname);
                     for(ProductVo vo : productlist)
                         System.out.println(vo);
-                    break;
+                    break; 
                 case "B","b":
                     System.out.print(" 상품코드를 입력하세요. __ ");
                     String pcode = System.console().readLine();

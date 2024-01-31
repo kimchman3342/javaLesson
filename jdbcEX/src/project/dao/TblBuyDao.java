@@ -135,7 +135,7 @@ public class TblBuyDao {
         PreparedStatement pstmt = null;
         int count=0;
         try {
-            connection = getConnection();    
+            connection = getConnection();     
             pstmt = connection.prepareStatement(sql);
             connection.setAutoCommit(false);    // ※ auto 커밋 해제
             for(BuyVo vo : cart){

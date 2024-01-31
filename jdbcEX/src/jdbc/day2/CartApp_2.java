@@ -1,88 +1,111 @@
 package jdbc.day2;
 
+import java.sql.SQLException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import project.dao.TblBuyDao;
 import project.dao.TblProductDao;
+import project.vo.BuyVo;
 import project.vo.CustomerBuyVo;
 import project.vo.ProductVo;
 
-// static이 많아지면 상속의 특징 사용할 수 없습니다. 멀티 스레드 환경에 적합하지 않습니다.
-//        -> 여기서는 테스트를 위해 static 사용 중입니다.
+//static이 많아지면 상속의 특징을 사용할 수 없다. 멀티스레드 환경애도 부적합
+//  =>여기서는 테스트를 위해 static 사용
 public class CartApp_2 {
 
     public static void showMenu() {
         System.out.println(".".repeat(50));
-        System.out.println("[C] 카테고리별 상품 조회       [P] 상품명 검색     [M]나의 구매내역");
+        System.out.println("[C] 카테고리별 상품 조회     [P] 상품명 검색  [M]나의 구매내역");
         System.out.println("[B] 구매하기   [D] 구매 취소   [Q] 구매 수량 변경  [X] 구매 종료");
         System.out.println(".".repeat(50));
     }
-  /*   public static showMyPage(){
 
-    }
- */
-            //상품 목록을 선택한 카테고리에 대해 보여주기  (구매할 상품 조회)
-            //또는 상품명으로 검색 (구매할 상품 조회)
-            //또는 입력한 아이디로 구매한 구매내역 보여주기 (구매수량 변경 또는 구매 취소 buy_idx 조회)
-
-    public static void main(String[] args) {
+    
+        //상품 목록을 선택한 카테고리에 대해 보여주기  (구매할 상품 조회)
+        //또는 상품명으로 검색 (구매할 상품 조회)
+        //또는 입력한 아이디로 구매한 구매내역 보여주기 (구매수량 변경 또는 구매 취소 buy_idx 조회)
+    public static void main(String[] args) throws SQLException {
         TblBuyDao buyDao = new TblBuyDao();
         TblProductDao productDao = new TblProductDao();
-
         System.out.println("구매할 사용자 간편 로그인 필요합니다.");
         System.out.print("아이디 입력 __");
-        //int select = Integer.parseInt(System.console().readLine());
         String customerid = System.console().readLine();
-        System.out.println(customerid + "님 환영합니다.");
-        boolean run = true;
+        System.out.println(String.format("%s님 환영합니다.", customerid));
 
+        boolean run = true;
         while (run) {       //메뉴 선택 반복
             showMenu();
-            System.out.println("선택 >>> ");
-            // int select = Integer.parseInt(System.console().readLine());
+            System.out.print("선택 >>> ");
             String select = System.console().readLine();
             switch (select) {
-                case "M","m": // 나의 구매내역   
+                case "M","m":   //나의 구매내역
                     List<CustomerBuyVo> result = buyDao.selectCustomerBuyList(customerid);
-                    for(CustomerBuyVo vo : result)
-                             System.out.println(vo);
+                    for(CustomerBuyVo vo : result)  
+                            System.out.println(vo);
                     break;
-              
                 case "C","c":
-                    System.out.println("카테고리 목록 : A1-과일 A2-수입과일 B1-인스턴트 B2-선물세트 C1 - 과자류");
-                    System.out.println("카테고리 입력__");
+                    System.out.println("카터고리 : A1-과일 A2-수입과일 B1-인스턴스 B2-선물세트 C1-과자류");
+                    System.out.print("카테고리 입력 > ");
                     String category = System.console().readLine();
-                    List<ProductVo> productList = productDao.selectByCategory(category);
-                    for( ProductVo vo : productList)
-                    System.out.println(vo);
-                break;
-                
+                    List<ProductVo> productlist = productDao.selectByCategory(category);
+                    for(ProductVo vo : productlist)
+                        System.out.println(vo);
+                    break;
                 case "P","p":
-                    System.out.println("상품명 입력__ ");
+                    System.out.print("상품명 검색어 입력 > ");
                     String pname = System.console().readLine();
-                    productList = productDao.selectByPname(pname);
-                    for( ProductVo vo : productList)
-                    System.out.println(vo);
+                    productlist = productDao.selectByPname(pname);
+                    for(ProductVo vo : productlist)
+                        System.out.println(vo);
+                    break;
+                case "B","b":
+                    System.out.print(" 상품코드를 입력하세요. __ ");
+                    String pcode = System.console().readLine();
+
+                    System.out.print(" 수량을 입력하세요. __ ");
+                    int quantity = Integer.parseInt(System.console().readLine());
+
+                    BuyVo vo = new BuyVo(0, customerid, pcode, quantity, null);
+                    
+                    buyDao.insert(vo);
+                    if(buyDao.insert(vo)==1)
+                    System.out.println("상품을 담았습니다.");
+                    else            // 참조테이블에 없는 값 입력했을 때
+                        System.out.println("상품코드 또는 고객아이디 오류 입니다.");
                 break;
-                
-                case "B","b":                
-                    System.out.println("구매하기 : ");
-                    System.out.println("구매할 목록 입력__");
-                    String category = System.console().readLine();
-                    List<ProductVo> productList = productDao.selectByCategory(category);
-                    for( ProductVo vo : productList)
-                                    System.out.println(vo);
-                break;
+                case "D","d":
+                System.out.print("취소할 구매 번호를 입력하세요. __ ");
+                int buy_idx = Integer.parseInt(System.console().readLine());
+                if(buyDao.delete(buy_idx)==1)
+                System.out.println("정상적으로 취소 되었습니다.");
+                else
+                    System.out.println("없는 구매번호 입니다.");
+                    break;
 
                 case "Q","q":
-                   
-                    break;
-                    
+                System.out.print(" 수정할 구매 번호를 입력하세요. __ ");
+                buy_idx = Integer.parseInt(System.console().readLine());
+
+                System.out.print(" 변경할 수량을 입력하세요. __ ");
+                quantity = Integer.parseInt(System.console().readLine());
+
+                //Map을 사용해 봅시다.
+                Map<String, Integer> arg = new HashMap<>();
+
+                //vo = new BuyVo(buy_idx, customerid, null, quantity, null);
+                arg.put("buyidx", buy_idx);
+                arg.put("quantity", quantity);
+
+                if(buyDao.update(arg)==1)
+                System.out.println("수정완료 되었습니다.");
+                else
+                System.out.println("없는 구매번호 입니다.");
+                break;
                 case "X","x":
-                    run = false;
-                    break;
-                                
-                    default:
+                    return;  
+                default:
                     break;
             }
         }

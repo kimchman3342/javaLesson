@@ -14,8 +14,8 @@ public class ProductApp {
         
         // 2) power 메소드 : Electronics 자식 클래스의 메소드 
         //           현재 부모타입으로 참조하는 것을 자식타입으로 변경
-        if(cart[5] instanceof Electronics){
-        Electronics tv = (Electronics) cart[5];
+        if(cart[5] instanceof Electronics){         // 타입체크 인스턴트식품
+        Electronics tv = (Electronics) cart[5];     // 업캐스팅
         tv.setKwh(0.9);
         System.out.println(tv.power());
         }else
@@ -26,7 +26,7 @@ public class ProductApp {
             // 3) 배열 10개 중에 객체가 참조된 것은 5개
         // -> 반복문으로 실행할 떄 반드시 null이 아닌 것만 하도록 합니다.
         // -> null 이면 메소드 실행 예외 발생합니다. NullpointerException 
-        for(Product p : cart) {
+        for(Product p : cart) {     // 배열자료구조 반복 : 하나씩 대입해서 반복 
         if(p!= null && p.price >= 100000) {
             // System.out.println(p.toString());
             System.out.println(p);      // toString() 메소드이름 생략 가능
@@ -38,7 +38,7 @@ public class ProductApp {
          //   현재 부모타입으로 참조하는 것을 자식 타입으로 변경.(다운캐스팅) 
          for(Product p : cart) {
             if(p!= null && p instanceof Bike) {
-                Bike bike = (Bike) p;
+                Bike bike = (Bike) p;       // Product(부모)가 Bike(자식) 안으로 들어갈 때 하는 짓
                 System.out.println(bike.ride());
          }
      }

@@ -1,16 +1,10 @@
 package JDBCteamProject.vo;
 
-import lombok.Builder;
-
-import java.sql.Date;
-
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
-import lombok.ToString;
 
 @Getter
-@ToString
 @AllArgsConstructor
 @EqualsAndHashCode
 public class PlaceVo {
@@ -18,8 +12,13 @@ public class PlaceVo {
     private String name;
     private String phone;
     private int rate;
-    private Date open_time;
-    private Date close_time;
+    private String open_time;
+    private String close_time;
     private String food_type;
 
+    @Override
+    public String toString() {
+        return String.format("%8d %-15s %40s \t %,6d %4d %30s",
+                buy_idx, pcode, pname, price, quantity, buy_date);
+    }
 }

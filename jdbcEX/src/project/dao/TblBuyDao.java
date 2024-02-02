@@ -1,14 +1,17 @@
 package project.dao;
 
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Types;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import jdbc.day1.OracleConnectionUtil;
 import project.vo.BuyVo;
 import project.vo.CustomerBuyVo;
 import project.vo.ProductVo;
@@ -164,4 +167,38 @@ public class TblBuyDao {
         }
         return count;
     }
+
+      private static void showMyPay(String customerid){
+        System.out.println("고객 ID와 날짜를 입력하면 총 구매금액을 조회합니다.");
+        System.out.println("고객 ID 입력_");
+        String customid = System.console().readLine();
+
+        System.out.println("구매 날짜 입력_");
+        String buydate = System.console().readLine();   // 입력형식 yyyy-mm-dd
+
+        Connection connection = OracleConnectionUtil.getConnection();
+        String sql = "{ call money_of_day(?,?,?) }";
+        try(
+            CallableStatement cstmt = connection.prepareCall(sql)  
+            ) {
+            // 프로시저의 IN 매개 변수 값 전달
+            cstmt.setString(1, customid); 
+            cstmt.setString(2, buydate); 
+            
+            // 프로시저 OUT 매개변수 1) 타입 설정 
+            cstmt.registerOutParameter(3, Types.NUMERIC);
+            cstmt.executeUpdate();  // 프로시저 실행
+            // OUT 매개변수 2) 결과 값 가져오기 : getXXX
+             
+            
+            String result = String.format("%s 고객님이 %s 에 구매한 총 구매금액 : %,8d ",
+                                                    customid,buydate,cstmt.getInt(3));
+            System.out.println(result);
+
+        } catch (SQLException e) {
+            System.out.println("money_of_day 프로시저 실행 예외 : " + e.getMessage());
+        }
+        
+    }
+
 }

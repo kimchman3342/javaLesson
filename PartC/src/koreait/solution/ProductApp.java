@@ -22,6 +22,12 @@ public class ProductApp {
             System.out.println("Electronics 타입으로 변경 불가.");
         
         
+        if(cart[1] instanceof Electronics){
+        Electronics usb = (Electronics) cart[1];
+        usb.setKwh(0.8);
+        System.out.println(usb.power());        
+        }else
+            System.out.println("Electronics 타입으로 변경 불가");
         
             // 3) 배열 10개 중에 객체가 참조된 것은 5개
         // -> 반복문으로 실행할 떄 반드시 null이 아닌 것만 하도록 합니다.
@@ -33,15 +39,20 @@ public class ProductApp {
             }
          }
     
-  
+        for(Product p : cart) {
+        if (p !=null && p.price <= 100000) {
+            System.out.println(p);
+        }
+        } 
+        
          // 4) ride 메소드 : Bike 자식 클래스의 메소드 
          //   현재 부모타입으로 참조하는 것을 자식 타입으로 변경.(다운캐스팅) 
          for(Product p : cart) {
             if(p!= null && p instanceof Bike) {
                 Bike bike = (Bike) p;       // Product(부모)가 Bike(자식) 안으로 들어갈 때 하는 짓
                 System.out.println(bike.ride());
-         }
-     }
+                }
+            }
 
     //  5)
     System.out.println("\n문제5.");
@@ -51,7 +62,9 @@ public class ProductApp {
     // 6)
     System.out.println("\n문제6.");
     System.out.println(cart[5].sell("사운드바"));
- }
+    
+    System.out.println(cart[7].sell("카트"));
+}
 }
 
 /* 자바 교재 204 페이지

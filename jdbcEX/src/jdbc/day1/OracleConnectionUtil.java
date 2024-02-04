@@ -7,8 +7,8 @@ import java.sql.SQLException;
 public class OracleConnectionUtil {
     public static final String DRIVER = "oracle.jdbc.driver.OracleDriver";
     public static final String URL = "jdbc:oracle:thin:@//localhost:1521/XE";
-    public static final String USERNAME = "C##idev";
-    public static final String PASSWORD = "1234";
+    public static final String USERNAME = "SCOTT";
+    public static final String PASSWORD = "tiger";
 
     // Connection 타입 객체 생성하는 메소드.
     //  OracleConnection conn = OracleConnectionUtil.getConnection(); 로 사용할 것 입니다.

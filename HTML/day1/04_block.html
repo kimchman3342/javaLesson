@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>4_block</title>
+    <style>
+        div{
+            border: 1px solid rgb(246, 87, 87);
+            margin: 3rem;
+            padding: 3rem;
+            /* 20*16px = 320 */
+            width: 20rem;   
+            height: 10rem;   
+            /* 결론 : 화명에 보이는 사각형의 크기는 width(또는 height)+내부여백*2 + 테두리*2 */
+        }
+        /* 클래스 이름을 선택자로 사용. class이름은 child1이고 기호 . 으로 표시  */
+        div.child1{
+            /* width, height를 지정할 때 내부여백과 테두리가 포함됨 */
+            box-sizing: border-box;
+        }
+        /* main의 컨텐츠를 적절하게 보이도록 크기와 여백을 정해보세요 */
+        main{
+            background-color: blanchedalmond;
+            box-sizing: border-box;
+            padding: 1rem;
+            width: 25rem; 
+            /* 테두리 "굵기" "모양" "색상"을 순서대로 정합니다. */
+            border-top: 1px dotted red;
+            border-bottom: 1px solid gray;
+            margin: 1rem 2rem 3rem 4rem;  
+            /* 결론 : 4가지 위치에 따라 값을 설정하는 border , padding, margin 은
+                    4개의 값을 위부터 시계방향으로 모두 설정
+                    2개의 값으로 위/아래 왼쪽/오른쪽 설정
+                    1개의 값으로 모두 같은 값 설정
+                    3개의 값은 ?
+                     */
+            /* height: 10rem; height는 잘 쓰이지 않고 자동으로 맞춰지게 놔둠*/
+        }
+        div.child2 {
+            box-sizing : border-box;
+            width: 30rem;
+            height: 30rem;
+            padding: 2rem 4rem 6rem;
+            border: 2px solid green;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h3>블록요소 CSS</h3>
+        <p>너비, 높이를 설정할 수 있음. 이 때 크기를 지정하는 단위는 주로 px, rem, em, % 이다.
+            이 중에서 px, rem은 html 요소를 절대값으로 한다. em, %는 바로 윗 단계 상위태그(부모요소)를
+            기준으로 하는 상대값이다.
+        </p>
+    </main>
+    <div>1</div>
+    <div class="child1">2</div>
+    <div class="child1">3</div>
+</body>
+</html>

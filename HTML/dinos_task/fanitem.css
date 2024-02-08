@@ -26,7 +26,84 @@ body{
     /* 너비와 높이 크기의 padding과 border 굵기 포함하여 계산합니다. */
     box-sizing: border-box;
 }
+
 ul {
     /* li 태그 앞에 붙이는 기호 없음. */
     list-style: none;
+}
+
+/* div#contents 영역 */
+#contents{
+    width: 128rem;
+    padding: 0 4rem 9rem;
+    margin: 0 auto;
+    background-color: beige;
+}
+
+/* 왼쪽 메뉴 */
+#left-menu{
+    width: 15rem;
+    margin-top: 2.2rem;
+    margin-bottom: 7rem;
+    display: inline-block;
+    /* border: 1px dashed brown; */
+}
+
+/* 자식 태그 li */
+#left-menu>li {
+    cursor: pointer;
+}
+
+#left-menu>li>span {
+    display: block;
+    padding: 1.8rem 0;
+    border-bottom: 0.1rem solid #e4e4e4;
+    font-size: 1.4rem;
+    font-weight: 700;
+   
+    /* 아이콘 표시 : 백그라운드 이미지로 합니다. */
+    background-image : url(img/ico/ic-menu-down@2x.png);
+    background-repeat : no-repeat;
+    background-position : right;
+    background-size: 1.6rem;
+}
+
+/* 오른쪽 상품 영역 */
+
+#cont-wrap{
+    width: calc(100% - 22.4rem);
+    display: inline-block;
+    border: 1px solid yellowgreen;
+}
+/* cont-wrap 영역 안 : 현재 웹페이지 위치  */
+.depth{
+    padding-top: 4rem;
+    margin-bottom: 6rem;
+    display: flex;
+    align-items: center;
+}
+
+.depth > li{
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    color: #747474;
+    vertical-align: middle;
+}
+
+/* depth의 자식태그 li 중에 가장 마지막 선택 */
+.depth > li:last-child{
+    font-weight: 700;
+    color: #071d3d;
+}
+
+i.ic-home {
+    display: block;
+    width: 1.4rem;
+    height: 1.4rem;
+    background-image: url(img/ico/ic-home@2x.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    
 }

@@ -47,6 +47,7 @@ ul {
     margin-bottom: 7rem;
     display: inline-block;
     /* border: 1px dashed brown; */
+    vertical-align: top;
 }
 
 /* 자식 태그 li */
@@ -121,4 +122,110 @@ i.ic-home {
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain ;
+}
+
+/* 상품 영역 */
+.cont-box > .title > h4{
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    color: #071d3d;
+}
+
+/* .title 요소의 후손을 선택하는 기호 : 공백 */
+.cont-box > .title span{
+    font-size: 2rem;
+    color: #747474;
+    font-weight: 500;
+    margin-left: 0.8rem;
+    vertical-align: middle;
+    position: relative;
+    top: - 0.2rem;
+    
+}
+
+/* 상품 목록 grid 레이아웃 */
+.item-list {
+    display: grid;
+    align-items: flex-start ;
+}
+/* .item-list.row-3는 item-list 와  row-3 클래스 이름을 모두 갖는 요소  */
+.item-list.low-3 {
+    /* 세 개의 행을 생성하고 각 행의 크기를 1fraction(파편)로 기준 값 설정
+        1fr로 하면 요소의 너비를 동등하게 n등분 합니다.
+    */
+    /* 1row(행) 을 3등분. 컨테이너 높이를 3등분. 1fr이므로 같은 크기로 합니다. */
+    grid-template-rows: repeat(3, 1fr);
+    row-gap: 6rem;
+}
+
+.item-list.col-4 {
+    /* column이 4개. 너비를 4등분. 1fr이므로 같은 크기로 합니다. */
+    grid-template-columns: repeat(4,1fr);
+    column-gap: 2rem;
+}
+
+.item-list > li > .img{
+    width: 100%;
+    height: 23rem;
+    background-color: #ffff;
+    /* 컨테이너 보다 작은 이미지는 크게, 큰 이미지는 작게 그리고 비율도 맞춰서 예쁘게 */
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.item-list > li > .desc{
+    margin-top: 2rem;
+}
+
+.item-list > li > .desc > h6{
+    width: 22rem;
+    height: 4rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+.item-list .price{
+    margin-top: 2rem;
+    font-size: 2.2rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+}
+
+.won{
+    font-size: 1.8rem;
+    font-weight: initial;
+    margin-left: 0.2rem;
+    vertical-align: middle;
+}
+
+.label{
+    display: inline-block;
+    /* min-width 는 최소 너비. 내용이 많아지만 커집니다. */
+    min-width: 4rem;
+    height: 1.6rem;
+    padding: 0 0.4rem;
+    /* 줄간격. 글자가 출력되는 1라인의 높이 */
+    line-height: 1.6rem;
+    /* 요소의 텍스트 정렬 속성. */
+    text-align: center;
+    font-size: 1.2rem;
+    /* #ffffff 를 줄여서 씁니다. */
+    color: #fff;
+}
+
+.item-list>li.desc.label-wrap{
+    margin-top: 1rem;
+}
+
+.label.blue {
+    background-color: #5b8ebd;
+    /* 다른 스타일 정의와 충돌 될 때 무조건 우선순위 최상 */
+    color: #fff !important;
+}
+
+.label.gray {
+    background-color: #747474;
+    /* 다른 스타일 정의와 충돌 될 때 무조건 우선순위 최상 */
+    color: #fff !important;
 }

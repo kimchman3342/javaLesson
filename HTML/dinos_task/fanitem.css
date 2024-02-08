@@ -1,0 +1,32 @@
+/*  글꼴  */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;1,100;1,300;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+/* 예시 사이트의 초기화 작업 */
+html,body,div,span,ul,li,h2,h3,h4,h6{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+html{
+   /* 1rem = 10px */
+   font-size: 62.5%;
+}
+body{
+    /* 글꼴 설정 */
+    font-family: 'Roboto', 'Noto Sans Kr';
+    letter-spacing: -.02rem;
+    color: #222;
+    /* 드래그 방지 */
+    user-select: none;
+    /* 글꼴 크기 16px */
+    font-size: 1.6rem;
+}
+
+*{
+    /* 너비와 높이 크기의 padding과 border 굵기 포함하여 계산합니다. */
+    box-sizing: border-box;
+}
+ul {
+    /* li 태그 앞에 붙이는 기호 없음. */
+    list-style: none;
+}

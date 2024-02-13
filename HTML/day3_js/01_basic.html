@@ -10,6 +10,25 @@
       margin: 10px;
     }
   </style>
+  <script>
+    // 선언하지 않고 변수를 사용할 수 없습니다.
+    "use strict"
+    // js는 문장 종료 ; 안써도 됩니다.
+    // const 상수 선언. 변경 못합니다.
+      const name ="hong";
+      console.log(name)
+      // 변수 선언. 과거 버전에서는 var 로 변수 선언. { } scope(범위) 의 지역변수 문제 발생.
+      let age = 24
+      age = 29
+      console.log(age)
+      // js는 변수를 선언하지 않고도 사용이 가능합니다.
+      address = "서울"
+      console.log(address)
+      name = "sana"
+      // 위에서 오류가 발생했을 때 그 다음 문장이 실행 됨? 안됨?
+      console.log("이 문장이 콘솔 창에 출력이 되나요???")
+  </script>
+
 </head>
 
 <body>

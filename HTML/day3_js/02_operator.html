@@ -8,6 +8,10 @@
 		// 전역변수 선언 위치
 		// op1,op2,result,operator 선언하면 오류. 요소를 가져올 수 없습니다.
 		// head 위치에서서는 body 태그 요소는 없는 상태이기 때문입니다.
+		// 					 이 자리에서는 body 요소들이 만들어지기 전에 실행하므로
+		const test = document.getElementById('operand1') // 오류
+		console.log(test)	// null
+		console.log(tset.value) // 오류
 
 		// style 태그는 항상 head 태그 안에 위치해야 함. 
 		// script 태그는 head 또는 body 태그 어느 곳에나 작성 가능합니다.

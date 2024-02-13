@@ -7,8 +7,30 @@
 <body>
     <h2>JS로 태그 요소의 속성 값을 변경할 수 있습니다.</h2>
     <!-- img 태그로 그림을 화면에 표시합니다. 그림파일의 url은 src 속성 값으로 설정합니다.  -->
-    <img src="../images/KakaoTalk_20240213_160833991.gif" alt="">
-    <button onclick="blurOn()">켜주세요</button>
-    <button onclick="blurOn()">꺼주세요</button>
+    <img src="../htmlmage/KakaoTalk_20240213_160833991.gif" alt="" id = "bulb">
+    <button onclick="blurOn()" id="on">켜주세요</button>
+    <button onclick="blurOff()" id="off">꺼주세요</button>
+    <script>
+        const bulb = document.getElementById('bulb')
+        // 버튼 비활성화 동작
+        // document.getElementById('off').disabled = true
+
+        const on = document.getElementById('on')
+        const off = document.getElementById('off')
+        off.disabled = true
+
+        function blurOn(){
+            bulb.src = "../htmlmage/KakaoTalk_20240213_160833779.gif"
+            // 요소의 disable 속성을 설정
+            on.disabled = true
+            off.disabled = false
+        }
+        function blurOff(){
+            bulb.src = "../htmlmage/KakaoTalk_20240213_160833991.gif"
+            off.disabled = true
+            on.disabled = false
+        }
+
+    </script>
 </body>
 </html>

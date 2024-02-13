@@ -12,4 +12,14 @@
         <button>검색</button>
     </form>
 </body>
+<!-- 
+    실행 결과 : 
+    입력요소에 아무 문자열 입력 후 전송 버튼 클릭하면
+    success.html로 페이지가 이동합니다.
+    실행 결과 url : 
+    * 입력 문자열이 영문일 때
+    http://127.0.0.1:3000/HTML/day3_form/success.html?search=abcd
+    * 입력 문자열이 한글일 때 (한글은 url에서 utf-8 인코딩된 값으로 전달 됩니다.%EA 1바이트 16진수 값)
+    http://127.0.0.1:3000/HTML/day3_form/success.html?search=%EA%B0%80%EB%82%98%EB%8B%A4%EB%9D%BC
+ -->
 </html>

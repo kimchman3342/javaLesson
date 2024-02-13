@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>사용자가 물품을 주문합니다. 주문 '품목'과 '수량'을 입력합니다.</p>
+    <form action="success.html">
+        <input type="text" name="pcode"
+                placeholder="상품코드를 입력하세요.">
+        <input type="number" name="quantity"
+        placeholder="주문수량을 입력하세요.">
+        <button>주문</button>
+    </form>
+    <!--  http://127.0.0.1:3000/HTML/day3_form/success.html?pcode=abc01&quantity=23
+        input 요소 name이 pcode는 사용자 입력값 abc01 이고(&)
+                          quantity는 입력 값 23을 전송합니다.
+        위 2개의 입력 값을 받는 서버의 주소는? 앞의 url입니다.
+    -->
+</body>
+    <!-- 
+        jsp 에서는 form 태그의 method 속성 값을 post (저장)로 하면
+        사용자가 입력한 값이 url에 안보입니다.
+        지금은 method 속성의 기본 값 get(조회) 입니다. 
+        결론 : form 주요 속성은 action, method 입니다.
+     -->
+</html>

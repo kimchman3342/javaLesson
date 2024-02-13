@@ -7,9 +7,16 @@
 </head>
 <body>
     <form action="success.html">
-        <input type="text" name="search">
+        <input type="text" name="search" value="item">
+
+        <!-- button 태그가 form 안에 있을 있으면 type이 생략되면 submit 
+            submit(제출하다.)은 서버로 데이터를 보내는 동작입니다.
+        -->
         <button>전송</button>
-        <button>검색</button>
+        <!-- type이 button 일 때에는 자바스크립트 명령을 실행합니다. -->
+        <button type = "button">검색</button>
+        <!-- 오래된 형식 -->
+        <input type="submit" value="테스트">
     </form>
 </body>
 <!-- 
@@ -21,5 +28,9 @@
     http://127.0.0.1:3000/HTML/day3_form/success.html?search=abcd
     * 입력 문자열이 한글일 때 (한글은 url에서 utf-8 인코딩된 값으로 전달 됩니다.%EA 1바이트 16진수 값)
     http://127.0.0.1:3000/HTML/day3_form/success.html?search=%EA%B0%80%EB%82%98%EB%8B%A4%EB%9D%BC
- -->
+ 
+    'action' 속성 값은 데이터를 전달 받을 url(백엔드 주소)
+    html 파일은 정적페이지로 데이터를 처리하는 기능이 없습니다.
+    웹애플리케이션 서버단에서 데이터를 처리할 수 있는 jsp로 바뀌어야 합니다.
+-->
 </html>

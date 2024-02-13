@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        main{
+            box-sizing: border-box;
+            border: 2px solid rgb(61, 168, 166);
+            width: 14rem;
+            height: 30;
+            
+        }
+    </style>
+   
+</head>
+<body>
+    
+    <main>
+        <h4>에너지를 절약합시다.</h4>
+        <h3>
+         <b>현재상태 : </b> <strong id = "change" style="color: red">OFF</strong>
+         </h3>
+        
+         <img src="../htmlmage/KakaoTalk_20240213_160833991.gif" alt="" id = "bulb" 
+                style="cursor: pointer;" onclick = "bulbOff()" title="버튼을 클릭하면 전구를 작동시킬 수 있습니다." >
+        <p>
+            <button onclick="blurOn()" id="on">불을 켜주세요</button>
+            <button onclick="blurOff()" id="off">불을 꺼주세요</button>
+        </p>
+    </main>
+    
+    <script>
+        const on = document.getElementById('on')
+        const off = document.getElementById('off')
+        const change = document.getElementById('change')
+       
+        function bulbOff(){
+            if(change.innerHTML == ' ON')
+                blurOff()
+            else
+                blurOn()
+        }
+        off.disabled = true
+
+        function blurOn(){
+            bulb.src = "../htmlmage/KakaoTalk_20240213_160833779.gif"
+            on.disabled = true
+            off.disabled = false
+            change.style.color = "green"
+            change.innerHTML = "ON"
+        }
+        function blurOff(){
+            bulb.src = "../htmlmage/KakaoTalk_20240213_160833991.gif"
+            off.disabled = true
+            on.disabled = false
+            change.style.color = "red"
+            change.innerHTML = "OFF"
+        }
+        // 초기화는 원하는대로
+        bulbOff()
+     </script>
+</body>
+</html>

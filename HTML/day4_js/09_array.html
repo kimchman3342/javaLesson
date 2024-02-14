@@ -78,7 +78,7 @@
             document.write('<hr>')
 
                 names.forEach(function(ele,i,arr){
-                    // forEach 메소드 콜백함수의 인자 필요 없다면 선언안해도 됩니다. (순서는 지키기)
+                    // 변수명은 임의로 선언합니다.
                     document.writeln('item', ele)
                     document.writeln('index', i)
                     document.writeln('array', arr)
@@ -87,7 +87,7 @@
             document.write('<hr>')
         
                 names.forEach(function(item,index){
-                    // forEach 메소드 콜백함수의 인자 순서는 정해져 있습니다.
+                    // forEach 메소드 콜백함수의 인자 필요 없다면 선언안해도 됩니다.(순서는 지키기)
                     document.writeln('item', item)
                     document.writeln('index', index)
                     document.write('<hr style ="border:0.2px dashed green">')                   

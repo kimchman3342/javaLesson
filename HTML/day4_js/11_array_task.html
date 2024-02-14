@@ -29,8 +29,12 @@
             liArr.forEach((item) =>{ 
                 if(item.innerHTML == '모모')
                    item.style.color = 'red'
-                        document.write(`li 요소 내용 = ${item.innerHTML}`)})
-
+                if(item.innerHTML == '다현'){
+                   item.innerHTML = 'dahyeon'
+                   item.style.color = 'blue'}
+                
+                document.write(`li 요소 내용 = ${item.innerHTML}`)
+                })
     </script>
 </body>
 </html>

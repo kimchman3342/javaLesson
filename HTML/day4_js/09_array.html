@@ -68,24 +68,48 @@
 
             // foreach 메소드가 더 많이 쓰입니다. - 메소드의 인자가 함수입니다.(콜백함수)
             //                      - names 배열 요소를 순서대로 하나씩 콜백함수 실행시킵니다.
+            names.forEach(function(item,index,array){
+                // forEach 메소드 콜백함수의 인자 순서는 정해져 있습니다.
+                document.writeln('item', item)
+                document.writeln('index', index)
+                document.writeln('array', array)
+                document.write('<hr style ="border:0.2px dashed black">')                   
+            })                
             document.write('<hr>')
+
                 names.forEach(function(ele,i,arr){
-                    // forEach 메소드 콜백함수의 인자 순서는 정해져 있습니다.
+                    // forEach 메소드 콜백함수의 인자 필요 없다면 선언안해도 됩니다. (순서는 지키기)
                     document.writeln('item', ele)
                     document.writeln('index', i)
                     document.writeln('array', arr)
                     document.write('<hr style ="border:0.2px dashed gray">')                   
                 })                
             document.write('<hr>')
-           
-            document.write('<hr>')
-                names.forEach(function(ele,i){
+        
+                names.forEach(function(item,index){
                     // forEach 메소드 콜백함수의 인자 순서는 정해져 있습니다.
-                    document.writeln('item', ele)
-                    document.writeln('index', i)
+                    document.writeln('item', item)
+                    document.writeln('index', index)
                     document.write('<hr style ="border:0.2px dashed green">')                   
                 })                
             document.write('<hr>')
+        
+                names.forEach(function(item){
+                    // forEach 메소드 콜백함수의 인자 순서는 정해져 있습니다.
+                    document.writeln('item', item)
+                    document.write('<hr style ="border:0.2px dashed blue">')                   
+                })                
+            document.write('<hr>')
+               
+            names.forEach((item)=>{
+                    // forEach 메소드 콜백함수의 인자 순서는 정해져 있습니다.
+                    document.writeln('item', item)
+                    document.write('<hr style ="border:0.2px dashed red">')                   
+                })                
+            document.write('<hr>')
+            
+            const printItem = (item) => document.write("itme=", item)
+            names.forEach(printItem)     
         </script>
     </pre>
 </body>

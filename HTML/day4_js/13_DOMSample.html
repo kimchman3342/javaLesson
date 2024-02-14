@@ -70,48 +70,7 @@
     // DOM : 문서객체모델. 웹문서는 태그로 구성이 됩니다. 그 태그들은 서로 부모자식
     //       관계가 있으며 이것은 트리구조로 설명될 수 있습니다.
     // id가 kopo 인 요소의 dom 속성들을 확인합니다.
-console.log('1.childNodes')
-console.log(kpop.childNodes)
-console.log('2.children')
-console.log(kpop.children)
-console.log('3.첫번째 자식')
-console.log(kpop.firstChild)
-console.log('4.첫번째 자식요소')
-console.log(kpop.firstElementChild)
-console.log('5.마지막 자식')
-console.log(kpop.lastChild)
-console.log('6.마지막자식요소')
-console.log(kpop.lastElementChild)
-const child1 = kpop.lastElementChild
-console.log('7.마지막 자식요소의 컨텐츠')
-console.log(child1.innerHTML)
-console.log(kpop.lastElementChild.innerHTML)
-console.log('8.첫번째 자식요소의 컨텐츠')
-console.log(kpop.firstElementChild.innerHTML)
-console.log('9.첫번째 자식의 형제 요소')
-console.log(kpop.firstElementChild.nextElementSibling)
-console.log(kpop.firstElementChild.nextElementSibling.innerHTML)
-console.log('10.마지막 자식의 형제 요소')
-console.log(kpop.lastElementChild.nextElementSibling)  //다음형제
-console.log(kpop.lastElementChild.previousElementSibling)  //앞에 나온 형제
 
-// getElementById 대신 선택자로 요소 가져오기
-//               querySelector 는 1개만 가져오는 메소드
-//               querySelectorAll 는 여러 개 가져오는 메소드
-const tr1 = document.querySelector('tr:first-child')	
-
-
- console.log(tr1)
- const newtd = document.createElement("td")	
- // createElement("태그이름") : 지정된 이름의 태그 요소 만들기 => <td></td>
- newtd.innerHTML='테스트'
- tr1.appendChild(newtd)		//tr1 변수로 지정된 요소의 마지막 자식 요소로 추가하기
-
- const tr2 = document.querySelector('tr:nth-child(2)')
- console.log(tr2)
- const newtd2 = document.createElement("td")
- newtd2.innerHTML='테스트'
- tr2.appendChild(newtd2)
 </script>
  </body>
 </html>

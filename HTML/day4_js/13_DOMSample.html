@@ -7,15 +7,7 @@
     <link rel="shortcut icon" href="../image/fav.ico" type="image/x-icon">
     <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <style>
-       div li:first-child{		/* 선택자 테스트 공백은 자손, > 는 자식 */
-            color: brown;
-        }
-    table { width: 300px; margin: 30px;  }
-	th { width: 13%; background-color: tomato; color:white; }
-	td { width: 10%; }
-	th,td { border : 1px solid tomato; padding: 7px 12px; text-align: center;}
-    </style>
+    
 </head>
 <body>
  <h4>DOM : Document Object Model</h4>
@@ -47,13 +39,13 @@
 </div>
 <hr>
 <pre style="padding: 10px;width:70%;margin: auto;">
-	const kpop = document.getElementById('kpop') //document.querySelector('#kpop')
+	const kpop = document.getElementById('kpop') 
 	console.log(kpop)
     	console.log('1.childNodes')
         console.log(kpop.childNodes)    
         //h4,ul,ul, 앞뒤에 있는 엔터가 text 자식 노드
         console.log('2.children')
-        console.log(kpop.children)      //1번결과에서 text(엔터) 제외
+        console.log(kpop.children)          // 1번결과에서 text(엔터) 제외    
         console.log('3.첫번째 자식')
         console.log(kpop.firstChild)
         console.log('4.첫번째 자식요소')
@@ -71,10 +63,13 @@
         console.log('9.첫번째 자식의 형제 요소')
         console.log(kpop.firstElementChild.nextElementSibling.innerHTML)
         console.log('10.마지막 자식의 형제 요소')
-        console.log(kpop.lastElementChild.nextElementSibling)  //다음형제
-        console.log(kpop.lastElementChild.previousElementSibling)  //앞에 나온 형제
+        console.log(kpop.lastElementChild.nextElementSibling)  // 다음형제
+        console.log(kpop.lastElementChild.previousElementSibling)  // 앞에 나온 형제
 </pre>
 <script type="text/javascript">
+    // DOM : 문서객체모델. 웹문서는 태그로 구성이 됩니다. 그 태그들은 서로 부모자식
+    //       관계가 있으며 이것은 트리구조로 설명될 수 있습니다.
+    // id가 kopo 인 요소의 dom 속성들을 확인합니다.
 console.log('1.childNodes')
 console.log(kpop.childNodes)
 console.log('2.children')
@@ -94,6 +89,7 @@ console.log(kpop.lastElementChild.innerHTML)
 console.log('8.첫번째 자식요소의 컨텐츠')
 console.log(kpop.firstElementChild.innerHTML)
 console.log('9.첫번째 자식의 형제 요소')
+console.log(kpop.firstElementChild.nextElementSibling)
 console.log(kpop.firstElementChild.nextElementSibling.innerHTML)
 console.log('10.마지막 자식의 형제 요소')
 console.log(kpop.lastElementChild.nextElementSibling)  //다음형제

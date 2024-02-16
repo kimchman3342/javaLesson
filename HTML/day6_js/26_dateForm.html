@@ -62,19 +62,23 @@
             // 1) 입실날짜 문자열 가져오기 -> Date로 바꾸기 ,
             //  숙박일수 값 가져오기 -> 입실날짜에 더하여 퇴실날짜 바꾸기!! ☞ setXXXX 메소드 사용
             //  퇴실날짜 요소에 문자열로 value 설정하기
+                let end_date = new Date(start.value)
+                end_date.setDate(end_date.getDate()+Number(night.value))
 
+                // 퇴실날짜 input은 변수 end로 선언했습니다.
+                end.value = dateFormat(end_date)
+                
+            })
+            
+            document.getElementById('enterDate').addEventListener('change', function() {
+                console.log('선택 입실날짜 = ', start.value)
+                // 2)
+            })
+            
+        // 1) 2)는 같은 실행 코드 퇴실 날짜 구하기
+        
 
-        })
         
-        document.getElementById('enterDate').addEventListener('change', function() {
-            console.log('선택 입실날짜 = ', start.value)
-            // 2)
-        })
-        // 1) 2)는 같은 실행 코드
-        
-        document.getElementById('outDate').addEventListener('change', function() {
-            console.log('퇴실날짜 = ', end.value)
-        })
     </script>
 </body>
 </html>

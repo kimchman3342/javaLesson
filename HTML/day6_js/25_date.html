@@ -40,7 +40,38 @@
             
             document.writeln('<h4>1970년 1월 1일 기준 long</h4>')
             document.writeln(new Date().getTime())
+             
+            document.writeln('<h4>날짜 및 시간 메소드</h4>')
+            document.writeln('년도 = ', new Date().getFullYear())
+            document.writeln('월 = ', new Date().getMonth() + 1)  // 월은 0~11 범위
+            document.writeln('일 = ', new Date().getDate())
+            document.writeln('시 = ', new Date().getHours())
+            document.writeln('분 = ', new Date().getMinutes())
+            document.writeln('초 = ', new Date().getSeconds())
+            document.writeln('요일 = ', new Date().getDay())    // 요일 0~6. 0이 일요일
+                            
+            document.writeln('<h4>날짜 및 시간 SET 메소드</h4>')
+            let today = new Date('2022-11-03');
+            // setXXX 메소드로 today에 저장된 날짜를 변경하기
+            document.writeln('today = ',today)
+            today.setFullYear(today.getFullYear()+3)    // 2027년
+            today.setMonth(today.getMonth()+2)          // 13월
+            today.setDate(today.getDate()+10)           // 23일
             
+            // 여러 메소드를 확인 테스트 해보세요.
+            document.writeln('변경된 today = ', today)
+            // 변경된 today = Tue Jan 13 2026 09:00:00 GMT+0900 (한국 표준시)
+            
+            
+            let mybirth = new Date('2002-11-03')
+            document.writeln('mybirth = ', mybirth)
+            mybirth.setFullYear(mybirth.getFullYear()+3)    // 2005년
+            mybirth.setMonth(mybirth.getMonth()+2)          // 13월
+            mybirth.setDate(mybirth.getDate()+10)           // 23일
+            document.writeln('변경된 mybirth = ', mybirth)
+            // 변경된 mybirth = Fri Jan 13 2006 09:00:00 GMT+0900 (한국 표준시)
+            
+            document.writeln('<h4></h4>')
             document.writeln('<h4></h4>')
             document.writeln('<h4></h4>')
         

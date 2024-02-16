@@ -17,17 +17,18 @@
     <input type="text" id="message" placeholder="메시지를 작성하세요.">
     <pre style="font-size: 1rem; font-family: inherit;">
         <script>
-            // change : 요소의 값이 변경될 때 발생하는 이벤트입니다. click 이벤트와 동작이 같습니다.
+            // change : 요소의 값이 변경될 때 발생하는 이벤트입니다. input에서는 내용이 바뀌는 이벤트
+            // click : 마우스 input을 클릭하면 발생하는 이벤트
             document.getElementById('message').addEventListener('change',() =>{
                 const msg = document.getElementById('message')
                 console.log(msg.value)
             })
             
             // keyup, keydown
-            document.getElementById('message').addEventListener('keydown',() =>{
-                const msg = document.getElementById('message')
-                console.log(msg.value)
-            })
+            // document.getElementById('message').addEventListener('keydown',() =>{
+            //     const msg = document.getElementById('message')
+            //     console.log(msg.value)
+            // })
 
 
             function hello(){

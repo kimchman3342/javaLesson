@@ -66,7 +66,7 @@
         // 콜백함수 이름을 인자로 전달할 때에는 () 안씁니다. ()는 호출 형식. 함수 이름(식별자) 전달
         // 2) 입실 날짜 선택했을 때
             document.getElementById('enterDate').addEventListener('change',changeEndDate)
-        // 1) 2)는 같은 실행 코드 퇴실 날짜 구하기
+        // 1) 2)는 같은 실행 코드 => 퇴실 날짜 구하기
         function changeEndDate() {
                 console.log('선택 입실날짜 = ', start.value)
                 console.log('선택 숙박일수 = ', night.value)
@@ -76,7 +76,21 @@
                 // 퇴실날짜 input은 변수 end로 선언했습니다.
                 end.value = dateFormat(end_date)
             }
-        
+       
+            // 입실날짜 요소의 min, max 속성으로 값의 제한을 설정해 봅니다.
+            // 요구사항 : min 은 오늘 날짜 
+            //            max 는 3개월 
+            function initStart(){
+                let today = new Date();
+                start.value = dateFormat(today)
+                start.min = start.value     // 오늘 이전 날짜는 비활성화
+                today.setMonth(today.getMonth()+3)
+                start.max = dateFormat(today) // 오늘 이후 3개월까지의 값
+            }
+
+            initStart()
     </script>
+
+    
 </body>
 </html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>자바스크립트의 Date 객체</h3>
+    <hr>
+    <pre style="font-size: 1rem; font-family: inherit;">
+        <script>
+            
+            document.writeln('<h4>현재 날짜와 시간</h4>')
+            console.log(new Date())
+            document.writeln(new Date())
+            // Locale : 운영체제에 설정된 국가/언어와 관련된 정보 en-US, ko-KR로 설정하기도 합니다.
+            //          현지 시간을 현지 형식에 맞게 출력.
+            document.writeln('toLocaleString() = ',new Date().toLocaleString())
+            document.writeln('toLocaleDateString(en-US) = ',new Date().toLocaleDateString('en-US',{
+                                                        year : 'numeric', month : '2-digit', day: '2-digit'
+                            })
+            )
+            
+            document.writeln('toLocaleDateString(ko-KR) = ',new Date().toLocaleDateString('ko-KR',{
+                                                        year : 'numeric', month : '2-digit', day: '2-digit'
+                            })
+            )
+            
+            document.writeln('toLocaleDateString(zh-CN) = ',new Date().toLocaleDateString('zh-CN',{
+                                                        year : 'numeric', month : '2-digit', day: '2-digit'
+                            })
+            )
+            
+            // locale에 따라 출력 형식 다릅니다.     03/10/2025
+            
+            document.writeln('<h4>표준시간 출력</h4>')
+            document.writeln('toUTCString(협정세계시) = ', new Date().toUTCString())
+            document.writeln('toISOString(국제표준 ISO형식) = ', new Date().toISOString())
+            
+            document.writeln('<h4>1970년 1월 1일 기준 long</h4>')
+            document.writeln(new Date().getTime())
+            
+            document.writeln('<h4></h4>')
+            document.writeln('<h4></h4>')
+        
+        </script>
+
+    </pre>
+</body>
+</html>

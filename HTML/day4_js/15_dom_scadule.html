@@ -23,12 +23,55 @@
 
         </tr>
     </table>
+    <br>
+    <table id="vertical">
+        <thead>
+            <tr>
+                <th>TIME</th>
+                <th>TODO</th>
+            </tr>
+        </thead>
+        <tbody id="vertbody">
+            <!-- tbody의 자식으로 tr을 만들어서 append 하기. 그냥 순수 for문으로 배열 사용하기 -->
+        </tbody>
+    </table>
+
+
     <script>
         const time = ['09:00','11:00','12:30','14:00','16:45']
         const todo = ['수업','과제','점심식사','주간회의','자료조사']
-        function makeTable(){
         //   dom 메소드 createElement, appendChild 이용해서 완성하세요
+        function makeVerticalTable(){
+        const timeVertical = document.getElementById('time');
+        const todoVertical = document.getElementById('todo');
+        const tableBody = document.getElementById('vertical').getElementsByTagName('tbody')[0];
+        
 
+        for (let i = 0; i < time.length; i++) {
+            const newRow = document.createElement('tr');
+            const timeCell = document.createElement('td');
+            timeCell.textContent = time[i];
+            newRow.appendChild(timeCell);
+            const todoCell = document.createElement('td');
+            todoCell.textContent = todo[i];
+            newRow.appendChild(todoCell);
+            tableBody.appendChild(newRow);
+        }
+    }
+        
+        makeVerticalTable();
+
+        
+        function makeTable(){
+        // getElenetById 또는 querySelector 메소드 선택은 취향.
+        const timeRow = document.getElementById('time');
+        const todoRow = document.getElementById('todo');
+        
+        let th = document.createElement('th');
+        th.innerHTML = "TIME"
+        timeRow.appendChild(th);
+        
+        
         // 첫 번째 행 제목 th 요소 생성해서 append
         time.forEach((value) => {
             // td 요소 생성(내용은 배열 값)후 appemd
@@ -37,14 +80,19 @@
             timeRow.appendChild(td);	
         })
         
+        th = document.createElement('th');
+        th.innerHTML = "TODO"
+        todoRow.appendChild(th);
         // 두 번째 행 제목 th 요소 생성해서 append
+       
         todo.forEach(function (value) {
             // td 요소 생성(내용은 배열 값)후 appemd
             const td = document.createElement('td');
             td.textContent = value;
             todoRow.appendChild(td);		
         })
-        }
+      
+    }
         makeTable()
 
     </script>

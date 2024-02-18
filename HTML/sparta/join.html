@@ -12,13 +12,50 @@
                 background-color: rgb(56, 55, 55);              
             } 
             
+            h2{
+                font-weight: 400;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            
             .joiner {
                 background-color: rgb(142, 146, 144);
                 max-width: 800px;
-                margin: 0 auto;
-                padding: 20px;
+                margin: 40px;
+                padding: 80px;
                 border: 1px solid #ccc;
                 border-radius: 5px;
+            }
+            button {
+                padding: 10px 20px;
+                background-color: #66707b;
+                color: #fff;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                font-size: medium;
+            }
+
+            
+            input[type="text"],
+            input[type="email"],
+            input[type="password"]{
+                width: 35%;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+            }
+            
+            input[type="number"]{
+                display: inline;
+                width: 20;
+                padding: 8px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+            }
+            input[type="number"]::-webkit-inner-spin-button {
+                -webkit-appearance: none;
             }
             
     </style>
@@ -26,39 +63,45 @@
 <body>
    
     <div class="joiner">
-        <h3 style="color: aliceblue;">회원가입</h3>
+        <h2 style="color: black;">회원가입</h2>
            <form action="success.html">
             <div class="join-source">
-                <label style="color: aliceblue;" for="username">사용자 이름:</label>
+                <label style="color: black;" for="username">ID:</label>
                 <input type="text" id="username" name="username" placeholder="ID" required>
               </div>
+                <br>
               <div class="join-source">
-                <label style="color: aliceblue;" for="email">이메일:</label>
-                <input type="email" id="email" name="email" placeholder="E-Mail" required>
-              </div>
+                  <label style="color: black;" for="email">이메일 :</label>
+                  <input type="email" id="email" name="email" placeholder="E-Mail" required>
+                </div>
+                <br>
               <div class="join-source">
-                <label style="color: aliceblue;" for="password">비밀번호:</label>
-                <input type="password" id="password" name="password" placeholder="Password" required>
-              </div>
+                  <label style="color: black;" for="password">비밀번호 :</label>
+                  <input type="password" id="password" name="password" placeholder="Password" required>
+                </div>
+                <br>
               <div class="join-source">
-                <label style="color: aliceblue;" for="password">비밀번호 확인:</label>
-                <input type="password" id="password" name="password" placeholder="Password Check" required>
-            </div>
-              <div class="join-source">
-                <label style="color: aliceblue;" for="number">주민등록번호:</label>
-                <input type="number" id="number" name="number" placeholder="Birth" required>
-                <span style="color: aliceblue;">-</span>
-                <input type="number" id="number" name="number" placeholder="P-Num" required>
-              </div>
-              <div class="join-source">
-                <label style="color: aliceblue;" for="sex">성별 - </label>
-                <span style="color: aliceblue;">
-                남성
-                <input type="radio" name="sex" id="sex">
-                여성
-                <input type="radio" name="sex" id="sex">
-               </span>
-              </div>
+                  <label style="color: black;" for="password">비밀번호 확인 :</label>
+                  <input type="password" id="password" name="password" placeholder="Password Check" required>
+                </div>
+                <br>
+                <div class="join-source">
+                    <label style="color: black;" for="number">주민등록번호 :</label>
+                    <input type="number" id="number" name="number" placeholder="Birth" required>
+                    <span style="color: black;">-</span>
+                    <input type="number" id="number" name="number" placeholder="P-Num" required>
+                </div>
+                <br>
+                <div class="join-source">
+                    <label style="color: black;" for="sex">성별 - </label>
+                    <span style="color: black;">
+                        남성
+                        <input type="radio" name="sex" id="sex">
+                        여성
+                        <input type="radio" name="sex" id="sex">
+                    </span>
+                </div>
+                <br>
               <div class="join-source">
                 <button type="submit" onclick="hello()">가입</button>
               </div>
@@ -67,5 +110,20 @@
             </form>
     </div>
     
+    <script>
+    document.getElementById("signup-form").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    var username = document.getElementById("username").value;
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+    var messageElement = document.getElementById("message");
+    messageElement.innerText = "회원가입이 완료되었습니다!";
+    });
+    
+    function hello(){
+    alert("회원가입이 완료되었습니다.")
+    }
+    </script>
 </body>
 </html>

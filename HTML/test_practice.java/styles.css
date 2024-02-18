@@ -34,7 +34,7 @@
   
   input[type="number"]::-webkit-inner-spin-button {
     -webkit-appearance: none;
-}
+ }
 
   button {
     padding: 10px 20px;

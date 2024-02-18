@@ -1,50 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>회원가입페이지</title>
-    <style>
-      
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>회원가입페이지</title>
+        <style>
+            
+            @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+            
+            body{
+                background-color: rgb(56, 55, 55);              
+            } 
+            
+            .joiner {
+                background-color: rgb(142, 146, 144);
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 20px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+            }
+            
     </style>
 </head>
 <body>
    
     <div class="joiner">
-        <h3>회원가입</h3>
+        <h3 style="color: aliceblue;">회원가입</h3>
            <form action="success.html">
-            <div class="form-group">
-                <label for="username">사용자 이름:</label>
+            <div class="join-source">
+                <label style="color: aliceblue;" for="username">사용자 이름:</label>
                 <input type="text" id="username" name="username" placeholder="ID" required>
               </div>
-              <div class="form-group">
-                <label for="email">이메일:</label>
+              <div class="join-source">
+                <label style="color: aliceblue;" for="email">이메일:</label>
                 <input type="email" id="email" name="email" placeholder="E-Mail" required>
               </div>
-              <div class="form-group">
-                <label for="password">비밀번호:</label>
+              <div class="join-source">
+                <label style="color: aliceblue;" for="password">비밀번호:</label>
                 <input type="password" id="password" name="password" placeholder="Password" required>
               </div>
-              <div class="form-group">
-                <label for="password">비밀번호 확인:</label>
-                <input type="password" id="password" name="password" placeholder="Password" required>
+              <div class="join-source">
+                <label style="color: aliceblue;" for="password">비밀번호 확인:</label>
+                <input type="password" id="password" name="password" placeholder="Password Check" required>
             </div>
-              <div class="form-group">
-                <label for="number">주민등록번호:</label>
-                <input type="number" id="number" name="number" placeholder="Personal Number" required>
-                <span>-</span>
-                <input type="number" id="number" name="number" required>
+              <div class="join-source">
+                <label style="color: aliceblue;" for="number">주민등록번호:</label>
+                <input type="number" id="number" name="number" placeholder="Birth" required>
+                <span style="color: aliceblue;">-</span>
+                <input type="number" id="number" name="number" placeholder="P-Num" required>
               </div>
-              <div class="form-group">
-                <label for="sex">성별</label>
-                <span>
+              <div class="join-source">
+                <label style="color: aliceblue;" for="sex">성별 - </label>
+                <span style="color: aliceblue;">
                 남성
                 <input type="radio" name="sex" id="sex">
                 여성
                 <input type="radio" name="sex" id="sex">
                </span>
               </div>
-              <div class="form-group">
+              <div class="join-source">
                 <button type="submit" onclick="hello()">가입</button>
               </div>
             </form>

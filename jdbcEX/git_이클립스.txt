@@ -1,0 +1,37 @@
+git 관리 순서
+
+앞으로는 jsp1 프로젝트 하나에 로컬/원격 저장소 하나.
+git init (초기화)
+git add 파일선택 (스테이징 : .gitignore 다시 작성하기)
+git remote add origin 저장소url
+git commit -m "메시지"
+git push origin
+
+------------- 명령어 복습 끝 -----------
+1. push 할때 사용자 권한 필요 -> 자격 증명 관리자
+	-> 새로 추가
+
+
+2. 이클립스의 현재 프로젝트에서 우클릭
+Team 메뉴 -> Share Project
+
+체크합니다.
+[v] Use or create repository in parent folder of project
+
+create Repository 버튼 클릭
+
+체크됩니다.
+[v] jsp1 프로젝트명
+
+Finish 버튼
+
+3. Open Perspective 에서 git 을 선택합니다.
+
+1) 왼쪽 상단에 Git Repositories 탭 : 프로젝트 열기
+2) Remote 선택 : 우클릭 create remote
+                   ㄴ Configure fetch 로 합니다.
+3) create 클릭
+4) 다음화면에서 Change 클릭
+5) URI에 1번에서 복사한 정보 붙여넣기
+   User 에 본인 github 이메일계정, 패스워드에는 토큰값
+6) Save and Fetch 버튼 클릭

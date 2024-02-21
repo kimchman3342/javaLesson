@@ -1,6 +1,7 @@
 package project.dao;
 
-import java.util.Date;
+import java.util.ArrayList;
+import java.util.List;
 
 import project.vo.BuyVo;
 
@@ -8,9 +9,19 @@ import project.vo.BuyVo;
 // vo : 데이터를 담는 클래스
 // main : 다오를 직접 가져다 씀
 public class MainHY {
-    TblBuyDao dao = new TblBuyDao();
-    Date ddd =  new Date();
-    BuyVo vo = new BuyVo(0, "kimchman", "kkkkkk", 4, null)
+    public static void main(String[] args) {
 
-    dao.insert1();
+        TblBuyDao dao = new TblBuyDao();
+        String s = "mina012";
+        List<BuyVo> list = new ArrayList<>();
+        list = dao.select(s);
+        System.out.println(list);
+
+        for (BuyVo vo : list) {
+            System.out.println(vo);
+            System.out.println(2);
+        }
+        System.out.println(3);
+
+    }
 }

@@ -3,15 +3,14 @@ package project.vo;
 import java.util.Date;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.ToString;
 
 @Getter
-@ToString
 @AllArgsConstructor
 @EqualsAndHashCode
+@ToString
 public class BuyVo {
 	private int buyIdx;
 	private String customid;

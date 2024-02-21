@@ -192,25 +192,29 @@ public class TblBuyDao {
 
     }
 
-    public int insert1(BuyVo vo) {
-        String sql = "insert into tbl_buy values (1010,?,?,?,?)";
-        int result = 0;
+    public List<BuyVo> select(String id1) {
+        List<BuyVo> list = new ArrayList<>();
+        String sql = "SELECT * FROM TBL_BUY WHERE CUSTOMID=?";
         try (
                 Connection conn = getConnection();
-                PreparedStatement pstmt = conn.prepareStatement(sql);
+                PreparedStatement pstmt = conn.prepareStatement(sql);) {
+            pstmt.setString(1, id1);
+            ResultSet rs = pstmt.executeQuery(sql);
 
-        ) {
-            pstmt.setString(1, vo.getCustomid());
-            pstmt.setString(2, vo.getPcode());
-            pstmt.setInt(3, vo.getQuantity());
-            pstmt.setDate(4, vo.getBuyDate());
+            while (rs.next()) {
+                BuyVo vo = new BuyVo(rs.getInt(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getInt(4),
+                        rs.getDate(5));
+                list.add(vo);
+            }
 
-            result = pstmt.executeUpdate(sql);
-
-        } catch (Exception e) {
-            // TODO: handle exception
+        } catch (SQLException e) {
+            System.out.println(6);
+            System.out.println(e.getMessage());
         }
-
-        return result;
+        System.out.println(4);
+        return list;
     }
 }

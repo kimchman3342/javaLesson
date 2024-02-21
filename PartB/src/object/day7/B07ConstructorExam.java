@@ -34,7 +34,7 @@ public class B07ConstructorExam {
 
         // 3) 문자열 내용 비교 : equals 메소드
         System.out.println("message.equals(temp) ? " + message.equals(temp));
-        System.out.println("message.equals(str2) ? " +message.equals(str2));
+        System.out.println("message.equals(str2) ? " + message.equals(str2));
 
         // 다른 클래스 생성자
         Scanner sc = new Scanner(System.in); // inputStream 클래스로 만들어진 객체 System.in을 생성자 인자로 하여 객체를 생성

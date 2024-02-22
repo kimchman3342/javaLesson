@@ -12,11 +12,11 @@ import lombok.ToString;
 @EqualsAndHashCode
 @ToString
 public class BuyVo {
-	private int buyIdx;
+	private int buy_Idx;
 	private String customid;
 	private String pcode;
 	private int quantity;
-	private Date buyDate;
+	private Date buy_Date;
 }
 // 필드값이 모두 값으면 equals 로 true 가 되도록 하고싶다.
 // -> equals 와 hashcode 를 재정의해야 합니다. (vo 객체)

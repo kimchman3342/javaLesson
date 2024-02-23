@@ -58,3 +58,20 @@
  java 에서 처리 할때 ipv6 로 출력되는 것을 ipv4 로 표시되게 설정을 바꿉시다. 
  	ㄴ Run - Run Configurations
  	  톰캣의 arguments 항목에 -Djava.net.preferIPv4Stack=true 추가하기
+
+지금까지 2/22 수업내용
+1. 요청 파라미터 전달하기
+2. jsp 파일의 형식
+3. jstl 태그 (반복, 조건, 서식, 함수)
+4. 애트리뷰트와 el
+5. request 객체의 속성 값 : 요청 URL, context path, 서버와 클라이언트 ip...
+6. 서블릿 클래스의 형식
+7. 서버측에서 웹페이지 전환하기 fowad
+    ㄴ 사용자 요청을 전달하므로 애트리뷰트 값을 jsp로 보낼 수 있음.
+	ㄴ forward 에서 사용한 객체는 RequestDispatcher (jsp의 pageContext 역할)
+8. 서버측에서 클라이언트가 다른 url 재요청하도록 redirect
+9. 요청 방식(메소드) GET 과 POST
+10. 애트리뷰트 : 서버에서 저장하는 Object 타입의 데이터
+		 	 	ㄴ 스콥(scope), 사용 범위가 있씁니다.
+				ㄴ 우리가 사용해 본 2개 스콥 : 현재 웹페이지(pageContext), 요청(request)
+				ㄴ 저장은 스콥객체.setAtrribute() , 읽기는 스콥객체.getAttribute()

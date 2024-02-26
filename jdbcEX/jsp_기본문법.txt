@@ -75,3 +75,27 @@
 		 	 	ㄴ 스콥(scope), 사용 범위가 있씁니다.
 				ㄴ 우리가 사용해 본 2개 스콥 : 현재 웹페이지(pageContext), 요청(request)
 				ㄴ 저장은 스콥객체.setAtrribute() , 읽기는 스콥객체.getAttribute()
+
+
+마이바티스 `SqlSession 메소드` 는 이름 자체가 sql명령문과 같습니다
+예를 들면 , insert sql 실행할때는 insert 메소드를 실행합니다.
+
+- 메소드 종류
+insert
+update
+delete
+selectList : 리턴타입이 List 컬렉션
+selectOne: 리턴타입이 컬렉션이 아닙니다.(1개행 조회 - PK컬럼)
+
+- 메소드의 인자
+그러면 마이바티스 메소드에게 무엇을 알려줘야 할까요? 실행할 sql 의 id(필수) 와 실행에 필요한 값(선택) 입니다.
+insert,update,delete,selectOne 은 100% 값(파라미터)가 필요하다.
+
+- 메소드의 리턴 타입
+selectOne, selectList 는 매퍼 xml 에서 반드시 resultType 으로 데이터 형식 설정해야합니다.
+insert,update,delete 는 매퍼 xml 에서 반드시 resultType 타입 설정 안하고 메소드에서는 반영된 행의 개수 리턴합니다.
+
+
+* 마이바티스에서는 실행할 sql이 매처xml에 모여 있으므로 그 파일에 있는 id 값을 써야합니다
+* sql 실행에 필요한 값은 sql 명령 중 매개변수 기호 #{} 에 전달됩니다. 이값의 형식을 파라미터 타입으로 설정합니다
+*select 쿼리는 실행하면 결과 행을 반환하므로 resultType 으로 데이터의 형식 작성합니다.

@@ -75,3 +75,43 @@
 		 	 	ㄴ 스콥(scope), 사용 범위가 있씁니다.
 				ㄴ 우리가 사용해 본 2개 스콥 : 현재 웹페이지(pageContext), 요청(request)
 				ㄴ 저장은 스콥객체.setAtrribute() , 읽기는 스콥객체.getAttribute()
+=============================================
+	서블릿 		기능					요청메소드		주요코드									view(화면)
+	A 			고객전체조회			GET				dispather.forward(req,resp)				   customers.jsp
+	B			상품전체조회			GET				dispather.forward(req,resp)				   products.jsp
+	C           주문전체조회			GET				dispather.forward(req,resp)				   buys.jsp
+	D			고객등록 - 화면			GET				dispather.forward(req,resp)				   register.jsp
+				   -저장 			    POST			resoponse.sendRedirect(url)				   없음-url 필요
+	F 			상품등록 - 화면			GET				dispather.forward(req,resp)			       productReg.jsp
+				   -저장				POST		    resoponse.sendRedirect(url)				   없음-url 필요
+
+	(퀴즈) ABC의 GET과 DE의 다른 코드 하나를 찾아보세요. request.setAtrribute("list",list)	
+						ㄴ 이유 : 화면에서 보여줄 데이터를 저장. -> 반드시 forward로 해야 합니다.
+
+	(퀴즈) 사용자 요청 파라미터는 POST 방식에서만 전달된다 (O or X)  정답 : X
+											ㄴ form 태그로 전달
+								 GET 방식에서는 url 쿼리스트링으로 전달.
+
+	(퀴즈) <c:forEach items="${list}" var = "vo">	에서 ${list} 실행 동작 메소드는?
+							정답 : 1) request.getAttribute("list") * 리턴타입이 Object
+								   2) Object 타입을 알아서 저장된 형식(List<~Vo>)으로 강제 캐스팅
+
+11. 마이바티스 프레임웍 :
+					* 라이브러리 사용해서 보다 `구조적으로 SQL 실행`하는 구조적으로 jdbc dao 구현 반복되는 코드를 없애보자. ( sql 파라미터와 자바 객체의 매핑)
+					* 마이바티스는 jdbc로 처리하는 상당부분의 코드와 파라미터 설정 및 결과 매핑을 대신 해준다. (참고 : 마이바티스 공식 사이트)
+					* 마이바티스 구현 방법 중에는 XML 파일을 사용하는 것이 제일 많이 사용됩니다. 
+						ㄴ XML : html 과 같이 태그를 사용하면서 데이터를 저장합니다. 단, html과 같이 지정된 태그를 사용하지 않고 여러가지 형식을 만들어내는 방법이 있습니다. 
+								xml 파일은 설정, 데이터 저장 목적으로 사용됩니다. (예시 : 톰캣의 서버 port 설정은 결국 sever.xml 파일 내용입니다.)
+
+
+1) dml insert, update, delete, select 과 동일한 태그 작성하기
+2) dao 메소드에서 지정했던 메소드의 인자 ParameterType, 리턴타입 resultType 정하기
+	주의 : 자바 객체의 변수(속성)명과 파라미터 기호 #{} 이름을 동일하게 합니다.
+		   파라미터가 Map 일 때에는 key 이름과 파라미터 이름 동일하게 합니다.
+		   기본 형식, String 은 변수 선언 키워드와 동일하게 합니다.
+3) dto(또는 vo) 클래스는 커스텀 생성자를 사용하고, 컬럼명과 변수명 순서를 같게합니다.
+4) namespace, id 속성 값은 개발자가 정합니다.
+5) 리턴 타입이 List 일 때에는 제너릭 타입만 설정하면 됩니다.
+6) 매퍼에서 select 가 리턴이 여러 행 또는 1개 행인지를 판단하여
+			sqlSession 메소드는 selectList 또는 selectOne을 선택해서 사용합니다.
+7) dao 메소드 인자가 Map일 때, value의 타입이 다르면 Object로 합니다.

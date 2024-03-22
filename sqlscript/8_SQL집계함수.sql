@@ -13,7 +13,9 @@ SELECT count(*) FROM TBL_SCORE ts ;
 
 
 -- 2) '성적' 테이블의 과목 컬럼 '국어' 값을 갖는 전체 행 개수
-SELECT count(*) FROM TBL_SCORE ts WHERE SUBJECT  = '국어';
+SELECT count(*) 
+FROM TBL_SCORE ts 
+WHERE SUBJECT  = '국어';
 
 -- 3) '성적' 테이블의 'jumsu' 컬럼의 합계
 SELECT sum(JUMSU) FROM TBL_SCORE ts;

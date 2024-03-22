@@ -133,13 +133,19 @@ SELECT * FROM EXBUY e ;
 
 -- 문제
 -- 1) 카테고리 별로 상품 갯수 구하기(카테고리 번호랑 같이 나와야 됨.)	- 황병훈
-SELECT PDT_CATE ,COUNT(*) FROM EXPRODUCT e GROUP BY PDT_CATE ; 
+SELECT PDT_CATE ,COUNT(*) 
+FROM EXPRODUCT e 
+GROUP BY PDT_CATE ; 
 
 -- 2) 고객이 가장 많이 구매한 상품을 구하시오(판매 갯수로 내림차순) - 한주영
-SELECT max(buy_count) FROM EXBUY e GROUP BY PDT_CODE  ;
+SELECT max(buy_count) 
+FROM EXBUY e
+GROUP BY PDT_CODE;
 
 -- 3) ID가 'mina012' 인 회원의 가입날짜부터 현재까지 며칠(day)이 지났는지 출력하시오. - 조하연
-SELECT (TO_DATE(SYSDATE,'YYYY-MM-DD') - TO_DATE(CUS_SIGNINTIME ,'YYYY-MM-DD')) AS "회원 기간" FROM EXCUSTOMER e WHERE CUS_ID ='mina012'; 
+SELECT (TO_DATE(SYSDATE,'YYYY-MM-DD') - TO_DATE(CUS_SIGNINTIME ,'YYYY-MM-DD')) AS "회원 기간" 
+FROM EXCUSTOMER e 
+WHERE CUS_ID ='mina012'; 
 
 -- 4) 이름 내림차순 정렬하기		- 조지수
 SELECT * FROM EXCUSTOMER e ORDER BY CUS_NAME DESC;

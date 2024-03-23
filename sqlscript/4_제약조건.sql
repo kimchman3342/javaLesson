@@ -15,9 +15,9 @@
  * */
 -- 제약조건 컬럼레벨 설정하기
 CREATE TABLE tbl_constr( 	
-	aname varchar2(20) NOT NULL,
-	bname varchar2(20) UNIQUE,	-- NULL 허용
-	cno NUMBER(4) NOT NULL UNIQUE,
+	aname varchar2(20) NOT NULL,	-- 중복허용;
+	bname varchar2(20) UNIQUE,	-- NULL 허용, 중복 불가;
+	cno NUMBER(4) NOT NULL UNIQUE,	-- NULL 불가, 중복 불가;
 	dno NUMBER(4) CHECK (dno BETWEEN 1 AND 4) -- NULL 허용
 	-- eno number(4)	-- 형식이 맞는 모든 데이터 허용.
 );
@@ -66,6 +66,7 @@ CREATE TABLE tbl_javaword(
 	korean	nvarchar2(100) NOT NULL,
 	step		number(1) CHECK (step BETWEEN 1 AND 4)		-- CHECK () 괄호 필수
 );
+
 
 
 

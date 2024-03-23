@@ -14,7 +14,7 @@ SELECT SYSDATE FROM DUAL;
 INSERT INTO 
 	TBL_MEMBER			-- 컬럼명 모두 생략된 경우 
 VALUES 
-	(1,'김모모','momo@naver.com','2022-11-24');
+(1,'김모모','momo@naver.com','2022-11-24');
 
 INSERT INTO TBL_MEMBER VALUES (2,'박나연','parkny@gmail.com','2022-10-24');
 INSERT INTO TBL_MEMBER VALUES (3,'최슬기','slgichoi@naver.com','2021-09-24');
@@ -33,6 +33,7 @@ VALUES
 --				ㄴ 모든 열을 지정하는 기호 * (와일드카드 문자)
 -- 1) 모든행과 모든 열 조회
 	SELECT * FROM TBL_MEMBER;
+
 -- 2) 지정된 열 `이름,이메일`의 모든 행 조회
 	SELECT name,email
 	FROM TBL_MEMBER ;
@@ -59,7 +60,7 @@ SELECT email FROM TBL_MEMBER tm WHERE name = '박사나';
 -- `이메일이 naver 인 회원`
 	SELECT email
 	FROM TBL_MEMBER
-	WHERE EMAIL LIKE '%@naver%'
+	WHERE EMAIL LIKE '%@naver%';
 
 -- 6) 여러가지 값으로 조회 : `이름이 김모모 또는 박나연 또는 강나현`
 	SELECT *
@@ -97,16 +98,4 @@ SELECT email FROM TBL_MEMBER tm WHERE name = '박사나';
 	ORDER BY name;
 
 -- dual은 오라클 임시테이블 - 수식,함수 결과값 확인 가능
-
-
-
-
-
-
-
-
-
-
-
-
 

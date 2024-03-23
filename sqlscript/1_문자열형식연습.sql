@@ -9,10 +9,18 @@ CREATE TABLE tblTest (    --tblTest 이름의 테이블 만들기
 	tid NUMBER,				-- 정수 또는 실수
 	name varchar2(100)		--최대 100바이트 크기의 문자열
 );
- 
+
+CREATE TABLE tblTest(
+	tid NUMBER,
+	name varchar2(100)
+);
+
+
+
 
 -- DDL : 2. 테이블 제거
 DROP TABLE TBLTEST ;
+
 
 -- 문자열 형식 테스트
 -- CHAR(길이) : 고정길이 , 단위는 바이트 

@@ -36,22 +36,26 @@ INSERT INTO TBL_JAVAWORD(idx,english,korean,step) VALUES (7, 'airplane', '비행
 INSERT INTO TBL_JAVAWORD(idx,english,korean,step) VALUES (8, 'mirror', '거울', 1);
 
 SELECT * FROM TBL_JAVAWORD tj ;
+
 SELECT 
-	ENGLISH , KOREAN 
+	ENGLISH , KOREAN 	-- 영어와 한국어 항목 만을 불러옴 
 FROM
 	TBL_JAVAWORD;
+
 -- SELECT 컬럼명 1, 컬럼명 2,... FROM 테이블명 
 --							WHERE 컬럼명 = 값 			=> 특정 컬럼을 조건식으로 조회	
-SELECT * FROM TBL_JAVAWORD tj WHERE STEP IS NOT NULL;
-SELECT * FROM TBL_JAVAWORD tj WHERE STEP  IS NULL;
-SELECT * FROM TBL_JAVAWORD tj WHERE IDX = 2;
-SELECT * FROM TBL_JAVAWORD tj WHERE ENGLISH = 'public';
-SELECT * FROM TBL_JAVAWORD tj WHERE ENGLISH = 'public' AND STEP  = 2;	-- AND : 논리연산
+SELECT * FROM TBL_JAVAWORD tj WHERE STEP IS NOT NULL; -- step 컬럼이 NULL 값이 아닌 정보들만 추출 ''
+SELECT * FROM TBL_JAVAWORD tj WHERE STEP  IS NULL; -- step이 NULL 값인 것들만 추출 ;
+SELECT * FROM TBL_JAVAWORD tj WHERE IDX = 2;	-- INDEX 번호가 2인 것을 추출;
+SELECT * FROM TBL_JAVAWORD tj WHERE ENGLISH = 'public';	
+SELECT * FROM TBL_JAVAWORD tj WHERE ENGLISH = 'public' AND STEP  = 2;	-- AND : 논리연산 english 컬럼의 값이 public이면서 스텝 2인 것 추출;
 SELECT * FROM TBL_JAVAWORD tj WHERE ENGLISH LIKE '%ic';		-- sh로 끝나는, %기호는 don't care
 SELECT * FROM TBL_JAVAWORD tj WHERE ENGLISH LIKE '%ic%';		-- sh로 끝나는, %기호는 don't care
 SELECT * FROM TBL_JAVAWORD tj WHERE IDX BETWEEN  10 AND 20;	-- 10~20
 SELECT * FROM TBL_JAVAWORD tj WHERE IDX NOT BETWEEN  10 AND 20;	-- 10~20 범위 값이 아닌 것.
 SELECT * FROM TBL_JAVAWORD tj WHERE ENGLISH <'public';	-- pulic보다 IDX가 높은 것 
+
+
 
 TRUNCATE TABLE TBL_JAVAWORD ;
 
@@ -60,11 +64,12 @@ INSERT INTO TBL_JAVAWORD(idx,english,korean,step) VALUES (5,'constraint', '제�
 INSERT INTO TBL_JAVAWORD(idx,english,korean,step) VALUES (9,'order', '순서',1);
 
 -- idx 값이 2,5,9 인  것만 조회
-SELECT * FROM TBL_JAVAWORD WHERE IDX = 2 OR IDX = 5 OR IDX = 9;
-SELECT * FROM TBL_JAVAWORD WHERE IDX IN (2,5,9);	-- OR 연산을 간단하게
+SELECT * FROM TBL_JAVAWORD WHERE IDX = 2 OR IDX = 5 OR IDX = 9; -- OR 쓸 때 컬럼명을 각각 입력해줘야 됨;
+SELECT * FROM TBL_JAVAWORD WHERE IDX IN (2,5,9);	-- OR 연산을 간단하게 (in 안에 한꺼번에 집어 넣음;)
 
 -- idx 값이 2~5 조회
-SELECT * FROM TBL_JAVAWORD WHERE IDX  >= 2 AND IDX <= 5; 	-- AND 연산은 between으로 간단하게
+SELECT * FROM TBL_JAVAWORD WHERE IDX  >= 2 AND IDX <= 5; 	
+SELECT * FROM TBL_JAVAWORD WHERE IDX BETWEEN 2 AND 5; -- AND 연산은 between으로 간단하게;
 
 -- select 컬럼명 1, 컬럼명 2... from 테이블명
 --							[Where 컬럼명 = 값]	=> 특정 컬럼을 조건식으로 조회

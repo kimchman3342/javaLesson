@@ -20,17 +20,20 @@ SELECT to_char(SYSDATE,'yyyy"년" mm"월" dd"일"') FROM dual;
 
 -- ***** 문자열 패턴을 알려주고 날짜 형식으로 변경하기
 INSERT INTO TBL_MEMBER VALUES (2,'박나연','parkny@gmail.com',to_date('2022-10-24 13:24:55', 'yyyy-mm-dd hh24:mi:ss'));
-INSERT INTO TBL_MEMBER VALUES (10,'홍길동','gdHONG@daum.net',to_date('20240109', 'yyyymmdd'))
+INSERT INTO TBL_MEMBER VALUES (10,'홍길동','gdHONG@daum.net',to_date('20240109', 'yyyymmdd'));
 
 
 SELECT * FROM TBL_MEMBER tm ;
 
 -- 1. '월' 관련 함수
 SELECT ADD_MONTHS(SYSDATE,3) FROM dual; -- 오늘 날짜 3개월 이후. 첫 번째 인자는 날짜 형식. 두 번째 더해지는 값
+SELECT ADD_MONTHS(SYSDATE,5) FROM dual;
 
-SELECT TO_CHAR(ADD_MONTHS(SYSDATE,3),'yyyy/mm/dd') FROM dual;  -- 문자열 패턴 기호 - 또는 / 또는 구분기호 없음 가능
+SELECT TO_CHAR(ADD_MONTHS(SYSDATE,3),'yyyy/mm/dd') FROM dual;  -- 문자열 패턴 기호 - 또는 / 또는 구분기호 없음 가능(이중함수;)
+SELECT TO_CHAR(ADD_MONTHS(SYSDATE,5),'yyy/mm/dd') FROM DUAL;
 
 SELECT MONTHS_BETWEEN(SYSDATE, TO_DATE('2022-09-23')) FROM dual; -- 지정된 2개의 날짜 사이에 간격(월). 결과는 소수점
+
 
 SELECT TRUNC(SYSDATE) - TO_DATE('20241110', 'yyyymmdd') FROM dual;  -- 2개의 날짜형식 값 간격(일) 2개의 날짜간격(일) TRUNC(SYSDATE)는 일(day) 까지로 변환
 SELECT TRUNC(SYSDATE) FROM dual; 
